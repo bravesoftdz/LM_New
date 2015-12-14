@@ -1,0 +1,14 @@
+program LM;
+
+uses
+  Vcl.Forms,
+  Principal in 'Principal.pas' {fmPrincipal};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfmPrincipal, fmPrincipal);
+  Application.Run;
+end.

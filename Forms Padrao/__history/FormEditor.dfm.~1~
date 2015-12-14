@@ -1,0 +1,5 @@
+inherited fmFormEditor: TfmFormEditor
+  Caption = 'fmFormEditor'
+  PixelsPerInch = 96
+  TextHeight = 13
+end
