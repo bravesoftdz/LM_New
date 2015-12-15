@@ -1,0 +1,39 @@
+inherited fmFormEditor: TfmFormEditor
+  Caption = 'fmFormEditor'
+  ExplicitWidth = 651
+  ExplicitHeight = 338
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnlControls: TPanel
+    Left = 0
+    Top = 0
+    Width = 635
+    Height = 54
+    Align = alTop
+    TabOrder = 0
+    object btnConcluir: TSpeedButton
+      Left = 191
+      Top = 4
+      Width = 121
+      Height = 43
+      Caption = '&Concluir'
+    end
+    object btnFechar: TSpeedButton
+      Left = 318
+      Top = 4
+      Width = 121
+      Height = 43
+      Caption = '&Fechar'
+    end
+  end
+  object IB_Query1: TIB_Query
+    IB_Connection = DMDados.Conexao
+    Left = 312
+    Top = 152
+  end
+  object IB_DataSource1: TIB_DataSource
+    Dataset = IB_Query1
+    Left = 352
+    Top = 184
+  end
+end

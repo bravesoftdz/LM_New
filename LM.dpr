@@ -7,7 +7,10 @@ uses
   FormPadrao in 'Forms Padrao\FormPadrao.pas' {fmFormPadrao},
   FormGrid in 'Forms Padrao\FormGrid.pas' {fmFormGrid},
   FormEditor in 'Forms Padrao\FormEditor.pas' {fmFormEditor},
-  Login in 'Login.pas' {fmLogin};
+  Login in 'Login.pas' {fmLogin},
+  CliForGrid in 'Modules\Cadastros\CliForGrid.pas' {fmCliForGrid},
+  CliForEditor in 'Modules\Cadastros\CliForEditor.pas' {fmCliforEditor},
+  ChamaForm in 'Functions\ChamaForm.pas';
 
 {$R *.res}
 
@@ -20,5 +23,7 @@ begin
   Application.CreateForm(TfmFormGrid, fmFormGrid);
   Application.CreateForm(TfmFormEditor, fmFormEditor);
   Application.CreateForm(TfmLogin, fmLogin);
+  Application.CreateForm(TfmCliForGrid, fmCliForGrid);
+  Application.CreateForm(TfmCliforEditor, fmCliforEditor);
   Application.Run;
 end.

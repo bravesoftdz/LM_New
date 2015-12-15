@@ -10,12 +10,12 @@ inherited fmFormGrid: TfmFormGrid
     Left = 0
     Top = 0
     Width = 790
-    Height = 65
+    Height = 53
     Align = alTop
     TabOrder = 0
     object btnIncluir: TSpeedButton
       Left = 64
-      Top = 16
+      Top = 4
       Width = 121
       Height = 43
       Caption = '&Incluir'
@@ -23,14 +23,14 @@ inherited fmFormGrid: TfmFormGrid
     end
     object btnAlterar: TSpeedButton
       Left = 191
-      Top = 16
+      Top = 4
       Width = 121
       Height = 43
       Caption = '&Alterar'
     end
     object btnExcluir: TSpeedButton
       Left = 318
-      Top = 16
+      Top = 4
       Width = 121
       Height = 43
       Caption = '&Excluir'
@@ -38,7 +38,7 @@ inherited fmFormGrid: TfmFormGrid
     end
     object btnPesquisar: TSpeedButton
       Left = 445
-      Top = 16
+      Top = 4
       Width = 121
       Height = 43
       Caption = '&Pesquisar'
@@ -46,16 +46,14 @@ inherited fmFormGrid: TfmFormGrid
   end
   object IB_Grid1: TIB_Grid
     Left = 0
-    Top = 65
+    Top = 53
     Width = 790
-    Height = 438
+    Height = 450
     CustomGlyphsSupplied = []
     DataSource = IB_DataSource1
     Align = alClient
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 56
-    ExplicitHeight = 447
   end
   object IB_Query1: TIB_Query
     IB_Connection = DMDados.Conexao

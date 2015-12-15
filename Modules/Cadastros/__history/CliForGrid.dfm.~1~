@@ -1,0 +1,9 @@
+inherited fmClientesFornecedores: TfmClientesFornecedores
+  Caption = 'fmClientesFornecedores'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited IB_Grid1: TIB_Grid
+    ExplicitTop = 53
+    ExplicitHeight = 450
+  end
+end
