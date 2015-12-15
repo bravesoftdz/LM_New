@@ -21,7 +21,7 @@ begin
   Application.CreateForm(TDMDados, DMDados);
   Application.CreateForm(TfmFormPadrao, fmFormPadrao);
   Application.CreateForm(TfmFormGrid, fmFormGrid);
-  Application.CreateForm(TfmFormEditor, fmFormEditor);
+//  Application.CreateForm(TfmFormEditor, fmFormEditor);
   Application.CreateForm(TfmLogin, fmLogin);
   Application.CreateForm(TfmCliForGrid, fmCliForGrid);
   Application.CreateForm(TfmCliforEditor, fmCliforEditor);

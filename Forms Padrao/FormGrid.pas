@@ -17,13 +17,14 @@ type
     btnAlterar: TSpeedButton;
     btnExcluir: TSpeedButton;
     btnPesquisar: TSpeedButton;
-    procedure btnIncluirClick(Sender: TObject);
     procedure btnExcluirClick(Sender: TObject);
   private
     { Private declarations }
+  protected
+    function CreateEditor(ACodigo: Variant): TFormularioEditor;
   public
     { Public declarations }
-    FormEditor : TfmFormEditor;
+    FormEditor : TFormularioEditor;
     NomeTabela : String;
   end;
 
@@ -34,22 +35,16 @@ implementation
 
 {$R *.dfm}
 
+function TfmFormGrid.CreateEditor(ACodigo: Variant): TFormularioEditor;
+begin
+ // Result := FormEditor.Create(self, ACodigo);
+end;
+
 procedure TfmFormGrid.btnExcluirClick(Sender: TObject);
 begin
   inherited;
   //adicionaer classe question message
   IB_Query1.Delete;
-end;
-
-procedure TfmFormGrid.btnIncluirClick(Sender: TObject);
-begin
-  inherited;
-  FormEditor.Create(Self);
-  try
-    FormEditor.ShowModal;
-  finally
-    FormEditor.Free;
-  end;
 end;
 
 end.

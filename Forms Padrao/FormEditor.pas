@@ -19,16 +19,28 @@ type
     procedure btnFecharClick(Sender: TObject);
   private
     { Private declarations }
+    FCodigo: Variant;
   public
     { Public declarations }
+    property Codigo: Variant read FCodigo write FCodigo;
+    constructor Create(AOwner: TComponent;
+                       ACodigo: Variant);
   end;
 
-var
-  fmFormEditor: TfmFormEditor;
+  TFormularioEditor = class of TfmFormEditor;
 
 implementation
 
 {$R *.dfm}
+
+{===================== CONTRUCTOR CREATE PUBLICO ==============================}
+constructor TfmFormEditor.Create(AOwner: TComponent;
+                                       ACodigo: Variant);
+begin
+  FCodigo := ACodigo;
+  inherited Create( AOwner );
+end;
+{==============================================================================}
 
 procedure TfmFormEditor.btnConcluirClick(Sender: TObject);
 begin

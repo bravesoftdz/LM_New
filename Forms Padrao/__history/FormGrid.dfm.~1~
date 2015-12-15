@@ -1,5 +1,0 @@
-inherited fmFormGrid: TfmFormGrid
-  Caption = 'fmFormGrid'
-  PixelsPerInch = 96
-  TextHeight = 13
-end

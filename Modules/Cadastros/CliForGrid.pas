@@ -25,7 +25,7 @@ implementation
 
 procedure TfmCliForGrid.FormCreate(Sender: TObject);
 begin
-//  FormEditor := TfmCliforEditor;
+  FormEditor := TfmCliforEditor;
   inherited;
 end;
 

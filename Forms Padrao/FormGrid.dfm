@@ -19,7 +19,6 @@ inherited fmFormGrid: TfmFormGrid
       Width = 121
       Height = 43
       Caption = '&Incluir'
-      OnClick = btnIncluirClick
     end
     object btnAlterar: TSpeedButton
       Left = 191
