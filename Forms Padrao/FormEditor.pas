@@ -23,8 +23,6 @@ type
   public
     { Public declarations }
     property Codigo: Variant read FCodigo write FCodigo;
-    constructor Create(AOwner: TComponent;
-                       ACodigo: Variant);
   end;
 
   TFormularioEditor = class of TfmFormEditor;
@@ -33,25 +31,16 @@ implementation
 
 {$R *.dfm}
 
-{===================== CONTRUCTOR CREATE PUBLICO ==============================}
-constructor TfmFormEditor.Create(AOwner: TComponent;
-                                       ACodigo: Variant);
-begin
-  FCodigo := ACodigo;
-  inherited Create( AOwner );
-end;
-{==============================================================================}
-
 procedure TfmFormEditor.btnConcluirClick(Sender: TObject);
 begin
-  inherited;
   IB_Query1.Post;
+  Close;
 end;
 
 procedure TfmFormEditor.btnFecharClick(Sender: TObject);
 begin
-  inherited;
-  IB_Query1.Cancel;
+  if IB_Query1.State in [dssEdit, dssInsert] then
+    IB_Query1.Cancel;
   Close;
 end;
 

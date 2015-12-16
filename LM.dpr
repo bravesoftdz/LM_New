@@ -19,11 +19,11 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfmPrincipal, fmPrincipal);
   Application.CreateForm(TDMDados, DMDados);
-  Application.CreateForm(TfmFormPadrao, fmFormPadrao);
-  Application.CreateForm(TfmFormGrid, fmFormGrid);
+//  Application.CreateForm(TfmFormPadrao, fmFormPadrao);
+//  Application.CreateForm(TfmFormGrid, fmFormGrid);
 //  Application.CreateForm(TfmFormEditor, fmFormEditor);
-  Application.CreateForm(TfmLogin, fmLogin);
-  Application.CreateForm(TfmCliForGrid, fmCliForGrid);
-  Application.CreateForm(TfmCliforEditor, fmCliforEditor);
+//  Application.CreateForm(TfmLogin, fmLogin);
+//  Application.CreateForm(TfmCliForGrid, fmCliForGrid);
+//  Application.CreateForm(TfmCliforEditor, fmCliforEditor);
   Application.Run;
 end.

@@ -2,6 +2,7 @@ inherited fmFormGrid: TfmFormGrid
   Caption = 'fmFormGrid'
   ClientHeight = 503
   ClientWidth = 790
+  OnCreate = FormCreate
   ExplicitWidth = 806
   ExplicitHeight = 542
   PixelsPerInch = 96
@@ -19,6 +20,7 @@ inherited fmFormGrid: TfmFormGrid
       Width = 121
       Height = 43
       Caption = '&Incluir'
+      OnClick = btnIncluirClick
     end
     object btnAlterar: TSpeedButton
       Left = 191
@@ -26,6 +28,7 @@ inherited fmFormGrid: TfmFormGrid
       Width = 121
       Height = 43
       Caption = '&Alterar'
+      OnClick = btnAlterarClick
     end
     object btnExcluir: TSpeedButton
       Left = 318
