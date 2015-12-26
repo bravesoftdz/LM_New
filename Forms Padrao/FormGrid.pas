@@ -60,9 +60,8 @@ end;
 procedure TfmFormGrid.btnIncluirClick(Sender: TObject);
 var F : TfmFormEditor;
 begin
-  F := TfmFormEditor.Create(Self);
+  F := FFormEditor.Create(Self);
   try
-   // F.IB_Query1.Open;
     F.IB_Query1.Insert;
     F.IB_Query1.FieldByName('codigo').AsInteger := 0;
     F.ShowModal;

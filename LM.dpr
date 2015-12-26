@@ -12,7 +12,8 @@ uses
   CliForEditor in 'Modules\Cadastros\CliForEditor.pas' {fmCliforEditor},
   ChamaForm in 'Functions\ChamaForm.pas',
   Vcl.Themes,
-  Vcl.Styles;
+  Vcl.Styles,
+  ContasPagarGrid in 'Modules\Financeiro\ContasPagarGrid.pas' {fmContasPagarGrid};
 
 {$R *.res}
 
@@ -22,11 +23,5 @@ begin
   TStyleManager.TrySetStyle('Amethyst Kamri');
   Application.CreateForm(TfmPrincipal, fmPrincipal);
   Application.CreateForm(TDMDados, DMDados);
-  //  Application.CreateForm(TfmFormPadrao, fmFormPadrao);
-//  Application.CreateForm(TfmFormGrid, fmFormGrid);
-//  Application.CreateForm(TfmFormEditor, fmFormEditor);
-//  Application.CreateForm(TfmLogin, fmLogin);
-//  Application.CreateForm(TfmCliForGrid, fmCliForGrid);
-//  Application.CreateForm(TfmCliforEditor, fmCliforEditor);
   Application.Run;
 end.
