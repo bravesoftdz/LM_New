@@ -4,14 +4,45 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.Buttons, Vcl.ExtCtrls,
+  Vcl.Imaging.pngimage;
 
 type
   TfmPrincipal = class(TForm)
-    MainMenu1: TMainMenu;
-    Cadastros1: TMenuItem;
-    ClienteseFornecedores1: TMenuItem;
-    procedure ClienteseFornecedores1Click(Sender: TObject);
+    Panel1: TPanel;
+    btnCadastros: TSpeedButton;
+    BtnOperacional: TSpeedButton;
+    BtnFinanceiro: TSpeedButton;
+    BtnRelatorios: TSpeedButton;
+    BtnConfig: TSpeedButton;
+    PopupCadastro: TPopupMenu;
+    Cadastros2: TMenuItem;
+    FuncionriosUsurios1: TMenuItem;
+    Planodecontas1: TMenuItem;
+    PopupFinanceiro: TPopupMenu;
+    PopupOperacional: TPopupMenu;
+    PopupRelatorios: TPopupMenu;
+    Popupconfig: TPopupMenu;
+    ContasaPagar1: TMenuItem;
+    ContasaReceber1: TMenuItem;
+    Caixa1: TMenuItem;
+    Metas1: TMenuItem;
+    Pedidos1: TMenuItem;
+    Estoque1: TMenuItem;
+    Requisies1: TMenuItem;
+    Vendas1: TMenuItem;
+    Locaes1: TMenuItem;
+    Panel2: TPanel;
+    Image1: TImage;
+    Empresas1: TMenuItem;
+    procedure btnCadastrosClick(Sender: TObject);
+    procedure BtnOperacionalClick(Sender: TObject);
+    procedure BtnFinanceiroClick(Sender: TObject);
+    procedure BtnRelatoriosClick(Sender: TObject);
+    procedure BtnConfigClick(Sender: TObject);
+    procedure Cadastros2Click(Sender: TObject);
+    procedure FuncionriosUsurios1Click(Sender: TObject);
+    procedure Empresas1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -25,9 +56,34 @@ implementation
 
 {$R *.dfm}
 
-uses CliforGrid;
+uses CliforGrid, FuncionariosGrid, EmpresasGrid;
 
-procedure TfmPrincipal.ClienteseFornecedores1Click(Sender: TObject);
+procedure TfmPrincipal.btnCadastrosClick(Sender: TObject);
+begin
+  PopupCadastro.Popup(Mouse.CursorPos.X,Mouse.CursorPos.Y);
+end;
+
+procedure TfmPrincipal.BtnConfigClick(Sender: TObject);
+begin
+ Popupconfig.Popup(Mouse.CursorPos.X,Mouse.CursorPos.Y);
+end;
+
+procedure TfmPrincipal.BtnFinanceiroClick(Sender: TObject);
+begin
+ PopupFinanceiro.Popup(Mouse.CursorPos.X,Mouse.CursorPos.Y);
+end;
+
+procedure TfmPrincipal.BtnOperacionalClick(Sender: TObject);
+begin
+  PopupOperacional.Popup(Mouse.CursorPos.X,Mouse.CursorPos.Y);
+end;
+
+procedure TfmPrincipal.BtnRelatoriosClick(Sender: TObject);
+begin
+ PopupRelatorios.Popup(Mouse.CursorPos.X,Mouse.CursorPos.Y);
+end;
+
+procedure TfmPrincipal.Cadastros2Click(Sender: TObject);
 var F : TfmCliForGrid;
 begin
   F := TfmCliForGrid.Create(Self);
@@ -36,6 +92,28 @@ begin
   finally
     F.Free;
   end;
+end;
+
+procedure TfmPrincipal.Empresas1Click(Sender: TObject);
+var F : TfmEmpresasGrid;
+begin
+  F := TfmEmpresasGrid.Create(Self);
+  Try
+    F.ShowModal
+  Finally
+    F.Free;
+  End;
+end;
+
+procedure TfmPrincipal.FuncionriosUsurios1Click(Sender: TObject);
+var F : TfmFuncionariosGrid;
+begin
+  F := TfmFuncionariosGrid.Create(Self);
+  Try
+    F.ShowModal;
+  Finally
+    F.Free
+  End;
 end;
 
 end.

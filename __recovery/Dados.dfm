@@ -1,7 +1,7 @@
 object DMDados: TDMDados
   OldCreateOrder = False
-  Height = 223
-  Width = 293
+  Height = 168
+  Width = 203
   object Conexao: TIB_Connection
     CacheStatementHandles = False
     SQLDialect = 3

@@ -9,7 +9,7 @@
     Top = 54
     Width = 628
     Height = 303
-    ActivePage = TabSheet1
+    ActivePage = Usuário
     Align = alClient
     Style = tsFlatButtons
     TabOrder = 1
@@ -86,7 +86,7 @@
         object IB_Edit6: TIB_Edit
           Left = 504
           Top = 24
-          Width = 94
+          Width = 97
           Height = 21
           AutoLabel.Caption = 'Data Nascimento:'
           AutoLabel.Kind = albLeft
@@ -213,15 +213,50 @@
     object Usuário: TTabSheet
       Caption = 'Usu'#225'rio'
       ImageIndex = 1
+      object IB_Edit15: TIB_Edit
+        Left = 64
+        Top = 11
+        Width = 137
+        Height = 21
+        AutoLabel.Caption = 'Usu'#225'rio:'
+        AutoLabel.Kind = albLeft
+        ParentBackground = False
+        TabOrder = 0
+      end
+      object IB_Edit16: TIB_Edit
+        Left = 64
+        Top = 38
+        Width = 137
+        Height = 21
+        AutoLabel.Caption = 'Senha:'
+        AutoLabel.Kind = albLeft
+        ParentBackground = False
+        TabOrder = 1
+        PasswordChar = '*'
+      end
+      object IB_CheckBox1: TIB_CheckBox
+        Left = 232
+        Top = 11
+        Width = 97
+        Height = 17
+        BorderStyle = bsNone
+        ParentBackground = False
+        TabOrder = 2
+        Caption = 'Ativo'
+      end
     end
   end
   inherited IB_Query1: TIB_Query
+    ColumnAttributes.Strings = (
+      'ATIVO=BOOLEAN='#39'1,0'#39)
     SQL.Strings = (
       'select * from usuarios where codigo = :codigo')
+    DefaultValues.Strings = (
+      'ATIVO=0')
     Left = 480
     Top = 16
     ParamValues = (
-      'CODIGO=')
+      'CODIGO='#39'0'#39)
   end
   inherited IB_DataSource1: TIB_DataSource
     Left = 576
@@ -229,6 +264,6 @@
   end
   inherited IB_Transaction1: TIB_Transaction
     Left = 528
-    Top = 24
+    Top = 40
   end
 end

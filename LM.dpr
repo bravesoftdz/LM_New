@@ -10,16 +10,19 @@ uses
   Login in 'Login.pas' {fmLogin},
   CliForGrid in 'Modules\Cadastros\CliForGrid.pas' {fmCliForGrid},
   CliForEditor in 'Modules\Cadastros\CliForEditor.pas' {fmCliforEditor},
-  ChamaForm in 'Functions\ChamaForm.pas';
+  ChamaForm in 'Functions\ChamaForm.pas',
+  Vcl.Themes,
+  Vcl.Styles;
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  TStyleManager.TrySetStyle('Amethyst Kamri');
   Application.CreateForm(TfmPrincipal, fmPrincipal);
   Application.CreateForm(TDMDados, DMDados);
-//  Application.CreateForm(TfmFormPadrao, fmFormPadrao);
+  //  Application.CreateForm(TfmFormPadrao, fmFormPadrao);
 //  Application.CreateForm(TfmFormGrid, fmFormGrid);
 //  Application.CreateForm(TfmFormEditor, fmFormEditor);
 //  Application.CreateForm(TfmLogin, fmLogin);

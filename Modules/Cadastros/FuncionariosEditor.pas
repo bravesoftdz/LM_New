@@ -30,6 +30,9 @@ type
     IB_Edit13: TIB_Edit;
     IB_LookupCombo1: TIB_LookupCombo;
     IB_Edit14: TIB_Edit;
+    IB_Edit15: TIB_Edit;
+    IB_Edit16: TIB_Edit;
+    IB_CheckBox1: TIB_CheckBox;
   private
     { Private declarations }
   public
