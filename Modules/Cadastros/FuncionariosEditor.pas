@@ -33,6 +33,11 @@ type
     IB_Edit15: TIB_Edit;
     IB_Edit16: TIB_Edit;
     IB_CheckBox1: TIB_CheckBox;
+    SpeedButton1: TSpeedButton;
+    Cidades: TIB_Query;
+    SourceCidades: TIB_DataSource;
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,5 +50,19 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfmFuncionariosEditor.FormCreate(Sender: TObject);
+begin
+  inherited;
+  Cidades.Open();
+end;
+
+procedure TfmFuncionariosEditor.SpeedButton1Click(Sender: TObject);
+begin
+  if IB_Edit16.Enabled then
+    IB_Edit16.Enabled := False
+  else
+    IB_Edit16.Enabled := True;
+end;
 
 end.

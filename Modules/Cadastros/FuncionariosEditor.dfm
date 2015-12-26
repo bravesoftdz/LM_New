@@ -1,6 +1,7 @@
 ﻿inherited fmFuncionariosEditor: TfmFuncionariosEditor
   Caption = 'Funcion'#225'rios'
   ClientHeight = 357
+  OnCreate = FormCreate
   ExplicitHeight = 396
   PixelsPerInch = 96
   TextHeight = 13
@@ -9,7 +10,7 @@
     Top = 54
     Width = 628
     Height = 303
-    ActivePage = Usuário
+    ActivePage = TabSheet1
     Align = alClient
     Style = tsFlatButtons
     TabOrder = 1
@@ -192,8 +193,10 @@
           Top = 79
           Width = 234
           Height = 21
+          DataSource = SourceCidades
           ParentBackground = False
           TabOrder = 6
+          DisplayField = 'NOME'
           ShowButton = True
         end
         object IB_Edit14: TIB_Edit
@@ -213,6 +216,14 @@
     object Usuário: TTabSheet
       Caption = 'Usu'#225'rio'
       ImageIndex = 1
+      object SpeedButton1: TSpeedButton
+        Left = 207
+        Top = 38
+        Width = 66
+        Height = 22
+        Caption = 'Alt. Senha'
+        OnClick = SpeedButton1Click
+      end
       object IB_Edit15: TIB_Edit
         Left = 64
         Top = 11
@@ -230,6 +241,7 @@
         Height = 21
         AutoLabel.Caption = 'Senha:'
         AutoLabel.Kind = albLeft
+        Enabled = False
         ParentBackground = False
         TabOrder = 1
         PasswordChar = '*'
@@ -253,6 +265,71 @@
       'select * from usuarios where codigo = :codigo')
     DefaultValues.Strings = (
       'ATIVO=0')
+    DeleteSQL.Strings = (
+      'DELETE FROM USUARIOS USUARIOS'
+      'WHERE'
+      '   CODIGO = :OLD_CODIGO')
+    EditSQL.Strings = (
+      'UPDATE USUARIOS USUARIOS SET'
+      '   USUARIOS.CODIGO = :CODIGO, /*PK*/'
+      '   USUARIOS.USUARIO = :USUARIO,'
+      '   USUARIOS.SENHA = :SENHA,'
+      '   USUARIOS.NOME = :NOME,'
+      '   USUARIOS.CPF = :CPF,'
+      '   USUARIOS.TELEFONE = :TELEFONE,'
+      '   USUARIOS.EMAIL = :EMAIL,'
+      '   USUARIOS.ENDERECO = :ENDERECO,'
+      '   USUARIOS.NUMERO = :NUMERO,'
+      '   USUARIOS.COMPLEMENTO = :COMPLEMENTO,'
+      '   USUARIOS.BAIRRO = :BAIRRO,'
+      '   USUARIOS.CEP = :CEP,'
+      '   USUARIOS.CIDADE = :CIDADE,'
+      '   USUARIOS.PAPEL_DE_ACESSO = :PAPEL_DE_ACESSO,'
+      '   USUARIOS.ESTADO = :ESTADO,'
+      '   USUARIOS.DATA_NASCIMENTO = :DATA_NASCIMENTO,'
+      '   USUARIOS.DATA_ADMISSAO = :DATA_ADMISSAO,'
+      '   USUARIOS.ATIVO = :ATIVO'
+      'WHERE'
+      '   CODIGO = :OLD_CODIGO')
+    InsertSQL.Strings = (
+      'INSERT INTO USUARIOS('
+      '   CODIGO, /*PK*/'
+      '   USUARIO,'
+      '   SENHA,'
+      '   NOME,'
+      '   CPF,'
+      '   TELEFONE,'
+      '   EMAIL,'
+      '   ENDERECO,'
+      '   NUMERO,'
+      '   COMPLEMENTO,'
+      '   BAIRRO,'
+      '   CEP,'
+      '   CIDADE,'
+      '   PAPEL_DE_ACESSO,'
+      '   ESTADO,'
+      '   DATA_NASCIMENTO,'
+      '   DATA_ADMISSAO,'
+      '   ATIVO)'
+      'VALUES ('
+      '   :CODIGO,'
+      '   :USUARIO,'
+      '   :SENHA,'
+      '   :NOME,'
+      '   :CPF,'
+      '   :TELEFONE,'
+      '   :EMAIL,'
+      '   :ENDERECO,'
+      '   :NUMERO,'
+      '   :COMPLEMENTO,'
+      '   :BAIRRO,'
+      '   :CEP,'
+      '   :CIDADE,'
+      '   :PAPEL_DE_ACESSO,'
+      '   :ESTADO,'
+      '   :DATA_NASCIMENTO,'
+      '   :DATA_ADMISSAO,'
+      '   :ATIVO)')
     Left = 480
     Top = 16
     ParamValues = (
@@ -264,6 +341,21 @@
   end
   inherited IB_Transaction1: TIB_Transaction
     Left = 528
-    Top = 40
+    Top = 8
+  end
+  object Cidades: TIB_Query
+    SQL.Strings = (
+      'select * from cidades'
+      'order by nome')
+    KeyLinks.Strings = (
+      'codigo = cidade')
+    KeySource = IB_DataSource1
+    Left = 479
+    Top = 312
+  end
+  object SourceCidades: TIB_DataSource
+    Dataset = Cidades
+    Left = 551
+    Top = 312
   end
 end
