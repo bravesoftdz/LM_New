@@ -7,7 +7,7 @@ object DMDados: TDMDados
     SQLDialect = 3
     Params.Strings = (
       'SQL DIALECT=3'
-      'SERVER=127.0.0.1/3055'
+      'SERVER=192.168.0.104/3055'
       'PROTOCOL=TCP/IP'
       'PATH=lm'
       'USER NAME=sysdba')
