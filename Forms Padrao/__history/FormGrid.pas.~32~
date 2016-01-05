@@ -17,7 +17,6 @@ type
     btnAlterar: TSpeedButton;
     btnExcluir: TSpeedButton;
     btnPesquisar: TSpeedButton;
-    Panel1: TPanel;
     procedure btnExcluirClick(Sender: TObject);
     procedure btnIncluirClick(Sender: TObject);
     procedure btnAlterarClick(Sender: TObject);

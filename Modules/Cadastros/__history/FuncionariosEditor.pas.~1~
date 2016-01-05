@@ -54,7 +54,6 @@ implementation
 procedure TfmFuncionariosEditor.FormCreate(Sender: TObject);
 begin
   inherited;
-  PageControl1.TabIndex := 0;
   Cidades.Open();
 end;
 

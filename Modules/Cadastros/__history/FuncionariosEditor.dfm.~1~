@@ -10,11 +10,10 @@
     Top = 54
     Width = 628
     Height = 303
-    ActivePage = Usuário
+    ActivePage = TabSheet1
     Align = alClient
     Style = tsFlatButtons
     TabOrder = 1
-    ExplicitTop = 53
     object TabSheet1: TTabSheet
       Caption = 'Funcion'#225'rio'
       object GroupBox1: TGroupBox
@@ -232,8 +231,6 @@
         Height = 21
         AutoLabel.Caption = 'Usu'#225'rio:'
         AutoLabel.Kind = albLeft
-        DataField = 'USUARIO'
-        DataSource = IB_DataSource1
         ParentBackground = False
         TabOrder = 0
       end
@@ -244,8 +241,6 @@
         Height = 21
         AutoLabel.Caption = 'Senha:'
         AutoLabel.Kind = albLeft
-        DataField = 'SENHA'
-        DataSource = IB_DataSource1
         Enabled = False
         ParentBackground = False
         TabOrder = 1
@@ -256,8 +251,6 @@
         Top = 11
         Width = 97
         Height = 17
-        DataField = 'ATIVO'
-        DataSource = IB_DataSource1
         BorderStyle = bsNone
         ParentBackground = False
         TabOrder = 2
@@ -268,9 +261,6 @@
   inherited IB_Query1: TIB_Query
     ColumnAttributes.Strings = (
       'ATIVO=BOOLEAN='#39'1,0'#39)
-    FieldsEditMask.Strings = (
-      'CPF=000.000.000-00'
-      'CEP=00000-000')
     SQL.Strings = (
       'select * from usuarios where codigo = :codigo')
     DefaultValues.Strings = (
@@ -340,8 +330,6 @@
       '   :DATA_NASCIMENTO,'
       '   :DATA_ADMISSAO,'
       '   :ATIVO)')
-    KeyLinks.Strings = (
-      'USUARIOS.CODIGO')
     Left = 480
     Top = 16
     ParamValues = (
@@ -362,11 +350,6 @@
     KeyLinks.Strings = (
       'codigo = cidade')
     KeySource = IB_DataSource1
-    OrderingItemNo = 1
-    OrderingItems.Strings = (
-      'NOME=NOME;NOME DESC')
-    OrderingLinks.Strings = (
-      'NOME=ITEM=1')
     Left = 479
     Top = 312
   end

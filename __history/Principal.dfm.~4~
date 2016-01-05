@@ -9408,7 +9408,6 @@ object fmPrincipal: TfmPrincipal
     end
     object Planodecontas1: TMenuItem
       Caption = 'Plano de contas'
-      OnClick = Planodecontas1Click
     end
     object Empresas1: TMenuItem
       Caption = 'Empresas'

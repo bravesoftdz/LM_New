@@ -34,6 +34,7 @@ implementation
 procedure TfmFormEditor.btnConcluirClick(Sender: TObject);
 begin
   IB_Query1.Post;
+  IB_Transaction1.Commit;
   Close;
 end;
 

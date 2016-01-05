@@ -226,7 +226,7 @@ inherited fmCliforEditor: TfmCliforEditor
     Height = 21
     AutoLabel.Caption = 'Telefone'
     AutoLabel.Kind = albLeft
-    DataField = 'TELEFONE'
+    DataField = 'CODIGO'
     DataSource = IB_DataSource1
     ParentBackground = False
     TabOrder = 10
@@ -238,15 +238,12 @@ inherited fmCliforEditor: TfmCliforEditor
     Height = 21
     AutoLabel.Caption = 'Cel'
     AutoLabel.Kind = albLeft
-    DataField = 'CELULAR'
+    DataField = 'CODIGO'
     DataSource = IB_DataSource1
     ParentBackground = False
     TabOrder = 11
   end
   inherited IB_Query1: TIB_Query
-    FieldsEditMask.Strings = (
-      'CELULAR=(00) 0000-0000'
-      'TELEFONE=(00) 0000-0000')
     SQL.Strings = (
       'select * from clifor where codigo = :codigo')
     DefaultValues.Strings = (
@@ -321,7 +318,7 @@ inherited fmCliforEditor: TfmCliforEditor
     Left = 353
     Top = 8
     ParamValues = (
-      'CODIGO='#39'0'#39)
+      'CODIGO=00000000')
   end
   inherited IB_DataSource1: TIB_DataSource
     Left = 393

@@ -118,14 +118,9 @@ begin
 end;
 
 procedure TfmPrincipal.Planodecontas1Click(Sender: TObject);
-var F : TfmPlanoConGrid;
+var F : tfm
 begin
-  F := TfmPlanoConGrid.Create(Self);
-  try
-    F.ShowModal;
-  finally
-    F.Free;
-  end;
+
 end;
 
 end.

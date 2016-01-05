@@ -1,0 +1,5 @@
+inherited fmFormGrid1: TfmFormGrid1
+  Caption = 'fmPlanoContasGrid'
+  PixelsPerInch = 96
+  TextHeight = 13
+end

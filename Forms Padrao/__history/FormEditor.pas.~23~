@@ -19,12 +19,10 @@ type
     procedure btnFecharClick(Sender: TObject);
   private
     { Private declarations }
+    FCodigo: Variant;
   public
     { Public declarations }
-    constructor Create(AOwner: TComponent;
-                       ACodigo: Variant;
-                       ATransaction: TIB_Transaction = nil;
-                       AVisualizing: Boolean = False);
+    property Codigo: Variant read FCodigo write FCodigo;
   end;
 
   TFormularioEditor = class of TfmFormEditor;
@@ -32,30 +30,17 @@ type
 implementation
 
 {$R *.dfm}
-{CONTRUCTOR CREATE PUBLICO}
-constructor TfmFormEditor.Create(AOwner: TComponent;
-                                       ACodigo: Variant;
-                                       ATransaction: TIB_Transaction = nil;
-                                       AVisualizing: boolean = False);
-begin
-  DefaultPKValue := 0;
-  FCodigo:=ACodigo;
-  FExternalTransaction:=ATransaction;
-  FVisualizing:=AVisualizing;
-
-  inherited Create( AOwner );
-end;
 
 procedure TfmFormEditor.btnConcluirClick(Sender: TObject);
 begin
-  inherited;
   IB_Query1.Post;
+  Close;
 end;
 
 procedure TfmFormEditor.btnFecharClick(Sender: TObject);
 begin
-  inherited;
-  IB_Query1.Cancel;
+  if IB_Query1.State in [dssEdit, dssInsert] then
+    IB_Query1.Cancel;
   Close;
 end;
 

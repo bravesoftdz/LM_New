@@ -25,6 +25,14 @@ type
     IB_Edit9: TIB_Edit;
     IB_Edit10: TIB_Edit;
     IB_Date1: TIB_Date;
+    Cidades: TIB_Query;
+    SourceCidades: TIB_DataSource;
+    IB_Edit11: TIB_Edit;
+    IB_Edit12: TIB_Edit;
+    IB_Edit13: TIB_Edit;
+    procedure IB_ComboBox1Change(Sender: TObject);
+    procedure IB_Edit3Enter(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,5 +45,30 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfmCliforEditor.FormCreate(Sender: TObject);
+begin
+  inherited;
+  Cidades.Open();
+end;
+
+procedure TfmCliforEditor.IB_ComboBox1Change(Sender: TObject);
+begin
+  inherited;
+  if IB_Query1.FieldByName('tipo_pessoa').AsInteger = 1 then
+    IB_Query1.FieldByName('cnpj').EditMask := '000.000.000-00'
+  else
+    IB_Query1.FieldByName('cnpj').EditMask := '00.000.000/0000-00';
+
+end;
+
+procedure TfmCliforEditor.IB_Edit3Enter(Sender: TObject);
+begin
+  inherited;
+  if IB_Query1.FieldByName('tipo_pessoa').AsInteger = 1 then
+    IB_Query1.FieldByName('cnpj').EditMask := '000.000.000-00'
+  else
+    IB_Query1.FieldByName('cnpj').EditMask := '00.000.000/0000-00';
+end;
 
 end.

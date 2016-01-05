@@ -17,12 +17,10 @@ type
     btnAlterar: TSpeedButton;
     btnExcluir: TSpeedButton;
     btnPesquisar: TSpeedButton;
-    Panel1: TPanel;
     procedure btnExcluirClick(Sender: TObject);
     procedure btnIncluirClick(Sender: TObject);
     procedure btnAlterarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure IB_Grid1DblClick(Sender: TObject);
   private
     { Private declarations }
     FFormEditor : TFormularioEditor;
@@ -41,7 +39,7 @@ implementation
 procedure TfmFormGrid.btnAlterarClick(Sender: TObject);
 var F : TfmFormEditor;
 begin
-  F := FFormEditor.Create(Self);
+  F := TfmFormEditor.Create(Self);
   try
     F.IB_Query1.ParamByName('codigo').AsInteger := IB_Query1.FieldByName('codigo').AsInteger;
     F.IB_Query1.Open;
@@ -77,12 +75,6 @@ procedure TfmFormGrid.FormCreate(Sender: TObject);
 begin
   inherited;
   IB_Query1.Open();
-end;
-
-procedure TfmFormGrid.IB_Grid1DblClick(Sender: TObject);
-begin
-  inherited;
-  btnAlterar.Click;
 end;
 
 end.

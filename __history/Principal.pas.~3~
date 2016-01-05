@@ -43,7 +43,6 @@ type
     procedure Cadastros2Click(Sender: TObject);
     procedure FuncionriosUsurios1Click(Sender: TObject);
     procedure Empresas1Click(Sender: TObject);
-    procedure Planodecontas1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -57,7 +56,7 @@ implementation
 
 {$R *.dfm}
 
-uses CliforGrid, FuncionariosGrid, EmpresasGrid, PlanoContaGrid;
+uses CliforGrid, FuncionariosGrid, EmpresasGrid;
 
 procedure TfmPrincipal.btnCadastrosClick(Sender: TObject);
 begin
@@ -115,17 +114,6 @@ begin
   Finally
     F.Free
   End;
-end;
-
-procedure TfmPrincipal.Planodecontas1Click(Sender: TObject);
-var F : TfmPlanoConGrid;
-begin
-  F := TfmPlanoConGrid.Create(Self);
-  try
-    F.ShowModal;
-  finally
-    F.Free;
-  end;
 end;
 
 end.
