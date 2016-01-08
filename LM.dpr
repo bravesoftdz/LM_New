@@ -13,7 +13,9 @@ uses
   ChamaForm in 'Functions\ChamaForm.pas',
   Vcl.Themes,
   Vcl.Styles,
-  ContasPagarGrid in 'Modules\Financeiro\ContasPagarGrid.pas' {fmContasPagarGrid};
+  ContasEditor in 'Modules\Financeiro\ContasEditor.pas',
+  ContasGrid in 'Modules\Financeiro\ContasGrid.pas' {fmContasGrid},
+  Sis.Classes in 'Functions\Sis.Classes.pas';
 
 {$R *.res}
 
@@ -23,5 +25,6 @@ begin
   TStyleManager.TrySetStyle('Amethyst Kamri');
   Application.CreateForm(TfmPrincipal, fmPrincipal);
   Application.CreateForm(TDMDados, DMDados);
+  Application.CreateForm(TfmContasGrid, fmContasGrid);
   Application.Run;
 end.

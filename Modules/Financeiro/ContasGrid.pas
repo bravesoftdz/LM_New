@@ -8,7 +8,7 @@ uses
   Vcl.Grids, IB_Grid, Vcl.Buttons, Vcl.ExtCtrls;
 
 type
-  TfmContasPagarGrid = class(TfmFormGrid)
+  TfmContasGrid = class(TfmFormGrid)
   private
     { Private declarations }
   public
@@ -16,7 +16,7 @@ type
   end;
 
 var
-  fmContasPagarGrid: TfmContasPagarGrid;
+  fmContasGrid: TfmContasGrid;
 
 implementation
 

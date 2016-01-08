@@ -1,5 +1,5 @@
-inherited fmContasPagarGrid: TfmContasPagarGrid
-  Caption = 'fmContasPagarGrid'
+inherited fmContasGrid: TfmContasGrid
+  Caption = 'fmContasGrid'
   ExplicitWidth = 320
   ExplicitHeight = 240
   PixelsPerInch = 96

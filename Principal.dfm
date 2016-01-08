@@ -9420,9 +9420,11 @@ object fmPrincipal: TfmPrincipal
     Top = 40
     object ContasaPagar1: TMenuItem
       Caption = 'Contas a Pagar'
+      OnClick = ContasaPagar1Click
     end
     object ContasaReceber1: TMenuItem
       Caption = 'Contas a Receber'
+      OnClick = ContasaReceber1Click
     end
     object Caixa1: TMenuItem
       Caption = 'Caixa/Banco'
