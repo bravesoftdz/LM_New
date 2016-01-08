@@ -26,8 +26,8 @@ implementation
 
 procedure TDMDados.ConexaoBeforeConnect(Sender: TIB_Connection);
 begin
-//  Conexao.Database := '127.0.0.1/3055:lm';
-  Conexao.Database := '192.168.0.104/3055:lm';
+  Conexao.Database := '127.0.0.1/3055:lm';
+//  Conexao.Database := '192.168.0.104/3055:lm';
   Conexao.Username := 'sysdba';
   Conexao.Password := 'masterkey';
 end;

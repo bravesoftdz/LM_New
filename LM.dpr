@@ -13,7 +13,7 @@ uses
   ChamaForm in 'Functions\ChamaForm.pas',
   Vcl.Themes,
   Vcl.Styles,
-  ContasEditor in 'Modules\Financeiro\ContasEditor.pas',
+  ContasEditor in 'Modules\Financeiro\ContasEditor.pas' {fmContasEditor},
   ContasGrid in 'Modules\Financeiro\ContasGrid.pas' {fmContasGrid},
   Sis.Classes in 'Functions\Sis.Classes.pas';
 
@@ -23,8 +23,7 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   TStyleManager.TrySetStyle('Amethyst Kamri');
-  Application.CreateForm(TfmPrincipal, fmPrincipal);
   Application.CreateForm(TDMDados, DMDados);
-  Application.CreateForm(TfmContasGrid, fmContasGrid);
+  Application.CreateForm(TfmPrincipal, fmPrincipal);
   Application.Run;
 end.

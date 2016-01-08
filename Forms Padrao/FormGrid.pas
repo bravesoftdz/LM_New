@@ -41,6 +41,9 @@ implementation
 procedure TfmFormGrid.btnAlterarClick(Sender: TObject);
 var F : TfmFormEditor;
 begin
+  if FFormEditor = nil then
+     raise Exception.Create('Nem um formulario de edição foi declarado');
+
   F := FFormEditor.Create(Self);
   try
     F.IB_Query1.ParamByName('codigo').AsInteger := IB_Query1.FieldByName('codigo').AsInteger;
@@ -62,6 +65,9 @@ end;
 procedure TfmFormGrid.btnIncluirClick(Sender: TObject);
 var F : TfmFormEditor;
 begin
+  if FFormEditor = nil then
+     raise Exception.Create('Nem um formulario de edição foi declarado');
+
   F := FFormEditor.Create(Self);
   try
     F.IB_Query1.Insert;
@@ -76,6 +82,9 @@ end;
 procedure TfmFormGrid.FormCreate(Sender: TObject);
 begin
   inherited;
+  if Trim(IB_Query1.SQL.Text) = '' then
+    raise Exception.Create('Não é possível preparar um DataSet em branco!');
+
   IB_Query1.Open();
 end;
 

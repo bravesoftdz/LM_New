@@ -14,7 +14,6 @@ inherited fmFormGrid: TfmFormGrid
     Height = 53
     Align = alTop
     TabOrder = 0
-    ExplicitTop = -6
     object Panel1: TPanel
       Left = 144
       Top = 4

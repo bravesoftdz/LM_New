@@ -9,6 +9,7 @@ uses
 
 type
   TfmContasGrid = class(TfmFormGrid)
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -20,6 +21,14 @@ var
 
 implementation
 
+uses ContasEditor;
+
 {$R *.dfm}
+
+procedure TfmContasGrid.FormCreate(Sender: TObject);
+begin
+  FormEditor := TfmContasEditor;
+  inherited;
+end;
 
 end.

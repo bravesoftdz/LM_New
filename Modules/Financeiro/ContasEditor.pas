@@ -9,7 +9,7 @@ uses
   Vcl.Mask, IB_EditButton, Sis.Classes;
 
 type
-  TfmContasPagarEditor = class(TfmFormEditor)
+  TfmContasEditor = class(TfmFormEditor)
     IB_Edit1: TIB_Edit;
     IB_Edit2: TIB_Edit;
     IB_Edit5: TIB_Edit;
@@ -43,18 +43,18 @@ type
   end;
 
 var
-  fmContasPagarEditor: TfmContasPagarEditor;
+  fmContasEditor: TfmContasEditor;
 
 implementation
 
 {$R *.dfm}
 
-function TfmContasPagarEditor.GetTipoConta: TTipoConta;
+function TfmContasEditor.GetTipoConta: TTipoConta;
 begin
   Result := FTipoConta;
 end;
 
-procedure TfmContasPagarEditor.IB_Query1BeforePost(IB_Dataset: TIB_Dataset);
+procedure TfmContasEditor.IB_Query1BeforePost(IB_Dataset: TIB_Dataset);
 begin
   if FTipoConta = tpPagar then
     IB_Query1.FieldByName('tipo').AsInteger := 1
@@ -64,7 +64,7 @@ begin
   inherited;
 end;
 
-procedure TfmContasPagarEditor.SetTipoConta(const Value: TTipoConta);
+procedure TfmContasEditor.SetTipoConta(const Value: TTipoConta);
 begin
   FTipoConta := Value;
 end;
