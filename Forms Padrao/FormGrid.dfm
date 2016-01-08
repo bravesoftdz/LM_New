@@ -62,6 +62,8 @@ inherited fmFormGrid: TfmFormGrid
     DataSource = IB_DataSource1
     Align = alClient
     OnDblClick = IB_Grid1DblClick
+    Ctl3D = False
+    ParentCtl3D = False
     ParentBackground = False
     TabOrder = 1
     RowSelect = True

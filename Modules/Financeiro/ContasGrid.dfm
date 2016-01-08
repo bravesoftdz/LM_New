@@ -12,5 +12,9 @@ inherited fmContasGrid: TfmContasGrid
     SQL.Strings = (
       'select *'
       'from contas')
+    DeleteSQL.Strings = (
+      'DELETE FROM CONTAS CONTAS'
+      'WHERE'
+      '   CODIGO = :OLD_CODIGO')
   end
 end

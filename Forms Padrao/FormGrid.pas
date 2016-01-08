@@ -58,6 +58,9 @@ end;
 
 procedure TfmFormGrid.btnExcluirClick(Sender: TObject);
 begin
+  if Trim(IB_Query1.DeleteSQL.Text) = '' then
+    raise Exception.Create('Não foi declarado SQL para delete!');
+
   if Application.MessageBox('Deseja realmente excluir o item selecionado?','Confirma',36)=idyes then
     IB_Query1.Delete;
 end;
