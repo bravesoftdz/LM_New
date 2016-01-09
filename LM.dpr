@@ -15,7 +15,9 @@ uses
   Vcl.Styles,
   ContasEditor in 'Modules\Financeiro\ContasEditor.pas' {fmContasEditor},
   ContasGrid in 'Modules\Financeiro\ContasGrid.pas' {fmContasGrid},
-  Sis.Classes in 'Functions\Sis.Classes.pas';
+  Sis.Classes in 'Functions\Sis.Classes.pas',
+  EntradaEstoque in 'Modules\Estoque\EntradaEstoque.pas' {fmEntradaEstoque},
+  EstoqueGrid in 'Modules\Estoque\EstoqueGrid.pas' {fmEstoqueGrid};
 
 {$R *.res}
 
