@@ -6,8 +6,9 @@ inherited fmEmpresasEditor: TfmEmpresasEditor
   ExplicitHeight = 420
   PixelsPerInch = 96
   TextHeight = 13
-  inherited pnlControls: TPanel
+  inherited pnlControles: TPanel
     Width = 668
+    ExplicitWidth = 668
   end
   object GroupBox1: TGroupBox [1]
     Left = 0

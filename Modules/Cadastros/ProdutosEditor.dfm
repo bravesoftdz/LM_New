@@ -23,42 +23,7 @@ inherited fmProdutosEditor: TfmProdutosEditor
     Caption = '>>'
     OnClick = SpeedButton2Click
   end
-  object IB_Edit5: TIB_Edit [2]
-    Left = 64
-    Top = 161
-    Width = 81
-    Height = 21
-    AutoLabel.Caption = 'Marca:'
-    AutoLabel.Kind = albLeft
-    DataField = 'MARCA'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 5
-  end
-  object IB_Edit7: TIB_Edit [3]
-    Left = 64
-    Top = 188
-    Width = 81
-    Height = 21
-    AutoLabel.Caption = 'Marca:'
-    AutoLabel.Kind = albLeft
-    DataField = 'TIPO'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 8
-  end
-  object IB_LookupCombo3: TIB_LookupCombo [4]
-    Left = 151
-    Top = 189
-    Width = 234
-    Height = 21
-    DataSource = SourceTipo
-    ParentBackground = False
-    TabOrder = 9
-    DisplayField = 'TIPO_PRODUTO'
-    ShowButton = True
-  end
-  object IB_Edit6: TIB_Edit [5]
+  object IB_Edit6: TIB_Edit [2]
     Left = 240
     Top = 80
     Width = 145
@@ -70,54 +35,7 @@ inherited fmProdutosEditor: TfmProdutosEditor
     ParentBackground = False
     TabOrder = 7
   end
-  object IB_LookupCombo1: TIB_LookupCombo [6]
-    Left = 151
-    Top = 161
-    Width = 234
-    Height = 21
-    DataSource = SourceMarcas
-    ParentBackground = False
-    TabOrder = 6
-    DisplayField = 'MARCA'
-    ShowButton = True
-  end
-  object IB_Edit4: TIB_Edit [7]
-    Left = 272
-    Top = 134
-    Width = 113
-    Height = 21
-    AutoLabel.Caption = 'Tamanho:'
-    AutoLabel.Kind = albLeft
-    DataField = 'TAMANHO'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 4
-  end
-  object IB_Edit3: TIB_Edit [8]
-    Left = 64
-    Top = 134
-    Width = 113
-    Height = 21
-    AutoLabel.Caption = 'Valor:'
-    AutoLabel.Kind = albLeft
-    DataField = 'VALOR'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 3
-  end
-  object IB_Edit2: TIB_Edit [9]
-    Left = 64
-    Top = 107
-    Width = 321
-    Height = 21
-    AutoLabel.Caption = 'Descri'#231#227'o:'
-    AutoLabel.Kind = albLeft
-    DataField = 'DESCRICAO'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 2
-  end
-  object IB_Edit1: TIB_Edit [10]
+  object IB_Edit1: TIB_Edit [3]
     Left = 64
     Top = 80
     Width = 81
@@ -130,16 +48,100 @@ inherited fmProdutosEditor: TfmProdutosEditor
     ReadOnly = True
     TabOrder = 1
   end
-  inherited pnlControls: TPanel
+  object IB_Edit2: TIB_Edit [4]
+    Left = 64
+    Top = 107
+    Width = 321
+    Height = 21
+    AutoLabel.Caption = 'Descri'#231#227'o:'
+    AutoLabel.Kind = albLeft
+    DataField = 'DESCRICAO'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 2
+  end
+  object IB_Edit3: TIB_Edit [5]
+    Left = 64
+    Top = 134
+    Width = 113
+    Height = 21
+    AutoLabel.Caption = 'Valor:'
+    AutoLabel.Kind = albLeft
+    DataField = 'VALOR'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 3
+  end
+  object IB_Edit4: TIB_Edit [6]
+    Left = 272
+    Top = 134
+    Width = 113
+    Height = 21
+    AutoLabel.Caption = 'Tamanho:'
+    AutoLabel.Kind = albLeft
+    DataField = 'TAMANHO'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 4
+  end
+  object IB_LookupCombo1: TIB_LookupCombo [7]
+    Left = 151
+    Top = 161
+    Width = 234
+    Height = 21
+    DataSource = SourceMarcas
+    ParentBackground = False
+    TabOrder = 6
+    DisplayField = 'MARCA'
+    ShowButton = True
+  end
+  object IB_LookupCombo3: TIB_LookupCombo [8]
+    Left = 151
+    Top = 189
+    Width = 234
+    Height = 21
+    DataSource = SourceTipo
+    ParentBackground = False
+    TabOrder = 9
+    DisplayField = 'TIPO_PRODUTO'
+    ShowButton = True
+  end
+  object IB_Edit7: TIB_Edit [9]
+    Left = 64
+    Top = 188
+    Width = 81
+    Height = 21
+    AutoLabel.Caption = 'Marca:'
+    AutoLabel.Kind = albLeft
+    DataField = 'TIPO'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 8
+  end
+  object IB_Edit5: TIB_Edit [10]
+    Left = 64
+    Top = 161
+    Width = 81
+    Height = 21
+    AutoLabel.Caption = 'Marca:'
+    AutoLabel.Kind = albLeft
+    DataField = 'MARCA'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 5
+  end
+  inherited pnlControles: TPanel
     Width = 426
     ExplicitWidth = 426
-    inherited btnConcluir: TSpeedButton
-      Left = 91
-      ExplicitLeft = 91
-    end
-    inherited btnFechar: TSpeedButton
-      Left = 218
-      ExplicitLeft = 218
+    inherited pnlBotao: TPanel
+      inherited btnConcluir: TSpeedButton
+        Left = 91
+        ExplicitLeft = 91
+      end
+      inherited btnFechar: TSpeedButton
+        Left = 218
+        ExplicitLeft = 218
+      end
     end
   end
   inherited IB_Query1: TIB_Query
