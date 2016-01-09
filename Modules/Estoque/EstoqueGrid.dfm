@@ -13,6 +13,22 @@ inherited fmEstoqueGrid: TfmEstoqueGrid
       'ME.VALOR_UNITARIO=Valor Unit'#225'rio'
       'ME.VALOR_TOTAL=Valor Total'
       'ME.DATA_VALIDADE=Data Validade')
+    FieldsIndex.Strings = (
+      'TIPO_MOVIMENTO'
+      'ME.PRODUTO'
+      'P.DESCRICAO'
+      'CLIENTE_FORNECEDOR'
+      'ME.CODIGO'
+      'ME.DATA_HORA'
+      'ME.QUANTIDADE'
+      'ME.EMPRESA'
+      'ME.USUARIO'
+      'ME.TIPO_MOVIMENTO'
+      'ME.CLIENTE_FORNECEDOR'
+      'ME.OBS'
+      'ME.VALOR_UNITARIO'
+      'ME.VALOR_TOTAL'
+      'ME.DATA_VALIDADE')
     FieldsVisible.Strings = (
       'ME.CLIENTE_FORNECEDOR=FALSE'
       'ME.CODIGO=FALSE'

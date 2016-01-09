@@ -9416,6 +9416,10 @@ object fmPrincipal: TfmPrincipal
       Caption = 'Empresas'
       OnClick = Empresas1Click
     end
+    object ipodemovimentao1: TMenuItem
+      Caption = 'Tipo de movimenta'#231#227'o'
+      OnClick = ipodemovimentao1Click
+    end
   end
   object PopupFinanceiro: TPopupMenu
     Left = 264

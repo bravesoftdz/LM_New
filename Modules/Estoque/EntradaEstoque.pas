@@ -29,16 +29,11 @@ type
     SourceTipoMovimento: TIB_DataSource;
     IB_Date1: TIB_Date;
     IB_DateTimePicker1: TIB_DateTimePicker;
-    procedure IB_Query1BeforePost(IB_Dataset: TIB_Dataset);
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
-    FMovEstoque : TMovEstoque;
-    function GetMovEstoque: TMovEstoque;
-    procedure SetMovEstoque(const Value: TMovEstoque);
   public
     { Public declarations }
-    property MovEstoque : TMovEstoque read GetMovEstoque write SetMovEstoque;
   end;
 
 var
@@ -54,37 +49,6 @@ begin
   Clifor.Open();
   TipoMovimentos.Open();
   Produtos.Open();
-end;
-
-function TfmEntradaEstoque.GetMovEstoque: TMovEstoque;
-begin
-  Result := FMovEstoque;
-end;
-
-procedure TfmEntradaEstoque.IB_Query1BeforePost(IB_Dataset: TIB_Dataset);
-begin
-  if FMovEstoque = meEntrada then
-  begin
-    IB_Query1.FieldByName('tipo').AsInteger := 1;
-    IB_Edit1.AutoLabel.Caption := 'Fornecedor';
-  end
-  else if FMovEstoque = meSaida then
-  begin
-    IB_Query1.FieldByName('tipo').AsInteger := 2;
-    IB_Edit1.AutoLabel.Caption := 'Cliente';
-  end
-  else if FMovEstoque = meLocacao then
-  begin
-    IB_Query1.FieldByName('tipo').AsInteger := 3;
-    IB_Edit1.AutoLabel.Caption := 'Locador';
-  end;
-
-  inherited;
-end;
-
-procedure TfmEntradaEstoque.SetMovEstoque(const Value: TMovEstoque);
-begin
-  FMovEstoque := Value;
 end;
 
 end.
