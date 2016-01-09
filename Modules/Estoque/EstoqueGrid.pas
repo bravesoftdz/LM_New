@@ -9,6 +9,7 @@ uses
 
 type
   TfmEstoqueGrid = class(TfmFormGrid)
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -21,5 +22,14 @@ var
 implementation
 
 {$R *.dfm}
+
+uses
+  EstoqueEditor;
+
+procedure TfmEstoqueGrid.FormCreate(Sender: TObject);
+begin
+  FormEditor :=
+  inherited;
+end;
 
 end.

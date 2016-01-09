@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FormEditor, IB_Components, IB_Access,
   Vcl.Buttons, Vcl.ExtCtrls, Sis.Classes, Vcl.StdCtrls, Vcl.Mask, IB_EditButton,
-  IB_Controls, Vcl.Grids, IB_Grid;
+  IB_Controls, Vcl.Grids, IB_Grid, Vcl.ComCtrls;
 
 type
   TfmEntradaEstoque = class(TfmFormEditor)
@@ -26,8 +26,10 @@ type
     IB_Edit4: TIB_Edit;
     IB_Edit5: TIB_Edit;
     IB_Edit6: TIB_Edit;
-    IB_Date1: TIB_Date;
     IB_Date2: TIB_Date;
+    IB_DateTimePicker1: TIB_DateTimePicker;
+    IB_Edit7: TIB_Edit;
+    IB_LookupCombo3: TIB_LookupCombo;
     procedure IB_Query1BeforePost(IB_Dataset: TIB_Dataset);
   private
     { Private declarations }
