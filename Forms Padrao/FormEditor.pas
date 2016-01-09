@@ -40,7 +40,7 @@ begin
       raise Exception.Create('Não foi declarado SQL para insert!');
 
   if IB_Query1.State = dssEdit then
-    if Trim(IB_Query1.InsertSQL.Text) = '' then
+    if Trim(IB_Query1.EditSQL.Text) = '' then
       raise Exception.Create('Não foi declarado SQL para edição!');
 
   IB_Query1.Post;
