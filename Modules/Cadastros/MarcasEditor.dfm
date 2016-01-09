@@ -2,26 +2,11 @@ inherited fmMarcasEditor: TfmMarcasEditor
   Caption = 'Marcas'
   ClientHeight = 143
   ClientWidth = 406
-  ExplicitWidth = 422
-  ExplicitHeight = 182
+  ExplicitWidth = 412
+  ExplicitHeight = 172
   PixelsPerInch = 96
   TextHeight = 13
-  inherited pnlControls: TPanel
-    Width = 406
-    inherited btnConcluir: TSpeedButton
-      Left = 79
-      Top = 5
-      ExplicitLeft = 79
-      ExplicitTop = 5
-    end
-    inherited btnFechar: TSpeedButton
-      Left = 206
-      Top = 5
-      ExplicitLeft = 206
-      ExplicitTop = 5
-    end
-  end
-  object IB_Edit1: TIB_Edit [1]
+  object IB_Edit1: TIB_Edit [0]
     Left = 64
     Top = 72
     Width = 89
@@ -33,7 +18,7 @@ inherited fmMarcasEditor: TfmMarcasEditor
     ParentBackground = False
     TabOrder = 1
   end
-  object IB_Edit2: TIB_Edit [2]
+  object IB_Edit2: TIB_Edit [1]
     Left = 64
     Top = 99
     Width = 321
@@ -44,6 +29,22 @@ inherited fmMarcasEditor: TfmMarcasEditor
     DataSource = IB_DataSource1
     ParentBackground = False
     TabOrder = 2
+  end
+  inherited pnlControles: TPanel
+    Width = 406
+    ExplicitWidth = 406
+    inherited pnlBotao: TPanel
+      Left = 86
+      ExplicitLeft = 86
+      inherited btnConcluir: TSpeedButton
+        Top = 4
+        ExplicitTop = 4
+      end
+      inherited btnFechar: TSpeedButton
+        Top = 4
+        ExplicitTop = 4
+      end
+    end
   end
   inherited IB_Query1: TIB_Query
     SQL.Strings = (

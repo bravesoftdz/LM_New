@@ -25,8 +25,6 @@ type
     IB_Edit10: TIB_Edit;
     IB_Edit11: TIB_Edit;
     IB_Edit12: TIB_Edit;
-    IB_LookupCombo2: TIB_LookupCombo;
-    IB_LookupCombo3: TIB_LookupCombo;
     IB_LookupCombo4: TIB_LookupCombo;
     IB_Edit13: TIB_Edit;
     IB_Edit14: TIB_Edit;

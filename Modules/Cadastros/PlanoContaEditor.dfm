@@ -13,55 +13,7 @@ inherited fmPlanoConEditor: TfmPlanoConEditor
     Height = 22
     OnClick = SpeedButton1Click
   end
-  object IB_Edit1: TIB_Edit [1]
-    Left = 72
-    Top = 72
-    Width = 89
-    Height = 21
-    AutoLabel.Caption = 'Codigo:'
-    AutoLabel.Kind = albLeft
-    DataField = 'CODIGO'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    ReadOnly = True
-    TabOrder = 1
-  end
-  object IB_Edit2: TIB_Edit [2]
-    Left = 72
-    Top = 99
-    Width = 273
-    Height = 21
-    AutoLabel.Caption = 'Descri'#231#227'o:'
-    AutoLabel.Kind = albLeft
-    DataField = 'DESCRICAO'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 2
-  end
-  object IB_LookupCombo1: TIB_LookupCombo [3]
-    Left = 168
-    Top = 126
-    Width = 177
-    Height = 21
-    DataSource = SourceGrupos
-    ParentBackground = False
-    TabOrder = 4
-    DisplayField = 'DESCRICAO'
-    ShowButton = True
-  end
-  object IB_Edit3: TIB_Edit [4]
-    Left = 72
-    Top = 126
-    Width = 89
-    Height = 21
-    AutoLabel.Caption = 'Grupo:'
-    AutoLabel.Kind = albLeft
-    DataField = 'GRUPO'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 5
-  end
-  object IB_ComboBox1: TIB_ComboBox [5]
+  object IB_ComboBox1: TIB_ComboBox [1]
     Left = 208
     Top = 72
     Width = 137
@@ -80,12 +32,60 @@ inherited fmPlanoConEditor: TfmPlanoConEditor
       '1'
       '2')
   end
+  object IB_Edit3: TIB_Edit [2]
+    Left = 72
+    Top = 126
+    Width = 89
+    Height = 21
+    AutoLabel.Caption = 'Grupo:'
+    AutoLabel.Kind = albLeft
+    DataField = 'GRUPO'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 5
+  end
+  object IB_LookupCombo1: TIB_LookupCombo [3]
+    Left = 168
+    Top = 126
+    Width = 177
+    Height = 21
+    DataSource = SourceGrupos
+    ParentBackground = False
+    TabOrder = 4
+    DisplayField = 'DESCRICAO'
+    ShowButton = True
+  end
+  object IB_Edit2: TIB_Edit [4]
+    Left = 72
+    Top = 99
+    Width = 273
+    Height = 21
+    AutoLabel.Caption = 'Descri'#231#227'o:'
+    AutoLabel.Kind = albLeft
+    DataField = 'DESCRICAO'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 2
+  end
+  object IB_Edit1: TIB_Edit [5]
+    Left = 72
+    Top = 72
+    Width = 89
+    Height = 21
+    AutoLabel.Caption = 'Codigo:'
+    AutoLabel.Kind = albLeft
+    DataField = 'CODIGO'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    ReadOnly = True
+    TabOrder = 1
+  end
   inherited pnlControles: TPanel
     Width = 377
     ExplicitWidth = 377
     inherited pnlBotao: TPanel
-      Left = 38
-      ExplicitLeft = 38
+      Left = 62
+      ExplicitLeft = 62
       inherited btnConcluir: TSpeedButton
         Left = 2
         ExplicitLeft = 2

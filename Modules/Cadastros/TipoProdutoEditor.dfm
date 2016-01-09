@@ -3,8 +3,8 @@ inherited fmTipoProdutoEditor: TfmTipoProdutoEditor
   Caption = 'Tipo Produto'
   ClientHeight = 139
   ClientWidth = 408
-  ExplicitWidth = 424
-  ExplicitHeight = 178
+  ExplicitWidth = 414
+  ExplicitHeight = 168
   PixelsPerInch = 96
   TextHeight = 13
   object IB_Edit1: TIB_Edit [0]
@@ -32,20 +32,20 @@ inherited fmTipoProdutoEditor: TfmTipoProdutoEditor
     ParentBackground = False
     TabOrder = 2
   end
-  inherited pnlControls: TPanel
+  inherited pnlControles: TPanel
     Width = 408
     ExplicitWidth = 408
-    inherited btnConcluir: TSpeedButton
-      Left = 80
-      Top = 0
-      ExplicitLeft = 80
-      ExplicitTop = 0
-    end
-    inherited btnFechar: TSpeedButton
-      Left = 207
-      Top = 0
-      ExplicitLeft = 207
-      ExplicitTop = 0
+    inherited pnlBotao: TPanel
+      Left = 86
+      ExplicitLeft = 86
+      inherited btnConcluir: TSpeedButton
+        Top = 0
+        ExplicitTop = 0
+      end
+      inherited btnFechar: TSpeedButton
+        Top = 0
+        ExplicitTop = 0
+      end
     end
   end
   inherited IB_Query1: TIB_Query

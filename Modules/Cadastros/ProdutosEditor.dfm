@@ -3,8 +3,8 @@ inherited fmProdutosEditor: TfmProdutosEditor
   ClientHeight = 238
   ClientWidth = 426
   OnCreate = FormCreate
-  ExplicitWidth = 442
-  ExplicitHeight = 277
+  ExplicitWidth = 432
+  ExplicitHeight = 267
   PixelsPerInch = 96
   TextHeight = 13
   object SpeedButton1: TSpeedButton [0]
@@ -23,7 +23,18 @@ inherited fmProdutosEditor: TfmProdutosEditor
     Caption = '>>'
     OnClick = SpeedButton2Click
   end
-  object IB_Edit5: TIB_Edit [2]
+  object IB_LookupCombo1: TIB_LookupCombo [2]
+    Left = 151
+    Top = 161
+    Width = 234
+    Height = 21
+    DataSource = SourceMarcas
+    ParentBackground = False
+    TabOrder = 6
+    DisplayField = 'MARCA'
+    ShowButton = True
+  end
+  object IB_Edit5: TIB_Edit [3]
     Left = 64
     Top = 161
     Width = 81
@@ -35,7 +46,7 @@ inherited fmProdutosEditor: TfmProdutosEditor
     ParentBackground = False
     TabOrder = 5
   end
-  object IB_Edit7: TIB_Edit [3]
+  object IB_Edit7: TIB_Edit [4]
     Left = 64
     Top = 188
     Width = 81
@@ -47,7 +58,7 @@ inherited fmProdutosEditor: TfmProdutosEditor
     ParentBackground = False
     TabOrder = 8
   end
-  object IB_LookupCombo3: TIB_LookupCombo [4]
+  object IB_LookupCombo3: TIB_LookupCombo [5]
     Left = 151
     Top = 189
     Width = 234
@@ -58,30 +69,7 @@ inherited fmProdutosEditor: TfmProdutosEditor
     DisplayField = 'TIPO_PRODUTO'
     ShowButton = True
   end
-  object IB_Edit6: TIB_Edit [5]
-    Left = 240
-    Top = 80
-    Width = 145
-    Height = 21
-    AutoLabel.Caption = 'Cor:'
-    AutoLabel.Kind = albLeft
-    DataField = 'COR'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 7
-  end
-  object IB_LookupCombo1: TIB_LookupCombo [6]
-    Left = 151
-    Top = 161
-    Width = 234
-    Height = 21
-    DataSource = SourceMarcas
-    ParentBackground = False
-    TabOrder = 6
-    DisplayField = 'MARCA'
-    ShowButton = True
-  end
-  object IB_Edit4: TIB_Edit [7]
+  object IB_Edit4: TIB_Edit [6]
     Left = 272
     Top = 134
     Width = 113
@@ -93,7 +81,7 @@ inherited fmProdutosEditor: TfmProdutosEditor
     ParentBackground = False
     TabOrder = 4
   end
-  object IB_Edit3: TIB_Edit [8]
+  object IB_Edit3: TIB_Edit [7]
     Left = 64
     Top = 134
     Width = 113
@@ -105,7 +93,7 @@ inherited fmProdutosEditor: TfmProdutosEditor
     ParentBackground = False
     TabOrder = 3
   end
-  object IB_Edit2: TIB_Edit [9]
+  object IB_Edit2: TIB_Edit [8]
     Left = 64
     Top = 107
     Width = 321
@@ -117,7 +105,7 @@ inherited fmProdutosEditor: TfmProdutosEditor
     ParentBackground = False
     TabOrder = 2
   end
-  object IB_Edit1: TIB_Edit [10]
+  object IB_Edit1: TIB_Edit [9]
     Left = 64
     Top = 80
     Width = 81
@@ -130,16 +118,32 @@ inherited fmProdutosEditor: TfmProdutosEditor
     ReadOnly = True
     TabOrder = 1
   end
-  inherited pnlControls: TPanel
+  object IB_Edit6: TIB_Edit [10]
+    Left = 240
+    Top = 80
+    Width = 145
+    Height = 21
+    AutoLabel.Caption = 'Cor:'
+    AutoLabel.Kind = albLeft
+    DataField = 'COR'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 7
+  end
+  inherited pnlControles: TPanel
     Width = 426
     ExplicitWidth = 426
-    inherited btnConcluir: TSpeedButton
-      Left = 91
-      ExplicitLeft = 91
-    end
-    inherited btnFechar: TSpeedButton
-      Left = 218
-      ExplicitLeft = 218
+    inherited pnlBotao: TPanel
+      Left = 86
+      ExplicitLeft = 86
+      inherited btnConcluir: TSpeedButton
+        Left = 3
+        ExplicitLeft = 3
+      end
+      inherited btnFechar: TSpeedButton
+        Left = 130
+        ExplicitLeft = 130
+      end
     end
   end
   inherited IB_Query1: TIB_Query
