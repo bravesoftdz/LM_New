@@ -2,35 +2,12 @@ inherited fmContasEditor: TfmContasEditor
   Caption = 'fmContasEditor'
   ClientHeight = 323
   ClientWidth = 538
-  ExplicitWidth = 554
-  ExplicitHeight = 362
+  ExplicitWidth = 544
+  ExplicitHeight = 352
   PixelsPerInch = 96
   TextHeight = 13
-  object IB_LookupCombo1: TIB_LookupCombo [0]
-    Left = 154
-    Top = 134
-    Width = 378
-    Height = 21
-    DataSource = srcClifor
-    ParentBackground = False
-    TabOrder = 5
-    CustomPopup = IB_Grid1
-    ShowButton = True
-  end
-  object IB_Memo1: TIB_Memo [1]
-    Left = 80
-    Top = 247
-    Width = 452
-    Height = 65
-    AutoLabel.Caption = 'Obs.'
-    AutoLabel.Kind = albLeft
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 14
-    AutoSize = False
-  end
-  object IB_CheckBox1: TIB_CheckBox [2]
-    Left = 80
+  object IB_CheckBox2: TIB_CheckBox [0]
+    Left = 215
     Top = 216
     Width = 97
     Height = 17
@@ -38,74 +15,22 @@ inherited fmContasEditor: TfmContasEditor
     Ctl3D = False
     ParentCtl3D = False
     ParentBackground = False
-    TabOrder = 15
-    Caption = 'Parcelada'
+    TabOrder = 16
+    Caption = #192' Vista'
   end
-  object IB_Edit5: TIB_Edit [3]
+  object IB_Edit2: TIB_Edit [1]
     Left = 80
-    Top = 134
+    Top = 161
     Width = 73
     Height = 21
-    AutoLabel.Caption = 'Client/Fornec.'
+    AutoLabel.Caption = 'Plano Conta'
     AutoLabel.Kind = albLeft
-    DataField = 'CLIFOR'
+    DataField = 'PLANO_CONTA'
     DataSource = IB_DataSource1
     ParentBackground = False
-    TabOrder = 3
+    TabOrder = 2
   end
-  object IB_Date3: TIB_Date [4]
-    Left = 432
-    Top = 107
-    Width = 97
-    Height = 21
-    AutoLabel.Caption = 'Programada'
-    AutoLabel.Kind = albLeft
-    DataField = 'DATA_PROGRAMADA'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 13
-    IncCellHeight = 1
-    IncCellWidth = 2
-    DrawYearArrow = False
-  end
-  object IB_CheckBox3: TIB_CheckBox [5]
-    Left = 342
-    Top = 216
-    Width = 97
-    Height = 17
-    BorderStyle = bsNone
-    Ctl3D = False
-    ParentCtl3D = False
-    ParentBackground = False
-    TabOrder = 17
-    Caption = 'IB_CheckBox3'
-  end
-  object IB_Date1: TIB_Date [6]
-    Left = 80
-    Top = 107
-    Width = 97
-    Height = 21
-    AutoLabel.Caption = 'Emiss'#227'o'
-    AutoLabel.Kind = albLeft
-    DataField = 'DATA_EMISSAO'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 4
-    IncCellHeight = 1
-    IncCellWidth = 2
-    DrawYearArrow = False
-  end
-  object IB_Grid1: TIB_Grid [7]
-    Left = 216
-    Top = 138
-    Width = 72
-    Height = 17
-    CustomGlyphsSupplied = []
-    DataSource = srcClifor
-    ParentBackground = False
-    TabOrder = 7
-  end
-  object IB_Date2: TIB_Date [8]
+  object IB_Date2: TIB_Date [2]
     Left = 253
     Top = 107
     Width = 97
@@ -120,7 +45,64 @@ inherited fmContasEditor: TfmContasEditor
     IncCellWidth = 2
     DrawYearArrow = False
   end
-  object IB_Edit6: TIB_Edit [9]
+  object IB_Grid1: TIB_Grid [3]
+    Left = 216
+    Top = 138
+    Width = 72
+    Height = 17
+    CustomGlyphsSupplied = []
+    DataSource = srcClifor
+    ParentBackground = False
+    TabOrder = 7
+  end
+  object IB_Edit5: TIB_Edit [4]
+    Left = 80
+    Top = 134
+    Width = 73
+    Height = 21
+    AutoLabel.Caption = 'Client/Fornec.'
+    AutoLabel.Kind = albLeft
+    DataField = 'CLIFOR'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 3
+  end
+  object IB_CheckBox1: TIB_CheckBox [5]
+    Left = 80
+    Top = 216
+    Width = 97
+    Height = 17
+    BorderStyle = bsNone
+    Ctl3D = False
+    ParentCtl3D = False
+    ParentBackground = False
+    TabOrder = 15
+    Caption = 'Parcelada'
+  end
+  object IB_LookupCombo1: TIB_LookupCombo [6]
+    Left = 154
+    Top = 134
+    Width = 378
+    Height = 21
+    DataSource = srcClifor
+    ParentBackground = False
+    TabOrder = 5
+    CustomPopup = IB_Grid1
+    ShowButton = True
+  end
+  object IB_CheckBox3: TIB_CheckBox [7]
+    Left = 342
+    Top = 216
+    Width = 97
+    Height = 17
+    BorderStyle = bsNone
+    Ctl3D = False
+    ParentCtl3D = False
+    ParentBackground = False
+    TabOrder = 17
+    Caption = 'IB_CheckBox3'
+  end
+  object IB_Edit6: TIB_Edit [8]
     Left = 232
     Top = 188
     Width = 88
@@ -132,19 +114,7 @@ inherited fmContasEditor: TfmContasEditor
     ParentBackground = False
     TabOrder = 11
   end
-  object IB_Edit4: TIB_Edit [10]
-    Left = 411
-    Top = 188
-    Width = 121
-    Height = 21
-    AutoLabel.Caption = 'Valor Total'
-    AutoLabel.Kind = albLeft
-    DataField = 'VALOR'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 10
-  end
-  object IB_Grid2: TIB_Grid [11]
+  object IB_Grid2: TIB_Grid [9]
     Left = 272
     Top = 165
     Width = 73
@@ -154,19 +124,7 @@ inherited fmContasEditor: TfmContasEditor
     ParentBackground = False
     TabOrder = 8
   end
-  object IB_Edit2: TIB_Edit [12]
-    Left = 80
-    Top = 161
-    Width = 73
-    Height = 21
-    AutoLabel.Caption = 'Plano Conta'
-    AutoLabel.Kind = albLeft
-    DataField = 'PLANO_CONTA'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 2
-  end
-  object IB_Edit1: TIB_Edit [13]
+  object IB_Edit1: TIB_Edit [10]
     Left = 80
     Top = 80
     Width = 73
@@ -178,7 +136,18 @@ inherited fmContasEditor: TfmContasEditor
     ParentBackground = False
     TabOrder = 1
   end
-  object IB_Edit3: TIB_Edit [14]
+  object IB_LookupCombo2: TIB_LookupCombo [11]
+    Left = 154
+    Top = 161
+    Width = 378
+    Height = 21
+    DataSource = SrcPlanoconta
+    ParentBackground = False
+    TabOrder = 6
+    CustomPopup = IB_Grid2
+    ShowButton = True
+  end
+  object IB_Edit3: TIB_Edit [12]
     Left = 80
     Top = 188
     Width = 73
@@ -190,30 +159,61 @@ inherited fmContasEditor: TfmContasEditor
     ParentBackground = False
     TabOrder = 9
   end
-  object IB_CheckBox2: TIB_CheckBox [15]
-    Left = 215
-    Top = 216
-    Width = 97
-    Height = 17
-    BorderStyle = bsNone
-    Ctl3D = False
-    ParentCtl3D = False
-    ParentBackground = False
-    TabOrder = 16
-    Caption = #192' Vista'
-  end
-  object IB_LookupCombo2: TIB_LookupCombo [16]
-    Left = 154
-    Top = 161
-    Width = 378
+  object IB_Edit4: TIB_Edit [13]
+    Left = 411
+    Top = 188
+    Width = 121
     Height = 21
-    DataSource = SrcPlanoconta
+    AutoLabel.Caption = 'Valor Total'
+    AutoLabel.Kind = albLeft
+    DataField = 'VALOR'
+    DataSource = IB_DataSource1
     ParentBackground = False
-    TabOrder = 6
-    CustomPopup = IB_Grid2
-    ShowButton = True
+    TabOrder = 10
   end
-  inherited pnlControls: TPanel
+  object IB_Date1: TIB_Date [14]
+    Left = 80
+    Top = 107
+    Width = 97
+    Height = 21
+    AutoLabel.Caption = 'Emiss'#227'o'
+    AutoLabel.Kind = albLeft
+    DataField = 'DATA_EMISSAO'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 4
+    IncCellHeight = 1
+    IncCellWidth = 2
+    DrawYearArrow = False
+  end
+  object IB_Date3: TIB_Date [15]
+    Left = 432
+    Top = 107
+    Width = 97
+    Height = 21
+    AutoLabel.Caption = 'Programada'
+    AutoLabel.Kind = albLeft
+    DataField = 'DATA_PROGRAMADA'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 13
+    IncCellHeight = 1
+    IncCellWidth = 2
+    DrawYearArrow = False
+  end
+  object IB_Memo1: TIB_Memo [16]
+    Left = 80
+    Top = 247
+    Width = 452
+    Height = 65
+    AutoLabel.Caption = 'Obs.'
+    AutoLabel.Kind = albLeft
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 14
+    AutoSize = False
+  end
+  inherited pnlControles: TPanel
     Width = 538
     ExplicitWidth = 538
   end

@@ -1,4 +1,4 @@
-unit MarcasEditor;
+unit TipoProdutoEditor;
 
 interface
 
@@ -8,7 +8,7 @@ uses
   Vcl.Buttons, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Mask, IB_EditButton, IB_Controls;
 
 type
-  TfmMarcasEditor = class(TfmFormEditor)
+  TfmTipoProdutoEditor = class(TfmFormEditor)
     IB_Edit1: TIB_Edit;
     IB_Edit2: TIB_Edit;
   private
@@ -18,7 +18,7 @@ type
   end;
 
 var
-  fmMarcasEditor: TfmMarcasEditor;
+  fmTipoProdutoEditor: TfmTipoProdutoEditor;
 
 implementation
 

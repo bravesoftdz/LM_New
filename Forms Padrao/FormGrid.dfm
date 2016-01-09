@@ -3,6 +3,7 @@ inherited fmFormGrid: TfmFormGrid
   ClientHeight = 503
   ClientWidth = 790
   OnCreate = FormCreate
+  OnShow = FormShow
   ExplicitWidth = 806
   ExplicitHeight = 542
   PixelsPerInch = 96
@@ -14,11 +15,12 @@ inherited fmFormGrid: TfmFormGrid
     Height = 53
     Align = alTop
     TabOrder = 0
-    object Panel1: TPanel
+    object pnlBotao: TPanel
       Left = 144
       Top = 4
       Width = 502
       Height = 43
+      Cursor = crHandPoint
       TabOrder = 0
       object btnPesquisar: TSpeedButton
         Left = 381

@@ -15,12 +15,10 @@ type
     Edit1: TEdit;
     btnEntrar: TSpeedButton;
     btnFechar: TSpeedButton;
-//    FUsuario : Integer;
   private
     { Private declarations }
   public
     { Public declarations }
-//    property FUsuario read FUsuario write FUsuario;
   end;
 
 var

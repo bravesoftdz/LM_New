@@ -9453,6 +9453,10 @@ object fmPrincipal: TfmPrincipal
     object Requisies1: TMenuItem
       Caption = 'Requisi'#231#245'es'
     end
+    object Cadastrodeprodutos1: TMenuItem
+      Caption = 'Cadastro de produtos'
+      OnClick = Cadastrodeprodutos1Click
+    end
   end
   object PopupRelatorios: TPopupMenu
     Left = 376

@@ -35,6 +35,7 @@ type
     Panel2: TPanel;
     Image1: TImage;
     Empresas1: TMenuItem;
+    Cadastrodeprodutos1: TMenuItem;
     procedure btnCadastrosClick(Sender: TObject);
     procedure BtnOperacionalClick(Sender: TObject);
     procedure BtnFinanceiroClick(Sender: TObject);
@@ -46,6 +47,7 @@ type
     procedure Planodecontas1Click(Sender: TObject);
     procedure ContasaPagar1Click(Sender: TObject);
     procedure ContasaReceber1Click(Sender: TObject);
+    procedure Cadastrodeprodutos1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,7 +61,8 @@ implementation
 
 {$R *.dfm}
 
-uses CliforGrid, FuncionariosGrid, EmpresasGrid, PlanoContaGrid, ContasGrid;
+uses CliforGrid, FuncionariosGrid, EmpresasGrid, PlanoContaGrid, ContasGrid,
+     ProdutosGrid;
 
 procedure TfmPrincipal.btnCadastrosClick(Sender: TObject);
 begin
@@ -84,6 +87,17 @@ end;
 procedure TfmPrincipal.BtnRelatoriosClick(Sender: TObject);
 begin
  PopupRelatorios.Popup(Mouse.CursorPos.X,Mouse.CursorPos.Y);
+end;
+
+procedure TfmPrincipal.Cadastrodeprodutos1Click(Sender: TObject);
+var F : TfmProdutosGrid;
+begin
+  F := TfmProdutosGrid.Create(Self);
+  Try
+    F.ShowModal;
+  Finally
+    F.Free;
+  End;
 end;
 
 procedure TfmPrincipal.Cadastros2Click(Sender: TObject);
