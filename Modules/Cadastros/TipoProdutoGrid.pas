@@ -1,4 +1,4 @@
-unit MarcasGrid;
+unit TipoProdutoGrid;
 
 interface
 
@@ -8,7 +8,7 @@ uses
   Vcl.Grids, IB_Grid, Vcl.Buttons, Vcl.ExtCtrls;
 
 type
-  TfmMarcasGrid = class(TfmFormGrid)
+  TfmTipoProdutoGrid = class(TfmFormGrid)
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -17,18 +17,18 @@ type
   end;
 
 var
-  fmMarcasGrid: TfmMarcasGrid;
+  fmTipoProdutoGrid: TfmTipoProdutoGrid;
 
 implementation
 
 {$R *.dfm}
 
 uses
-MarcasEditor;
+TipoProdutoEditor;
 
-procedure TfmMarcasGrid.FormCreate(Sender: TObject);
+procedure TfmTipoProdutoGrid.FormCreate(Sender: TObject);
 begin
-  FormEditor := TfmMarcasEditor;
+  FormEditor := TfmTipoProdutoEditor;
   inherited;
 end;
 

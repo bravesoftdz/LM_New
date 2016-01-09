@@ -1,5 +1,5 @@
 inherited fmPlanoConEditor: TfmPlanoConEditor
-  Caption = 'fmPlanoContasEditor'
+  Caption = 'Plano de Contas'
   ClientHeight = 164
   ClientWidth = 377
   OnShow = FormShow
@@ -14,43 +14,7 @@ inherited fmPlanoConEditor: TfmPlanoConEditor
     Height = 22
     OnClick = SpeedButton1Click
   end
-  inherited pnlControls: TPanel
-    Width = 377
-    inherited btnConcluir: TSpeedButton
-      Left = 55
-      ExplicitLeft = 55
-    end
-    inherited btnFechar: TSpeedButton
-      Left = 198
-      ExplicitLeft = 198
-    end
-  end
-  object IB_Edit1: TIB_Edit [2]
-    Left = 72
-    Top = 72
-    Width = 89
-    Height = 21
-    AutoLabel.Caption = 'Codigo:'
-    AutoLabel.Kind = albLeft
-    DataField = 'CODIGO'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    ReadOnly = True
-    TabOrder = 1
-  end
-  object IB_Edit2: TIB_Edit [3]
-    Left = 72
-    Top = 99
-    Width = 273
-    Height = 21
-    AutoLabel.Caption = 'Descri'#231#227'o:'
-    AutoLabel.Kind = albLeft
-    DataField = 'DESCRICAO'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 2
-  end
-  object IB_ComboBox1: TIB_ComboBox [4]
+  object IB_ComboBox1: TIB_ComboBox [1]
     Left = 208
     Top = 72
     Width = 137
@@ -69,18 +33,7 @@ inherited fmPlanoConEditor: TfmPlanoConEditor
       '1'
       '2')
   end
-  object IB_LookupCombo1: TIB_LookupCombo [5]
-    Left = 168
-    Top = 126
-    Width = 177
-    Height = 21
-    DataSource = SourceGrupos
-    ParentBackground = False
-    TabOrder = 4
-    DisplayField = 'DESCRICAO'
-    ShowButton = True
-  end
-  object IB_Edit3: TIB_Edit [6]
+  object IB_Edit3: TIB_Edit [2]
     Left = 72
     Top = 126
     Width = 89
@@ -91,6 +44,54 @@ inherited fmPlanoConEditor: TfmPlanoConEditor
     DataSource = IB_DataSource1
     ParentBackground = False
     TabOrder = 5
+  end
+  object IB_LookupCombo1: TIB_LookupCombo [3]
+    Left = 168
+    Top = 126
+    Width = 177
+    Height = 21
+    DataSource = SourceGrupos
+    ParentBackground = False
+    TabOrder = 4
+    DisplayField = 'DESCRICAO'
+    ShowButton = True
+  end
+  object IB_Edit2: TIB_Edit [4]
+    Left = 72
+    Top = 99
+    Width = 273
+    Height = 21
+    AutoLabel.Caption = 'Descri'#231#227'o:'
+    AutoLabel.Kind = albLeft
+    DataField = 'DESCRICAO'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 2
+  end
+  object IB_Edit1: TIB_Edit [5]
+    Left = 72
+    Top = 72
+    Width = 89
+    Height = 21
+    AutoLabel.Caption = 'Codigo:'
+    AutoLabel.Kind = albLeft
+    DataField = 'CODIGO'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    ReadOnly = True
+    TabOrder = 1
+  end
+  inherited pnlControls: TPanel
+    Width = 377
+    ExplicitWidth = 377
+    inherited btnConcluir: TSpeedButton
+      Left = 55
+      ExplicitLeft = 55
+    end
+    inherited btnFechar: TSpeedButton
+      Left = 198
+      ExplicitLeft = 198
+    end
   end
   inherited IB_Query1: TIB_Query
     SQL.Strings = (
