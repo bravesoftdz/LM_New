@@ -1,5 +1,5 @@
 inherited fmFuncionariosGrid: TfmFuncionariosGrid
-  Caption = 'Funcionarios'
+  Caption = 'Cadastro de Funcionarios'
   PixelsPerInch = 96
   TextHeight = 13
   inherited IB_Query1: TIB_Query
