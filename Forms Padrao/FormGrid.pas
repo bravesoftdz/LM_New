@@ -17,12 +17,13 @@ type
     btnAlterar: TSpeedButton;
     btnExcluir: TSpeedButton;
     btnPesquisar: TSpeedButton;
-    Panel1: TPanel;
+    pnlBotao: TPanel;
     procedure btnExcluirClick(Sender: TObject);
     procedure btnIncluirClick(Sender: TObject);
     procedure btnAlterarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure IB_Grid1DblClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
     FFormEditor : TFormularioEditor;
@@ -89,6 +90,16 @@ begin
     raise Exception.Create('Não é possível preparar um DataSet em branco!');
 
   IB_Query1.Open();
+end;
+
+procedure TfmFormGrid.FormShow(Sender: TObject);
+var J : Integer;
+begin
+  inherited;
+  //Função para alinhar a panel
+  J := (pnlControles.Width - pnlBotao.Width);
+  J :=  Trunc(J / 2);
+  pnlBotao.Left := J;
 end;
 
 procedure TfmFormGrid.IB_Grid1DblClick(Sender: TObject);
