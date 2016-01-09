@@ -19,7 +19,7 @@ type
     procedure SetEmpresa(const Value: Integer);
   public
     { Public declarations }
-    property Usuario: Integer read FUsuario write FUsuario;
+    property Usuario: Integer read GetUsuario write SetUsuario;
     property Empresa: Integer read FEmpresa write FEmpresa;
   end;
 

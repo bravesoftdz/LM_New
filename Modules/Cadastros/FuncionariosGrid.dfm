@@ -19,7 +19,7 @@ inherited fmFuncionariosGrid: TfmFuncionariosGrid
       '      ,u.email'
       '      ,u.endereco'
       '      ,u.data_nascimento'
-      '      ,c.nome as cidade'
+      '      ,c.cidade as cidade'
       'from usuarios u'
       'left join cidades c on c.codigo = u.cidade')
   end
