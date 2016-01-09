@@ -1,12 +1,24 @@
 inherited fmGrupoPlanoConEditor: TfmGrupoPlanoConEditor
   Caption = 'Grupo de Plano de Contas'
   ClientHeight = 142
-  ClientWidth = 443
-  ExplicitWidth = 459
-  ExplicitHeight = 181
+  ClientWidth = 374
+  ExplicitWidth = 380
+  ExplicitHeight = 171
   PixelsPerInch = 96
   TextHeight = 13
-  object IB_Edit1: TIB_Edit [0]
+  object IB_Edit2: TIB_Edit [0]
+    Left = 63
+    Top = 99
+    Width = 290
+    Height = 21
+    AutoLabel.Caption = 'Descri'#231#227'o:'
+    AutoLabel.Kind = albLeft
+    DataField = 'DESCRICAO'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 2
+  end
+  object IB_Edit1: TIB_Edit [1]
     Left = 63
     Top = 72
     Width = 90
@@ -19,29 +31,19 @@ inherited fmGrupoPlanoConEditor: TfmGrupoPlanoConEditor
     ReadOnly = True
     TabOrder = 1
   end
-  object IB_Edit2: TIB_Edit [1]
-    Left = 63
-    Top = 99
-    Width = 250
-    Height = 21
-    AutoLabel.Caption = 'Descri'#231#227'o:'
-    AutoLabel.Kind = albLeft
-    DataField = 'DESCRICAO'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 2
-  end
   inherited pnlControles: TPanel
-    Width = 443
+    Width = 374
     ExplicitWidth = 443
     inherited pnlBotao: TPanel
+      Left = 63
+      ExplicitLeft = 63
       inherited btnConcluir: TSpeedButton
-        Left = 47
-        ExplicitLeft = 47
+        Left = 4
+        ExplicitLeft = 4
       end
       inherited btnFechar: TSpeedButton
-        Left = 174
-        ExplicitLeft = 174
+        Left = 129
+        ExplicitLeft = 129
       end
     end
   end

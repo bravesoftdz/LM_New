@@ -3,23 +3,11 @@ inherited fmTipoProdutoEditor: TfmTipoProdutoEditor
   Caption = 'Tipo Produto'
   ClientHeight = 139
   ClientWidth = 408
-  ExplicitWidth = 424
-  ExplicitHeight = 178
+  ExplicitWidth = 414
+  ExplicitHeight = 168
   PixelsPerInch = 96
   TextHeight = 13
-  object IB_Edit2: TIB_Edit [0]
-    Left = 64
-    Top = 99
-    Width = 321
-    Height = 21
-    AutoLabel.Caption = 'Marca:'
-    AutoLabel.Kind = albLeft
-    DataField = 'TIPO_PRODUTO'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 2
-  end
-  object IB_Edit1: TIB_Edit [1]
+  object IB_Edit1: TIB_Edit [0]
     Left = 64
     Top = 72
     Width = 89
@@ -32,20 +20,30 @@ inherited fmTipoProdutoEditor: TfmTipoProdutoEditor
     ReadOnly = True
     TabOrder = 1
   end
+  object IB_Edit2: TIB_Edit [1]
+    Left = 64
+    Top = 99
+    Width = 321
+    Height = 21
+    AutoLabel.Caption = 'Marca:'
+    AutoLabel.Kind = albLeft
+    DataField = 'TIPO_PRODUTO'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 2
+  end
   inherited pnlControles: TPanel
     Width = 408
     ExplicitWidth = 408
     inherited pnlBotao: TPanel
+      Left = 86
+      ExplicitLeft = 86
       inherited btnConcluir: TSpeedButton
-        Left = 80
         Top = 0
-        ExplicitLeft = 80
         ExplicitTop = 0
       end
       inherited btnFechar: TSpeedButton
-        Left = 207
         Top = 0
-        ExplicitLeft = 207
         ExplicitTop = 0
       end
     end
