@@ -36,6 +36,7 @@ type
     Image1: TImage;
     Empresas1: TMenuItem;
     Cadastrodeprodutos1: TMenuItem;
+    Movimentaodeestoque1: TMenuItem;
     procedure btnCadastrosClick(Sender: TObject);
     procedure BtnOperacionalClick(Sender: TObject);
     procedure BtnFinanceiroClick(Sender: TObject);
@@ -48,12 +49,14 @@ type
     procedure ContasaPagar1Click(Sender: TObject);
     procedure ContasaReceber1Click(Sender: TObject);
     procedure Cadastrodeprodutos1Click(Sender: TObject);
+    procedure Movimentaodeestoque1Click(Sender: TObject);
   private
     { Private declarations }
+
+    procedure CriaForm(Form: TFormClass);
   public
     { Public declarations }
   end;
-
 var
   fmPrincipal: TfmPrincipal;
 
@@ -62,7 +65,7 @@ implementation
 {$R *.dfm}
 
 uses CliforGrid, FuncionariosGrid, EmpresasGrid, PlanoContaGrid, ContasGrid,
-     ProdutosGrid;
+     ProdutosGrid, EstoqueGrid;
 
 procedure TfmPrincipal.btnCadastrosClick(Sender: TObject);
 begin
@@ -133,6 +136,16 @@ begin
   end;
 end;
 
+procedure TfmPrincipal.CriaForm(Form: TFormClass);
+begin
+  with Form.Create(Self) do
+  try
+    ShowModal;
+  finally
+    Free;
+  end;
+end;
+
 procedure TfmPrincipal.Empresas1Click(Sender: TObject);
 var F : TfmEmpresasGrid;
 begin
@@ -153,6 +166,11 @@ begin
   Finally
     F.Free
   End;
+end;
+
+procedure TfmPrincipal.Movimentaodeestoque1Click(Sender: TObject);
+begin
+  CriaForm(TfmEstoqueGrid);
 end;
 
 procedure TfmPrincipal.Planodecontas1Click(Sender: TObject);

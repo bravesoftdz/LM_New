@@ -11,26 +11,26 @@ uses
 type
   TfmEntradaEstoque = class(TfmFormEditor)
     IB_Edit1: TIB_Edit;
-    IB_Edit2: TIB_Edit;
-    GroupBox1: TGroupBox;
-    IB_LookupCombo1: TIB_LookupCombo;
-    IB_Grid1: TIB_Grid;
     Clifor: TIB_Query;
     srcClifor: TIB_DataSource;
-    Itens: TIB_Query;
-    GridItens: TIB_Grid;
-    IB_Edit3: TIB_Edit;
-    IB_LookupCombo2: TIB_LookupCombo;
-    IB_Grid2: TIB_Grid;
-    srcItens: TIB_DataSource;
-    IB_Edit4: TIB_Edit;
-    IB_Edit5: TIB_Edit;
-    IB_Edit6: TIB_Edit;
-    IB_Date2: TIB_Date;
-    IB_DateTimePicker1: TIB_DateTimePicker;
     IB_Edit7: TIB_Edit;
     IB_LookupCombo3: TIB_LookupCombo;
+    GroupBox2: TGroupBox;
+    IB_Edit2: TIB_Edit;
+    IB_LookupCombo1: TIB_LookupCombo;
+    IB_Edit9: TIB_Edit;
+    IB_Edit10: TIB_Edit;
+    IB_Edit12: TIB_Edit;
+    Produtos: TIB_Query;
+    SourceProdutos: TIB_DataSource;
+    IB_Edit8: TIB_Edit;
+    IB_LookupCombo4: TIB_LookupCombo;
+    TipoMovimentos: TIB_Query;
+    SourceTipoMovimento: TIB_DataSource;
+    IB_Date1: TIB_Date;
+    IB_DateTimePicker1: TIB_DateTimePicker;
     procedure IB_Query1BeforePost(IB_Dataset: TIB_Dataset);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
     FMovEstoque : TMovEstoque;
@@ -47,6 +47,14 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfmEntradaEstoque.FormCreate(Sender: TObject);
+begin
+  inherited;
+  Clifor.Open();
+  TipoMovimentos.Open();
+  Produtos.Open();
+end;
 
 function TfmEntradaEstoque.GetMovEstoque: TMovEstoque;
 begin

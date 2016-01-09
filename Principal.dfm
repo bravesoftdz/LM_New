@@ -9457,6 +9457,10 @@ object fmPrincipal: TfmPrincipal
       Caption = 'Cadastro de produtos'
       OnClick = Cadastrodeprodutos1Click
     end
+    object Movimentaodeestoque1: TMenuItem
+      Caption = 'Movimenta'#231#227'o de estoque'
+      OnClick = Movimentaodeestoque1Click
+    end
   end
   object PopupRelatorios: TPopupMenu
     Left = 376

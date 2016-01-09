@@ -24,11 +24,11 @@ implementation
 {$R *.dfm}
 
 uses
-  EstoqueEditor;
+  EntradaEstoque;
 
 procedure TfmEstoqueGrid.FormCreate(Sender: TObject);
 begin
-  FormEditor :=
+  FormEditor := TfmEntradaEstoque;
   inherited;
 end;
 
