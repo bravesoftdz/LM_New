@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FormEditor, IB_Components, IB_Access,
   Vcl.Buttons, Vcl.ExtCtrls, Vcl.Grids, IB_Grid, IB_Controls, Vcl.StdCtrls,
-  Vcl.Mask, IB_EditButton, Sis.Classes;
+  Vcl.Mask, IB_EditButton, Sis.Classes, Vcl.Menus;
 
 type
   TfmContasEditor = class(TfmFormEditor)
@@ -16,8 +16,6 @@ type
     IB_Date1: TIB_Date;
     IB_LookupCombo1: TIB_LookupCombo;
     IB_LookupCombo2: TIB_LookupCombo;
-    IB_Grid1: TIB_Grid;
-    IB_Grid2: TIB_Grid;
     IB_Edit3: TIB_Edit;
     IB_Edit4: TIB_Edit;
     IB_Edit6: TIB_Edit;
@@ -32,6 +30,9 @@ type
     qryPlanoConta: TIB_Query;
     SrcPlanoconta: TIB_DataSource;
     procedure IB_Query1BeforePost(IB_Dataset: TIB_Dataset);
+    procedure FormShow(Sender: TObject);
+    procedure IB_DataSource1DataChange(Sender: TIB_StatementLink;
+      Statement: TIB_Statement; Field: TIB_Column);
   private
     { Private declarations }
     FTipoConta : TTipoConta;
@@ -49,9 +50,33 @@ implementation
 
 {$R *.dfm}
 
+procedure TfmContasEditor.FormShow(Sender: TObject);
+begin
+  inherited;
+  AbrirQuery(qryClifor);
+  AbrirQuery(qryPlanoConta);
+
+  if IB_Date1.Enabled then
+    IB_Date1.SetFocus;
+end;
+
 function TfmContasEditor.GetTipoConta: TTipoConta;
 begin
   Result := FTipoConta;
+end;
+
+procedure TfmContasEditor.IB_DataSource1DataChange(Sender: TIB_StatementLink;
+  Statement: TIB_Statement; Field: TIB_Column);
+begin
+  with IB_Query1 do begin
+    if (Field = FieldByName('QUANTIDADE'))
+      or (Field = FieldByName('VALOR_UNITARIO'))
+      or (Field = FieldByName('VALOR'))
+    then
+      FieldByName('VALOR').AsCurrency := FieldByName('QUANTIDADE').AsFloat * FieldByName('QUANTIDADE').AsFloat;
+
+  end;
+  inherited;
 end;
 
 procedure TfmContasEditor.IB_Query1BeforePost(IB_Dataset: TIB_Dataset);

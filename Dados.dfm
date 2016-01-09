@@ -10,7 +10,8 @@ object DMDados: TDMDados
       'SERVER=127.0.0.1/3055'
       'PROTOCOL=TCP/IP'
       'PATH=lm'
-      'USER NAME=sysdba')
+      'USER NAME=sysdba'
+      'BUFFERS=<default>')
     BeforeConnect = ConexaoBeforeConnect
     Left = 104
     Top = 64

@@ -30,6 +30,7 @@ type
   public
     { Public declarations }
     property FormEditor : TFormularioEditor read  FFormEditor write FFormEditor;
+    procedure LocateField(Campo: String; Valor: Variant);
   end;
 
 var
@@ -47,6 +48,9 @@ begin
 
   F := FFormEditor.Create(Self);
   try
+    if Trim(F.IB_Query1.EditSQL.Text) = '' then
+      raise Exception.Create('Não foi declarado SQL para edição!');
+
     F.IB_Query1.ParamByName('codigo').AsInteger := IB_Query1.FieldByName('codigo').AsInteger;
     F.IB_Query1.Open;
     F.IB_Query1.Edit;
@@ -74,6 +78,8 @@ begin
 
   F := FFormEditor.Create(Self);
   try
+    if Trim(F.IB_Query1.InsertSQL.Text) = '' then
+      raise Exception.Create('Não foi declarado SQL para insert!');
     F.IB_Query1.Insert;
     F.IB_Query1.FieldByName('codigo').AsInteger := 0;
     F.ShowModal;
@@ -106,6 +112,12 @@ procedure TfmFormGrid.IB_Grid1DblClick(Sender: TObject);
 begin
   inherited;
   btnAlterar.Click;
+end;
+
+procedure TfmFormGrid.LocateField(Campo: String; Valor: Variant);
+begin
+  if (IB_Query1.FindField(Campo) <> nil) then
+    IB_Query1.Locate(Campo, Valor, []);
 end;
 
 end.

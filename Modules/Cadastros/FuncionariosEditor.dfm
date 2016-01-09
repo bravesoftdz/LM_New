@@ -2,19 +2,18 @@
   Caption = 'Funcion'#225'rios'
   ClientHeight = 357
   OnCreate = FormCreate
-  ExplicitHeight = 396
+  ExplicitHeight = 386
   PixelsPerInch = 96
   TextHeight = 13
   object PageControl1: TPageControl [1]
     Left = 0
     Top = 54
-    Width = 628
+    Width = 638
     Height = 303
-    ActivePage = Usuário
+    ActivePage = TabSheet1
     Align = alClient
     Style = tsFlatButtons
     TabOrder = 1
-    ExplicitTop = 53
     object TabSheet1: TTabSheet
       Caption = 'Funcion'#225'rio'
       object GroupBox1: TGroupBox
@@ -197,7 +196,7 @@
           DataSource = SourceCidades
           ParentBackground = False
           TabOrder = 6
-          DisplayField = 'NOME'
+          DisplayField = 'CIDADE'
           ShowButton = True
         end
         object IB_Edit14: TIB_Edit
@@ -268,6 +267,8 @@
   inherited IB_Query1: TIB_Query
     ColumnAttributes.Strings = (
       'ATIVO=BOOLEAN='#39'1,0'#39)
+    FieldsCharCase.Strings = (
+      'USUARIO=UPPER')
     FieldsEditMask.Strings = (
       'CPF=000.000.000-00'
       'CEP=00000-000')
@@ -358,15 +359,15 @@
   object Cidades: TIB_Query
     SQL.Strings = (
       'select * from cidades'
-      'order by nome')
+      'order by cidade')
     KeyLinks.Strings = (
       'codigo = cidade')
     KeySource = IB_DataSource1
     OrderingItemNo = 1
     OrderingItems.Strings = (
-      'NOME=NOME;NOME DESC')
+      'CIDADE=CIDADE;CIDADE DESC')
     OrderingLinks.Strings = (
-      'NOME=ITEM=1')
+      'CIDADE=ITEM=1')
     Left = 479
     Top = 312
   end

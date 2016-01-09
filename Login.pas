@@ -15,6 +15,12 @@ type
     Edit1: TEdit;
     btnEntrar: TSpeedButton;
     btnFechar: TSpeedButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    procedure btnFecharClick(Sender: TObject);
+    procedure btnEntrarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Edit1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -27,5 +33,31 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfmLogin.btnEntrarClick(Sender: TObject);
+begin
+  if Edit1.Text = Usuarios.FieldByName('senha').AsString then begin
+    DMDados.Usuario := Usuarios.FieldByName('codigo').AsInteger;
+    Close
+  end else
+    ShowMessage('Senha Incorreta!');
+end;
+
+procedure TfmLogin.btnFecharClick(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TfmLogin.Edit1KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+ if Key = VK_RETURN then
+   btnEntrar.Click;
+end;
+
+procedure TfmLogin.FormCreate(Sender: TObject);
+begin
+  Usuarios.Open();
+end;
 
 end.
