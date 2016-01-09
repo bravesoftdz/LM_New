@@ -1,8 +1,0 @@
-inherited fmCliforEditor: TfmCliforEditor
-  Caption = 'fmCliforEditor'
-  PixelsPerInch = 96
-  TextHeight = 13
-  inherited pnlControls: TPanel
-    ExplicitWidth = 628
-  end
-end
