@@ -1,0 +1,30 @@
+CREATE TABLE RESERVA (
+    CODIGO INTEGER NOT NULL,
+    PRODUTO INTEGER,
+    CLIENTE INTEGER,
+    CANCELADO INTEGER,
+    DATA DOM_DATA1,
+    HORA TIME,
+    QUANTIDADE NUMERIC(15,2),
+    OBSERVACAO VARCHAR(100),
+    VALOR_UNITARIO NUMERIC(15,2),
+    VALOR_TOTAL NUMERIC(15,2));
+
+ALTER TABLE RESERVA
+ADD CONSTRAINT PK_RESERVA
+PRIMARY KEY (CODIGO);
+
+CREATE SEQUENCE GEN_RESERVA_ID;
+
+SET TERM ^ ;
+
+create trigger reserva_bi for reserva
+active before insert position 0
+as
+begin
+  if ((new.codigo is null) or (new.codigo = 0) ) then
+    new.codigo = gen_id(gen_reserva_id,1);
+end^
+
+SET TERM ; ^
+
