@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FormPadrao, IB_Components, IB_Access,
-  Vcl.ExtCtrls, Vcl.Buttons, Sis.Classes;
+  Vcl.ExtCtrls, Vcl.Buttons, Sis.Classes, Vcl.StdCtrls, Vcl.Mask, IB_EditButton,
+  IB_Controls;
 
 type
   TfmFormEditor = class(TfmFormPadrao)
@@ -63,6 +64,12 @@ begin
   J := (pnlControles.Width - pnlBotao.Width);
   J :=  Trunc(J / 2);
   pnlBotao.Left := J;
+  for K := 0 to ComponentCount -1 do
+    if Components[K].ClassType = TIB_Edit then
+      if (UpperCase((Components[K] as TIB_Edit).DataField) = 'CODIGO')
+        and (UpperCase((Components[K] as TIB_Edit).DataSource.Name) = 'IB_DATASOURCE1')
+      then
+        (Components[K] as TIB_Edit).ReadOnly := True;
 end;
 
 end.
