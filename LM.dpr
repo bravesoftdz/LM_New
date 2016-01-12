@@ -13,13 +13,15 @@ uses
   ChamaForm in 'Functions\ChamaForm.pas',
   Vcl.Themes,
   Vcl.Styles,
-  ContasEditor in 'Modules\Financeiro\ContasEditor.pas' {fmContasEditor},
-  ContasGrid in 'Modules\Financeiro\ContasGrid.pas' {fmContasGrid},
   Sis.Classes in 'Functions\Sis.Classes.pas',
   EntradaEstoque in 'Modules\Estoque\EntradaEstoque.pas' {fmEntradaEstoque},
   EstoqueGrid in 'Modules\Estoque\EstoqueGrid.pas' {fmEstoqueGrid},
   ReservaGrid in 'Modules\Estoque\ReservaGrid.pas' {fmReservaGrid},
-  ReservaEditor in 'Modules\Estoque\ReservaEditor.pas' {fmReservaEditor};
+  ReservaEditor in 'Modules\Estoque\ReservaEditor.pas' {fmReservaEditor},
+  ContasPagarEditor in 'Modules\Financeiro\ContasPagarEditor.pas' {fmContasPagarEditor},
+  ContasPagarGrid in 'Modules\Financeiro\ContasPagarGrid.pas' {fmContasPagarGrid},
+  ContasReceberEditor in 'Modules\Financeiro\ContasReceberEditor.pas' {fmContasReceberEditor},
+  ContasReceberGrid in 'Modules\Financeiro\ContasReceberGrid.pas' {fmContasReceberGrid};
 
 {$R *.res}
 
@@ -29,5 +31,9 @@ begin
   TStyleManager.TrySetStyle('Amethyst Kamri');
   Application.CreateForm(TDMDados, DMDados);
   Application.CreateForm(TfmPrincipal, fmPrincipal);
+  Application.CreateForm(TfmContasPagarEditor, fmContasPagarEditor);
+  Application.CreateForm(TfmContasPagarGrid, fmContasPagarGrid);
+  Application.CreateForm(TfmContasReceberEditor, fmContasReceberEditor);
+  Application.CreateForm(TfmContasReceberGrid, fmContasReceberGrid);
   Application.Run;
 end.
