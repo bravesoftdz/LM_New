@@ -17,7 +17,9 @@ uses
   ContasGrid in 'Modules\Financeiro\ContasGrid.pas' {fmContasGrid},
   Sis.Classes in 'Functions\Sis.Classes.pas',
   EntradaEstoque in 'Modules\Estoque\EntradaEstoque.pas' {fmEntradaEstoque},
-  EstoqueGrid in 'Modules\Estoque\EstoqueGrid.pas' {fmEstoqueGrid};
+  EstoqueGrid in 'Modules\Estoque\EstoqueGrid.pas' {fmEstoqueGrid},
+  ReservaGrid in 'Modules\Estoque\ReservaGrid.pas' {fmReservaGrid},
+  ReservaEditor in 'Modules\Estoque\ReservaEditor.pas' {fmReservaEditor};
 
 {$R *.res}
 

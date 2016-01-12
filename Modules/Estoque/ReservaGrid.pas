@@ -9,6 +9,7 @@ uses
 
 type
   TfmReservaGrid = class(TfmFormGrid)
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -24,5 +25,11 @@ implementation
 
 uses
   ReservaEditor;
+
+procedure TfmReservaGrid.FormCreate(Sender: TObject);
+begin
+  FormEditor := TfmReservaEditor;
+  inherited;
+end;
 
 end.

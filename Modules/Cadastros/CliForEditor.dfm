@@ -1,40 +1,119 @@
 inherited fmCliforEditor: TfmCliforEditor
-  Caption = 'fmCliforEditor'
-  ClientHeight = 323
+  Caption = 'Clientes e Fornecedores'
+  ClientHeight = 321
   ClientWidth = 463
   OnCreate = FormCreate
   ExplicitWidth = 469
-  ExplicitHeight = 352
+  ExplicitHeight = 350
   PixelsPerInch = 96
   TextHeight = 13
-  object IB_Edit4: TIB_Edit [0]
-    Left = 361
-    Top = 150
-    Width = 87
+  object edtCodigo: TIB_Edit [0]
+    Left = 65
+    Top = 69
+    Width = 65
     Height = 21
-    AutoLabel.Caption = 'IE'
+    AutoLabel.Caption = 'C'#243'digo'
     AutoLabel.Kind = albLeft
-    DataField = 'IE'
+    DataField = 'CODIGO'
     DataSource = IB_DataSource1
     ParentBackground = False
-    TabOrder = 6
+    TabOrder = 1
   end
-  object IB_Date1: TIB_Date [1]
-    Left = 361
+  object IB_Edit13: TIB_Edit [1]
+    Left = 342
+    Top = 69
+    Width = 106
+    Height = 21
+    AutoLabel.Caption = 'Cel'
+    AutoLabel.Kind = albLeft
+    DataField = 'CELULAR'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 11
+  end
+  object IB_Edit12: TIB_Edit [2]
+    Left = 191
+    Top = 69
+    Width = 106
+    Height = 21
+    AutoLabel.Caption = 'Telefone'
+    AutoLabel.Kind = albLeft
+    DataField = 'TELEFONE'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 10
+  end
+  object IB_Edit11: TIB_Edit [3]
+    Left = 64
     Top = 177
-    Width = 87
+    Width = 233
     Height = 21
-    AutoLabel.Caption = 'Nascimento'
+    AutoLabel.Caption = 'Email'
     AutoLabel.Kind = albLeft
-    DataField = 'DATA_NASCIMENTO'
+    DataField = 'EMAIL'
     DataSource = IB_DataSource1
     ParentBackground = False
-    TabOrder = 8
-    IncCellHeight = 1
-    IncCellWidth = 2
-    DrawYearArrow = False
+    TabOrder = 9
   end
-  object GroupBox1: TGroupBox [2]
+  object IB_Edit1: TIB_Edit [4]
+    Left = 65
+    Top = 96
+    Width = 383
+    Height = 21
+    AutoLabel.Caption = 'Razao'
+    AutoLabel.Kind = albLeft
+    DataField = 'RAZAO'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 2
+  end
+  object IB_Edit2: TIB_Edit [5]
+    Left = 65
+    Top = 123
+    Width = 383
+    Height = 21
+    AutoLabel.Caption = 'Fantasia'
+    AutoLabel.Kind = albLeft
+    DataField = 'FANTASIA'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 3
+  end
+  object IB_Edit3: TIB_Edit [6]
+    Left = 223
+    Top = 150
+    Width = 115
+    Height = 21
+    AutoLabel.Caption = 'CPF/CNPJ'
+    AutoLabel.Kind = albLeft
+    DataField = 'CNPJ'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 4
+    OnEnter = IB_Edit3Enter
+  end
+  object IB_ComboBox1: TIB_ComboBox [7]
+    Left = 65
+    Top = 150
+    Width = 97
+    Height = 21
+    AutoLabel.Caption = 'Pessoa'
+    AutoLabel.Kind = albLeft
+    DataField = 'TIPO_PESSOA'
+    DataSource = IB_DataSource1
+    BorderStyle = bsNone
+    ParentBackground = False
+    TabOrder = 5
+    Style = csDropDownList
+    Items.Strings = (
+      'Fis'#237'ca'
+      'Jur'#237'dica')
+    ItemValues.Strings = (
+      '1'
+      '2')
+    OnChange = IB_ComboBox1Change
+  end
+  object GroupBox1: TGroupBox [8]
     Left = 8
     Top = 204
     Width = 447
@@ -125,111 +204,32 @@ inherited fmCliforEditor: TfmCliforEditor
       TabOrder = 6
     end
   end
-  object IB_ComboBox1: TIB_ComboBox [3]
-    Left = 65
-    Top = 150
-    Width = 97
-    Height = 21
-    AutoLabel.Caption = 'Pessoa'
-    AutoLabel.Kind = albLeft
-    DataField = 'TIPO_PESSOA'
-    DataSource = IB_DataSource1
-    BorderStyle = bsNone
-    ParentBackground = False
-    TabOrder = 5
-    Style = csDropDownList
-    Items.Strings = (
-      'Fis'#237'ca'
-      'Jur'#237'dica')
-    ItemValues.Strings = (
-      '1'
-      '2')
-    OnChange = IB_ComboBox1Change
-  end
-  object IB_Edit3: TIB_Edit [4]
-    Left = 223
-    Top = 150
-    Width = 115
-    Height = 21
-    AutoLabel.Caption = 'CPF/CNPJ'
-    AutoLabel.Kind = albLeft
-    DataField = 'CNPJ'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 4
-    OnEnter = IB_Edit3Enter
-  end
-  object IB_Edit2: TIB_Edit [5]
-    Left = 65
-    Top = 123
-    Width = 383
-    Height = 21
-    AutoLabel.Caption = 'Fantasia'
-    AutoLabel.Kind = albLeft
-    DataField = 'FANTASIA'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 3
-  end
-  object IB_Edit1: TIB_Edit [6]
-    Left = 65
-    Top = 96
-    Width = 383
-    Height = 21
-    AutoLabel.Caption = 'Razao'
-    AutoLabel.Kind = albLeft
-    DataField = 'RAZAO'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 2
-  end
-  object IB_Edit11: TIB_Edit [7]
-    Left = 64
+  object IB_Date1: TIB_Date [9]
+    Left = 368
     Top = 177
-    Width = 233
+    Width = 87
     Height = 21
-    AutoLabel.Caption = 'Email'
+    AutoLabel.Caption = 'Nascimento'
     AutoLabel.Kind = albLeft
-    DataField = 'EMAIL'
+    DataField = 'DATA_NASCIMENTO'
     DataSource = IB_DataSource1
     ParentBackground = False
-    TabOrder = 9
+    TabOrder = 8
+    IncCellHeight = 1
+    IncCellWidth = 2
+    DrawYearArrow = False
   end
-  object IB_Edit12: TIB_Edit [8]
-    Left = 191
-    Top = 69
-    Width = 106
+  object IB_Edit4: TIB_Edit [10]
+    Left = 361
+    Top = 150
+    Width = 87
     Height = 21
-    AutoLabel.Caption = 'Telefone'
+    AutoLabel.Caption = 'IE'
     AutoLabel.Kind = albLeft
-    DataField = 'TELEFONE'
+    DataField = 'IE'
     DataSource = IB_DataSource1
     ParentBackground = False
-    TabOrder = 10
-  end
-  object IB_Edit13: TIB_Edit [9]
-    Left = 342
-    Top = 69
-    Width = 106
-    Height = 21
-    AutoLabel.Caption = 'Cel'
-    AutoLabel.Kind = albLeft
-    DataField = 'CELULAR'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 11
-  end
-  object edtCodigo: TIB_Edit [10]
-    Left = 65
-    Top = 69
-    Width = 65
-    Height = 21
-    AutoLabel.Caption = 'C'#243'digo'
-    AutoLabel.Kind = albLeft
-    DataField = 'CODIGO'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 1
+    TabOrder = 6
   end
   inherited pnlControles: TPanel
     Width = 463
@@ -341,15 +341,17 @@ inherited fmCliforEditor: TfmCliforEditor
   end
   object Cidades: TIB_Query
     SQL.Strings = (
-      'select * from cidades ')
+      'select codigo'
+      '    , cidade'
+      ' from cidades ')
     KeyLinks.Strings = (
       'codigo=cidade')
     KeySource = IB_DataSource1
     OrderingItemNo = 1
     OrderingItems.Strings = (
-      'NOME=NOME;NOME DESC')
+      'CIDADE=CIDADE;CIDADE DESC')
     OrderingLinks.Strings = (
-      'NOME=ITEM=1')
+      'CIDADE=ITEM=1')
     Left = 240
     Top = 320
   end

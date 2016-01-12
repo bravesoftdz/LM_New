@@ -1,5 +1,5 @@
 inherited fmCliForGrid: TfmCliForGrid
-  Caption = 'fmCliForGrid'
+  Caption = 'Cadastro de Clientes e Fornecedores'
   PixelsPerInch = 96
   TextHeight = 13
   inherited IB_Query1: TIB_Query
