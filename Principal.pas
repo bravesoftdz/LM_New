@@ -95,47 +95,24 @@ begin
 end;
 
 procedure TfmPrincipal.Cadastrodeprodutos1Click(Sender: TObject);
-var F : TfmProdutosGrid;
 begin
-  F := TfmProdutosGrid.Create(Self);
-  Try
-    F.ShowModal;
-  Finally
-    F.Free;
-  End;
+  CriaForm(TfmProdutosGrid);
 end;
 
 procedure TfmPrincipal.Cadastros2Click(Sender: TObject);
-var F : TfmCliForGrid;
 begin
-  F := TfmCliForGrid.Create(Self);
-  try
-    F.ShowModal;
-  finally
-    F.Free;
-  end;
+  CriaForm(TfmCliForGrid);
 end;
 
 procedure TfmPrincipal.ContasaPagar1Click(Sender: TObject);
-var F : TfmContasGrid;
 begin
-  F := TfmContasGrid.Create(Self);
-  try
-    F.ShowModal;
-  finally
-    F.Free;
-  end;
+  CriaForm(TfmContasGrid);
 end;
 
 procedure TfmPrincipal.ContasaReceber1Click(Sender: TObject);
 var F : TfmContasGrid;
 begin
-  F := TfmContasGrid.Create(Self);
-  try
-    F.ShowModal;
-  finally
-    F.Free;
-  end;
+  CriaForm(TfmContasGrid);
 end;
 
 procedure TfmPrincipal.CriaForm(Form: TFormClass);
@@ -149,25 +126,13 @@ begin
 end;
 
 procedure TfmPrincipal.Empresas1Click(Sender: TObject);
-var F : TfmEmpresasGrid;
 begin
-  F := TfmEmpresasGrid.Create(Self);
-  Try
-    F.ShowModal
-  Finally
-    F.Free;
-  End;
+  CriaForm(TfmEmpresasGrid);
 end;
 
 procedure TfmPrincipal.FuncionriosUsurios1Click(Sender: TObject);
-var F : TfmFuncionariosGrid;
 begin
-  F := TfmFuncionariosGrid.Create(Self);
-  Try
-    F.ShowModal;
-  Finally
-    F.Free
-  End;
+  CriaForm(TfmFuncionariosGrid);
 end;
 
 procedure TfmPrincipal.ipodemovimentao1Click(Sender: TObject);
@@ -181,14 +146,8 @@ begin
 end;
 
 procedure TfmPrincipal.Planodecontas1Click(Sender: TObject);
-var F : TfmPlanoConGrid;
 begin
-  F := TfmPlanoConGrid.Create(Self);
-  try
-    F.ShowModal;
-  finally
-    F.Free;
-  end;
+  CriaForm(TfmPlanoConGrid);
 end;
 
 end.
