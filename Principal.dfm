@@ -9443,7 +9443,8 @@ object fmPrincipal: TfmPrincipal
     Left = 152
     Top = 40
     object Pedidos1: TMenuItem
-      Caption = 'Pedidos'
+      Caption = 'Reserva'
+      OnClick = Pedidos1Click
     end
     object Vendas1: TMenuItem
       Caption = 'Vendas'

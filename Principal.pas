@@ -52,6 +52,7 @@ type
     procedure Cadastrodeprodutos1Click(Sender: TObject);
     procedure Movimentaodeestoque1Click(Sender: TObject);
     procedure ipodemovimentao1Click(Sender: TObject);
+    procedure Pedidos1Click(Sender: TObject);
   private
     { Private declarations }
 
@@ -67,7 +68,7 @@ implementation
 {$R *.dfm}
 
 uses CliforGrid, FuncionariosGrid, EmpresasGrid, PlanoContaGrid, ContasPagarGrid,
-     ProdutosGrid, EstoqueGrid, TipoEntradaEstoqueGrid, ContasReceberGrid;
+     ProdutosGrid, EstoqueGrid, TipoEntradaEstoqueGrid, ContasReceberGrid, ReservaGrid;
 
 procedure TfmPrincipal.btnCadastrosClick(Sender: TObject);
 begin
@@ -142,6 +143,11 @@ end;
 procedure TfmPrincipal.Movimentaodeestoque1Click(Sender: TObject);
 begin
   CriaForm(TfmEstoqueGrid);
+end;
+
+procedure TfmPrincipal.Pedidos1Click(Sender: TObject);
+begin
+  CriaForm(TfmReservaGrid);
 end;
 
 procedure TfmPrincipal.Planodecontas1Click(Sender: TObject);
