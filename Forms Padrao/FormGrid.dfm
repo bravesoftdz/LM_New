@@ -3,7 +3,6 @@ inherited fmFormGrid: TfmFormGrid
   ClientHeight = 503
   ClientWidth = 790
   OnCreate = FormCreate
-  OnShow = FormShow
   ExplicitWidth = 806
   ExplicitHeight = 542
   PixelsPerInch = 96

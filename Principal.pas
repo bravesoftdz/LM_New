@@ -66,8 +66,8 @@ implementation
 
 {$R *.dfm}
 
-uses CliforGrid, FuncionariosGrid, EmpresasGrid, PlanoContaGrid, ContasGrid,
-     ProdutosGrid, EstoqueGrid, TipoEntradaEstoqueGrid;
+uses CliforGrid, FuncionariosGrid, EmpresasGrid, PlanoContaGrid, ContasPagarGrid,
+     ProdutosGrid, EstoqueGrid, TipoEntradaEstoqueGrid, ContasReceberGrid;
 
 procedure TfmPrincipal.btnCadastrosClick(Sender: TObject);
 begin
@@ -106,13 +106,12 @@ end;
 
 procedure TfmPrincipal.ContasaPagar1Click(Sender: TObject);
 begin
-  CriaForm(TfmContasGrid);
+  CriaForm(TfmContasPagarGrid);
 end;
 
 procedure TfmPrincipal.ContasaReceber1Click(Sender: TObject);
-var F : TfmContasGrid;
 begin
-  CriaForm(TfmContasGrid);
+  CriaForm(TfmContasReceberGrid);
 end;
 
 procedure TfmPrincipal.CriaForm(Form: TFormClass);

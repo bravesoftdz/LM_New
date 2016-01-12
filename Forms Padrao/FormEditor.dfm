@@ -3,7 +3,6 @@ inherited fmFormEditor: TfmFormEditor
   Caption = 'fmFormEditor'
   ClientHeight = 550
   ClientWidth = 638
-  OnShow = FormShow
   ExplicitWidth = 644
   ExplicitHeight = 579
   PixelsPerInch = 96

@@ -1,4 +1,4 @@
-unit ContasEditor;
+unit ContasPagarEditor;
 
 interface
 
@@ -9,7 +9,7 @@ uses
   Vcl.Mask, IB_EditButton, Sis.Classes, Vcl.Menus;
 
 type
-  TfmContasEditor = class(TfmFormEditor)
+  TfmContasPagarEditor = class(TfmFormEditor)
     IB_Edit1: TIB_Edit;
     IB_Edit2: TIB_Edit;
     IB_Edit5: TIB_Edit;
@@ -44,13 +44,13 @@ type
   end;
 
 var
-  fmContasEditor: TfmContasEditor;
+  fmContasPagarEditor: TfmContasPagarEditor;
 
 implementation
 
 {$R *.dfm}
 
-procedure TfmContasEditor.FormShow(Sender: TObject);
+procedure TfmContasPagarEditor.FormShow(Sender: TObject);
 begin
   inherited;
   AbrirQuery(qryClifor);
@@ -60,26 +60,25 @@ begin
     IB_Date1.SetFocus;
 end;
 
-function TfmContasEditor.GetTipoConta: TTipoConta;
+function TfmContasPagarEditor.GetTipoConta: TTipoConta;
 begin
   Result := FTipoConta;
 end;
 
-procedure TfmContasEditor.IB_DataSource1DataChange(Sender: TIB_StatementLink;
+procedure TfmContasPagarEditor.IB_DataSource1DataChange(Sender: TIB_StatementLink;
   Statement: TIB_Statement; Field: TIB_Column);
 begin
   with IB_Query1 do begin
     if (Field = FieldByName('QUANTIDADE'))
       or (Field = FieldByName('VALOR_UNITARIO'))
-      or (Field = FieldByName('VALOR'))
     then
-      FieldByName('VALOR').AsCurrency := FieldByName('QUANTIDADE').AsFloat * FieldByName('QUANTIDADE').AsFloat;
+      FieldByName('VALOR').AsCurrency := FieldByName('QUANTIDADE').AsFloat * FieldByName('VALOR_UNITARIO').AsFloat;
 
   end;
   inherited;
 end;
 
-procedure TfmContasEditor.IB_Query1BeforePost(IB_Dataset: TIB_Dataset);
+procedure TfmContasPagarEditor.IB_Query1BeforePost(IB_Dataset: TIB_Dataset);
 begin
   if FTipoConta = tpPagar then
     IB_Query1.FieldByName('tipo').AsInteger := 1
@@ -89,7 +88,7 @@ begin
   inherited;
 end;
 
-procedure TfmContasEditor.SetTipoConta(const Value: TTipoConta);
+procedure TfmContasPagarEditor.SetTipoConta(const Value: TTipoConta);
 begin
   FTipoConta := Value;
 end;

@@ -58,6 +58,7 @@ begin
   finally
     F.Free;
     IB_Query1.Refresh;
+    IB_Query1.Last;
   end;
 end;
 
@@ -86,6 +87,7 @@ begin
   finally
     F.Free;
     IB_Query1.Refresh;
+    IB_Query1.Last;
   end;
 end;
 

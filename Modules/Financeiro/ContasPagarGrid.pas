@@ -1,4 +1,4 @@
-unit ContasGrid;
+unit ContasPagarGrid;
 
 interface
 
@@ -8,7 +8,7 @@ uses
   Vcl.Grids, IB_Grid, Vcl.Buttons, Vcl.ExtCtrls;
 
 type
-  TfmContasGrid = class(TfmFormGrid)
+  TfmContasPagarGrid = class(TfmFormGrid)
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -17,17 +17,17 @@ type
   end;
 
 var
-  fmContasGrid: TfmContasGrid;
+  fmContasPagarGrid: TfmContasPagarGrid;
 
 implementation
 
-uses ContasEditor;
+uses ContasPagarEditor;
 
 {$R *.dfm}
 
-procedure TfmContasGrid.FormCreate(Sender: TObject);
+procedure TfmContasPagarGrid.FormCreate(Sender: TObject);
 begin
-  FormEditor := TfmContasEditor;
+  FormEditor := TfmContasPagarEditor;
   inherited;
 end;
 

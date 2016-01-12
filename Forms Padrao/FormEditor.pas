@@ -69,7 +69,10 @@ begin
       if (UpperCase((Components[K] as TIB_Edit).DataField) = 'CODIGO')
         and (UpperCase((Components[K] as TIB_Edit).DataSource.Name) = 'IB_DATASOURCE1')
       then
+      begin
         (Components[K] as TIB_Edit).ReadOnly := True;
+        (Components[K] as TIB_Edit).Enabled := False;
+      end;
 end;
 
 end.
