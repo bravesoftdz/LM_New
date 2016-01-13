@@ -1,0 +1,31 @@
+procedure TfmRequisicaoGrid.IB_Grid1GetCellProps(Sender: TObject; ACol,
+  ARow: Integer; AState: TGridDrawState; var AColor: TColor; AFont: TFont);
+var tmpFld: TIB_Column;
+begin
+  if RadioButton1.Checked then
+  begin
+    try
+      with IB_DataSource1.DataSet do
+      begin
+        BufferRowNum := IB_Grid1.DataRow[ARow];
+        if BufferRowNum > 0 then
+        begin
+          tmpFld := IB_Grid1.GridFields[ IB_Grid1.DataCol[ACol]];
+
+          If (BufferFieldByName('datavenc').AsDate > Date) and (BufferFieldByName('MOVIMENTADO').AsString = '') then    //não quitada e não vencida
+            AFont.Color := $0056A554;
+
+          If (BufferFieldByName('datavenc').AsDate <= Date) and (BufferFieldByName('MOVIMENTADO').AsString = '') then  //não quitada e vencida
+            AFont.Color := $00133AD9;
+
+          If BufferFieldByName('MOVIMENTADO').AsString <> ''  then  //vencendo hoje e quitada
+            AFont.Color := $00B75F3E;
+
+          If BufferFieldByName('codigocp').AsString = '' then
+            AFont.Color := clWindowText;
+        end;
+      end;
+    except
+    Exit;
+    end;
+  end;
