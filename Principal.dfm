@@ -13,6 +13,7 @@ object fmPrincipal: TfmPrincipal
   OldCreateOrder = False
   Position = poScreenCenter
   WindowState = wsMaximized
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
@@ -9389,7 +9390,6 @@ object fmPrincipal: TfmPrincipal
     Width = 754
     Height = 167
     Align = alBottom
-    Caption = 'Panel2'
     TabOrder = 1
   end
   object PopupCadastro: TPopupMenu

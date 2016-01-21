@@ -7,57 +7,7 @@ inherited fmEntradaEstoque: TfmEntradaEstoque
   ExplicitHeight = 254
   PixelsPerInch = 96
   TextHeight = 13
-  object IB_LookupCombo3: TIB_LookupCombo [0]
-    Left = 151
-    Top = 87
-    Width = 450
-    Height = 21
-    DataSource = srcClifor
-    ParentBackground = False
-    TabOrder = 3
-    DisplayField = 'RAZAO'
-    IndicateTitles = True
-    ShowButton = True
-  end
-  object IB_Edit7: TIB_Edit [1]
-    Left = 72
-    Top = 87
-    Width = 73
-    Height = 21
-    AutoLabel.Kind = albLeft
-    AutoLabel.Suffix = ':'
-    DataField = 'CLIENTE_FORNECEDOR'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 2
-  end
-  object IB_Edit8: TIB_Edit [2]
-    Left = 72
-    Top = 114
-    Width = 73
-    Height = 21
-    AutoLabel.Kind = albLeft
-    AutoLabel.Suffix = ':'
-    DataField = 'TIPO_MOVIMENTO'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 5
-  end
-  object IB_DateTimePicker1: TIB_DateTimePicker [3]
-    Left = 224
-    Top = 60
-    Width = 169
-    Height = 21
-    Date = 42378.992365439810000000
-    Time = 42378.992365439810000000
-    TabOrder = 8
-    AutoLabel.Kind = albLeft
-    AutoLabel.Suffix = ':'
-    DataField = 'DATA_HORA'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-  end
-  object IB_Date1: TIB_Date [4]
+  object IB_Date1: TIB_Date [0]
     Left = 480
     Top = 60
     Width = 121
@@ -67,30 +17,42 @@ inherited fmEntradaEstoque: TfmEntradaEstoque
     DataField = 'DATA_VALIDADE'
     DataSource = IB_DataSource1
     ParentBackground = False
-    TabOrder = 7
+    TabOrder = 3
     IncCellHeight = 1
     IncCellWidth = 2
     DrawYearArrow = False
   end
-  object IB_LookupCombo4: TIB_LookupCombo [5]
+  object IB_LookupCombo4: TIB_LookupCombo [1]
     Left = 151
     Top = 114
     Width = 450
     Height = 21
     DataSource = SourceTipoMovimento
     ParentBackground = False
-    TabOrder = 6
+    TabOrder = 7
     DisplayField = 'NOME'
     IndicateTitles = True
     ShowButton = True
   end
-  object GroupBox2: TGroupBox [6]
+  object IB_Edit1: TIB_Edit [2]
+    Left = 72
+    Top = 60
+    Width = 113
+    Height = 21
+    AutoLabel.Caption = 'C'#243'digo'
+    AutoLabel.Kind = albLeft
+    DataField = 'CODIGO'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 1
+  end
+  object GroupBox2: TGroupBox [3]
     Left = 8
     Top = 141
     Width = 593
     Height = 76
     Caption = 'Produto da movimenta'#231#227'o'
-    TabOrder = 4
+    TabOrder = 8
     object IB_Edit2: TIB_Edit
       Left = 56
       Top = 16
@@ -125,7 +87,7 @@ inherited fmEntradaEstoque: TfmEntradaEstoque
       DataField = 'VALOR_UNITARIO'
       DataSource = IB_DataSource1
       ParentBackground = False
-      TabOrder = 2
+      TabOrder = 3
     end
     object IB_Edit10: TIB_Edit
       Left = 464
@@ -137,7 +99,7 @@ inherited fmEntradaEstoque: TfmEntradaEstoque
       DataField = 'VALOR_TOTAL'
       DataSource = IB_DataSource1
       ParentBackground = False
-      TabOrder = 3
+      TabOrder = 4
     end
     object IB_Edit12: TIB_Edit
       Left = 56
@@ -149,20 +111,58 @@ inherited fmEntradaEstoque: TfmEntradaEstoque
       DataField = 'QUANTIDADE'
       DataSource = IB_DataSource1
       ParentBackground = False
-      TabOrder = 4
+      TabOrder = 2
     end
   end
-  object IB_Edit1: TIB_Edit [7]
-    Left = 72
+  object IB_DateTimePicker1: TIB_DateTimePicker [4]
+    Left = 224
     Top = 60
-    Width = 113
+    Width = 169
     Height = 21
-    AutoLabel.Caption = 'C'#243'digo'
+    Date = 42378.992365439810000000
+    Time = 42378.992365439810000000
+    TabOrder = 2
     AutoLabel.Kind = albLeft
-    DataField = 'CODIGO'
+    AutoLabel.Suffix = ':'
+    DataField = 'DATA_HORA'
     DataSource = IB_DataSource1
     ParentBackground = False
-    TabOrder = 1
+  end
+  object IB_Edit8: TIB_Edit [5]
+    Left = 72
+    Top = 114
+    Width = 73
+    Height = 21
+    AutoLabel.Kind = albLeft
+    AutoLabel.Suffix = ':'
+    DataField = 'TIPO_MOVIMENTO'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 6
+  end
+  object IB_Edit7: TIB_Edit [6]
+    Left = 72
+    Top = 87
+    Width = 73
+    Height = 21
+    AutoLabel.Kind = albLeft
+    AutoLabel.Suffix = ':'
+    DataField = 'CLIENTE_FORNECEDOR'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 4
+  end
+  object IB_LookupCombo3: TIB_LookupCombo [7]
+    Left = 151
+    Top = 87
+    Width = 450
+    Height = 21
+    DataSource = srcClifor
+    ParentBackground = False
+    TabOrder = 5
+    DisplayField = 'RAZAO'
+    IndicateTitles = True
+    ShowButton = True
   end
   inherited pnlControles: TPanel
     Width = 613

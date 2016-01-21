@@ -14,8 +14,6 @@ type
     IB_Edit2: TIB_Edit;
     IB_LookupCombo1: TIB_LookupCombo;
     IB_Edit3: TIB_Edit;
-    IB_LookupCombo2: TIB_LookupCombo;
-    IB_LookupCombo3: TIB_LookupCombo;
     IB_LookupCombo4: TIB_LookupCombo;
     IB_Date1: TIB_Date;
     IB_Edit4: TIB_Edit;

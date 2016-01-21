@@ -46,7 +46,7 @@
           DataField = 'NOME'
           DataSource = IB_DataSource1
           ParentBackground = False
-          TabOrder = 1
+          TabOrder = 3
         end
         object IB_Edit3: TIB_Edit
           Left = 56
@@ -58,7 +58,7 @@
           DataField = 'CPF'
           DataSource = IB_DataSource1
           ParentBackground = False
-          TabOrder = 2
+          TabOrder = 5
         end
         object IB_Edit4: TIB_Edit
           Left = 232
@@ -70,7 +70,7 @@
           DataField = 'TELEFONE'
           DataSource = IB_DataSource1
           ParentBackground = False
-          TabOrder = 3
+          TabOrder = 1
         end
         object IB_Edit5: TIB_Edit
           Left = 280
@@ -82,7 +82,7 @@
           DataField = 'EMAIL'
           DataSource = IB_DataSource1
           ParentBackground = False
-          TabOrder = 4
+          TabOrder = 6
         end
         object IB_Edit6: TIB_Edit
           Left = 504
@@ -94,7 +94,7 @@
           DataField = 'DATA_NASCIMENTO'
           DataSource = IB_DataSource1
           ParentBackground = False
-          TabOrder = 5
+          TabOrder = 2
         end
         object IB_Edit7: TIB_Edit
           Left = 504
@@ -106,7 +106,7 @@
           DataField = 'DATA_ADMISSAO'
           DataSource = IB_DataSource1
           ParentBackground = False
-          TabOrder = 6
+          TabOrder = 4
         end
       end
       object GroupBox2: TGroupBox

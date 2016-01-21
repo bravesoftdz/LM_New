@@ -3,6 +3,11 @@ inherited fmPlanoConGrid: TfmPlanoConGrid
   PixelsPerInch = 96
   TextHeight = 13
   inherited IB_Query1: TIB_Query
+    FieldsDisplayLabel.Strings = (
+      'P.CODIGO=C'#243'digo'
+      'P.DESCRICAO=Descri'#231#227'o'
+      'TIPO=Tipo'
+      'GRUPO=Grupo')
     SQL.Strings = (
       'select p.codigo'
       '     , p.descricao'

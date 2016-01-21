@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FormEditor, IB_Components, IB_Access,
   Vcl.Buttons, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ColorGrd, IB_Grid, Vcl.Mask,
-  IB_EditButton, IB_Controls;
+  IB_EditButton, IB_Controls, Vcl.ExtDlgs, Vcl.Imaging.jpeg;
 
 type
   TfmProdutosEditor = class(TfmFormEditor)
@@ -25,9 +25,19 @@ type
     SpeedButton2: TSpeedButton;
     Tipo: TIB_Query;
     SourceTipo: TIB_DataSource;
+    SpeedButton3: TSpeedButton;
+    SpeedButton4: TSpeedButton;
+    Foto: TImage;
+    PictureDialog: TOpenPictureDialog;
+    SavePictureDialog1: TSavePictureDialog;
+    SpeedButton5: TSpeedButton;
     procedure SpeedButton1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure SpeedButton4Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure SpeedButton5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -42,13 +52,20 @@ implementation
 {$R *.dfm}
 
 Uses
-MarcasGrid, TipoProdutoGrid;
+MarcasGrid, TipoProdutoGrid, DB;
 
 procedure TfmProdutosEditor.FormCreate(Sender: TObject);
 begin
   inherited;
   Marca.Open();
   Tipo.Open();
+end;
+
+procedure TfmProdutosEditor.FormShow(Sender: TObject);
+begin
+  if not IB_Query1.FieldByName('FOTO').IsNull then
+    IB_Query1.FieldByName('FOTO').AssignTo(Foto.Picture.Graphic);
+  inherited;
 end;
 
 procedure TfmProdutosEditor.SpeedButton1Click(Sender: TObject);
@@ -73,6 +90,35 @@ begin
     F.Free;
     Tipo.Refresh;
   End;
+end;
+
+procedure TfmProdutosEditor.SpeedButton3Click(Sender: TObject);
+begin
+  if PictureDialog.Execute then begin
+    Foto.Picture.LoadFromFile(PictureDialog.FileName);
+    IB_Query1.FieldByName('FOTO').Assign(Foto.Picture.Graphic);
+  end;
+end;
+
+procedure TfmProdutosEditor.SpeedButton4Click(Sender: TObject);
+begin
+  foto.Picture := nil;
+  IB_Query1.FieldByName('FOTO').Clear;
+end;
+
+procedure TfmProdutosEditor.SpeedButton5Click(Sender: TObject);
+var
+  Save: TSaveDialog;
+  Arquivo: String;
+begin
+  Save := TSaveDialog.Create(nil);
+  Save.Filter := 'jpg';
+  Save.DefaultExt := 'jpg';
+  if Save.Execute then begin
+    Arquivo := Save.FileName;
+    Foto.Picture.SaveToFile(Arquivo + 'aaaaaaaa.jpg');
+  end;
+  Save.Free;
 end;
 
 end.

@@ -21,8 +21,8 @@
     <Transaction>2015/12/14 22:53:49.000.000,C:\Projetos\LM\Unit1.dfm=C:\Projetos\LM\Modules\Cadastros\ClientesFornecedoresGrid.dfm</Transaction>
     <Transaction>2015/12/14 22:53:49.000.000,C:\Projetos\LM\Unit1.pas=C:\Projetos\LM\Modules\Cadastros\ClientesFornecedoresGrid.pas</Transaction>
     <Transaction>2015/12/14 22:54:20.000.971,=C:\Projetos\LM\Unit1.pas</Transaction>
-    <Transaction>2015/12/14 22:55:14.000.550,C:\Projetos\LM\Modules\Cadastros\ClientesFornecedoresGrid.pas=C:\Projetos\LM\Modules\Cadastros\CliForGrid.pas</Transaction>
     <Transaction>2015/12/14 22:55:14.000.550,C:\Projetos\LM\Modules\Cadastros\ClientesFornecedoresGrid.dfm=C:\Projetos\LM\Modules\Cadastros\CliForGrid.dfm</Transaction>
+    <Transaction>2015/12/14 22:55:14.000.550,C:\Projetos\LM\Modules\Cadastros\ClientesFornecedoresGrid.pas=C:\Projetos\LM\Modules\Cadastros\CliForGrid.pas</Transaction>
     <Transaction>2015/12/14 22:55:36.000.589,C:\Projetos\LM\Unit1.dfm=C:\Projetos\LM\Modules\Cadastros\CliForEditor.dfm</Transaction>
     <Transaction>2015/12/14 22:55:36.000.589,C:\Projetos\LM\Unit1.pas=C:\Projetos\LM\Modules\Cadastros\CliForEditor.pas</Transaction>
     <Transaction>2015/12/14 23:21:29.000.236,=C:\Projetos\LM\Unit1.pas</Transaction>
@@ -32,9 +32,9 @@
     <Transaction>2016/01/08 19:09:45.000.006,=C:\Projetos\LM\Functions\Sis.Classes.pas</Transaction>
     <Transaction>2016/01/09 00:13:56.000.164,=C:\Projetos\LM\Modules\Estoque\EntradaEstoque.pas</Transaction>
     <Transaction>2016/01/09 00:13:56.000.223,=C:\Projetos\LM\Modules\Estoque\EstoqueGrid.pas</Transaction>
-    <Transaction>2016/01/12 21:17:37.515,=C:\Projetos\LM\Modules\Financeiro\ContasPagarEditor.pas</Transaction>
-    <Transaction>2016/01/12 21:17:37.608,=C:\Projetos\LM\Modules\Financeiro\ContasPagarGrid.pas</Transaction>
-    <Transaction>2016/01/12 21:17:37.675,=C:\Projetos\LM\Modules\Financeiro\ContasReceberEditor.pas</Transaction>
-    <Transaction>2016/01/12 21:17:37.726,=C:\Projetos\LM\Modules\Financeiro\ContasReceberGrid.pas</Transaction>
+    <Transaction>2016/01/12 21:17:37.000.515,=C:\Projetos\LM\Modules\Financeiro\ContasPagarEditor.pas</Transaction>
+    <Transaction>2016/01/12 21:17:37.000.675,=C:\Projetos\LM\Modules\Financeiro\ContasReceberEditor.pas</Transaction>
+    <Transaction>2016/01/12 21:17:37.000.726,=C:\Projetos\LM\Modules\Financeiro\ContasReceberGrid.pas</Transaction>
+    <Transaction>2016/01/12 21:17:37.000.608,=C:\Projetos\LM\Modules\Financeiro\ContasPagarGrid.pas</Transaction>
   </Transactions>
 </BorlandProject>
