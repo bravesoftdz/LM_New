@@ -14,6 +14,7 @@ object fmPrincipal: TfmPrincipal
   Position = poScreenCenter
   WindowState = wsMaximized
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
@@ -9391,6 +9392,35 @@ object fmPrincipal: TfmPrincipal
     Height = 167
     Align = alBottom
     TabOrder = 1
+    ExplicitTop = 350
+    object Label1: TLabel
+      Left = 5
+      Top = 149
+      Width = 31
+      Height = 13
+      Caption = 'Label1'
+    end
+    object Label2: TLabel
+      Left = 16
+      Top = 6
+      Width = 350
+      Height = 91
+      Caption = 'LM System'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clSilver
+      Font.Height = -80
+      Font.Name = 'Bauhaus 93'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Panel3: TPanel
+      Left = 408
+      Top = 1
+      Width = 345
+      Height = 165
+      Align = alRight
+      TabOrder = 0
+    end
   end
   object PopupCadastro: TPopupMenu
     Alignment = paCenter
@@ -9474,5 +9504,9 @@ object fmPrincipal: TfmPrincipal
   object Popupconfig: TPopupMenu
     Left = 488
     Top = 40
+  end
+  object IB_Query1: TIB_Query
+    Left = 664
+    Top = 224
   end
 end

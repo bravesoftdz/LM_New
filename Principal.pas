@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.Buttons, Vcl.ExtCtrls,
-  Vcl.Imaging.pngimage;
+  Vcl.Imaging.pngimage, IB_Components, IB_Access, Vcl.StdCtrls;
 
 type
   TfmPrincipal = class(TForm)
@@ -38,6 +38,10 @@ type
     Cadastrodeprodutos1: TMenuItem;
     Movimentaodeestoque1: TMenuItem;
     ipodemovimentao1: TMenuItem;
+    IB_Query1: TIB_Query;
+    Label1: TLabel;
+    Label2: TLabel;
+    Panel3: TPanel;
     procedure btnCadastrosClick(Sender: TObject);
     procedure BtnOperacionalClick(Sender: TObject);
     procedure BtnFinanceiroClick(Sender: TObject);
@@ -54,6 +58,7 @@ type
     procedure ipodemovimentao1Click(Sender: TObject);
     procedure Pedidos1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
 
@@ -70,7 +75,7 @@ implementation
 
 uses CliforGrid, FuncionariosGrid, EmpresasGrid, PlanoContaGrid, ContasPagarGrid,
      ProdutosGrid, EstoqueGrid, TipoEntradaEstoqueGrid, ContasReceberGrid, ReservaGrid,
-     Login;
+     Login, Dados, Functions, Configuracoes;
 
 procedure TfmPrincipal.btnCadastrosClick(Sender: TObject);
 begin
@@ -78,8 +83,15 @@ begin
 end;
 
 procedure TfmPrincipal.BtnConfigClick(Sender: TObject);
+var F : TfmConfiguracoes;
 begin
- Popupconfig.Popup(Mouse.CursorPos.X,Mouse.CursorPos.Y);
+  F := TfmConfiguracoes.Create(Self);
+  Try
+    F.ShowModal;
+  Finally
+    F.Free;
+  End;
+
 end;
 
 procedure TfmPrincipal.BtnFinanceiroClick(Sender: TObject);
@@ -140,6 +152,22 @@ begin
     F.ShowModal;
   Finally
     F.Free;
+  End;
+end;
+
+procedure TfmPrincipal.FormShow(Sender: TObject);
+var
+Q1 : TIB_Query;
+begin
+  Q1 := TIB_Query.Create(Self);
+  Try
+    Q1.SQL.Text := 'select usuario from usuarios where codigo = ' + IntToStr(DMDados.Usuario);
+    Q1.Open();
+  Finally
+    Label1.Caption := 'Usuário: ' +Q1.FieldByName('usuario').AsString +
+                   '   Data Login: ' + DateToStr(Date) +' - ' + TimeToStr(Time)+
+                      '   Versão 1.00 2016.' ;
+    Q1.Free;
   End;
 end;
 
