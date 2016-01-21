@@ -22,11 +22,17 @@ uses
   ContasPagarGrid in 'Modules\Financeiro\ContasPagarGrid.pas' {fmContasPagarGrid},
   ContasReceberEditor in 'Modules\Financeiro\ContasReceberEditor.pas' {fmContasReceberEditor},
   ContasReceberGrid in 'Modules\Financeiro\ContasReceberGrid.pas' {fmContasReceberGrid},
-  FuncionariosGrid in 'Modules\Cadastros\FuncionariosGrid.pas',
-  FuncionariosEditor in 'Modules\Cadastros\FuncionariosEditor.pas',
-  EmpresasGrid in 'Modules\Cadastros\EmpresasGrid.pas',
+
+  FuncionariosGrid in 'Modules\Cadastros\FuncionariosGrid.pas' {$R *.res},
+
+  FuncionariosEditor in 'Modules\Cadastros\FuncionariosEditor.pas' {$R *.res},
+
+  EmpresasGrid in 'Modules\Cadastros\EmpresasGrid.pas' {$R *.res},
   PlanoContaGrid in 'Modules\Cadastros\PlanoContaGrid.pas',
-  PlanoContaEditor in 'Modules\Cadastros\PlanoContaEditor.pas';
+
+  PlanoContaEditor in 'Modules\Cadastros\PlanoContaEditor.pas' {$R *.res},
+  Functions in 'Functions\Functions.pas';
+
 {$R *.res}
 
 begin

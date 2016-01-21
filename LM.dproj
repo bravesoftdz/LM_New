@@ -178,6 +178,7 @@
         <DCCReference Include="Modules\Cadastros\PlanoContaEditor.pas">
             <Form>$R *.res</Form>
         </DCCReference>
+        <DCCReference Include="Functions\Functions.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -206,7 +207,7 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="2">
-                <DeployFile LocalName="..\Bin\LM\LM.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="C:\Projetos\Bin\LM\LM.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>LM.exe</RemoteName>
                         <Overwrite>true</Overwrite>

@@ -1,5 +1,6 @@
 object DMDados: TDMDados
   OldCreateOrder = False
+  OnCreate = DataModuleCreate
   Height = 223
   Width = 293
   object Conexao: TIB_Connection
