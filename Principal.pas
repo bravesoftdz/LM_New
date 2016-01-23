@@ -180,7 +180,7 @@ begin
                    ' , cd.cidade ' +
                ' from clifor c ' +
                ' left join cidades cd on cd.codigo = c.cidade ' +
-               ' where c.codigo = ' + IntToStr(fmConfiguracoes.EMPRESA_PADRAO);
+               ' where c.codigo = 0 '; //+ IntToStr(fmConfiguracoes.EMPRESA_PADRAO);
     Q1.Open();
     LblRazao.Caption := Q1.FieldByName('razao').AsString;
 

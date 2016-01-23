@@ -27,9 +27,10 @@ type
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
+    procedure LoadConfig;
+    procedure GravaConfig;
   public
     { Public declarations }
-    EMPRESA_PADRAO : Integer;
   end;
 
 var
@@ -37,37 +38,33 @@ var
 
 implementation
 
+uses Functions;
+
 {$R *.dfm}
 
 procedure TfmConfiguracoes.FormCreate(Sender: TObject);
 begin
-  IB_Query1.ParamByName('codigo').AsInteger := 1;
-  IB_Query1.Open();
-  IB_Query1.Edit;
+  LoadConfig;
+end;
 
-  Clientes.Open();
-  EMPRESA_PADRAO := IB_Query1.FieldByName('EMPRESA_PADRAO').AsInteger;
+procedure TfmConfiguracoes.GravaConfig;
+begin
+//TConfig.SetConfig('permite_alterar', 'contas', Edit.text);
+
+end;
+
+procedure TfmConfiguracoes.LoadConfig;
+begin
+//TConfig.GetConfig()
 end;
 
 procedure TfmConfiguracoes.SpeedButton1Click(Sender: TObject);
 begin
-  if IB_Query1.State = dssInsert then
-    if Trim(IB_Query1.InsertSQL.Text) = '' then
-      raise Exception.Create('Não foi declarado SQL para insert!');
-
-  if IB_Query1.State = dssEdit then
-    if Trim(IB_Query1.EditSQL.Text) = '' then
-      raise Exception.Create('Não foi declarado SQL para edição!');
-
-  IB_Query1.Post;
-  IB_Transaction1.Commit;
-  Close;
+  GravaConfig;
 end;
 
 procedure TfmConfiguracoes.SpeedButton2Click(Sender: TObject);
 begin
-  if IB_Query1.State in [dssEdit, dssInsert] then
-    IB_Query1.Cancel;
   Close;
 end;
 

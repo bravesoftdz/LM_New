@@ -9402,8 +9402,8 @@ object fmPrincipal: TfmPrincipal
     object Label2: TLabel
       Left = 16
       Top = 6
-      Width = 350
-      Height = 91
+      Width = 398
+      Height = 89
       Caption = 'LM System'
       Font.Charset = ANSI_CHARSET
       Font.Color = clSilver

@@ -76,12 +76,12 @@ object fmLogin: TfmLogin
       'CODIGO=FALSE')
     IB_Connection = DMDados.Conexao
     SQL.Strings = (
-      'select usuario'
+      'select nome usuario'
       ', senha'
       ', codigo'
       'from usuarios'
       'where ativo = 1'
-      'and usuario is not null')
+      '')
     OrderingItemNo = 1
     OrderingItems.Strings = (
       'USUARIO=USUARIO;USUARIO DESC')
