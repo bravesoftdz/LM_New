@@ -80,7 +80,8 @@ object fmLogin: TfmLogin
       ', senha'
       ', codigo'
       'from usuarios'
-      'where ativo = 1')
+      'where ativo = 1'
+      'and usuario is not null')
     OrderingItemNo = 1
     OrderingItems.Strings = (
       'USUARIO=USUARIO;USUARIO DESC')
