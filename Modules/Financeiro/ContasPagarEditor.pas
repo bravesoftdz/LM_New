@@ -29,10 +29,14 @@ type
     srcClifor: TIB_DataSource;
     qryPlanoConta: TIB_Query;
     SrcPlanoconta: TIB_DataSource;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
     procedure IB_Query1BeforePost(IB_Dataset: TIB_Dataset);
     procedure FormShow(Sender: TObject);
     procedure IB_DataSource1DataChange(Sender: TIB_StatementLink;
       Statement: TIB_Statement; Field: TIB_Column);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
   private
     { Private declarations }
     FTipoConta : TTipoConta;
@@ -47,6 +51,8 @@ var
   fmContasPagarEditor: TfmContasPagarEditor;
 
 implementation
+
+uses CliforGrid, PlanoContaGrid;
 
 {$R *.dfm}
 
@@ -93,4 +99,30 @@ begin
   FTipoConta := Value;
 end;
 
+procedure TfmContasPagarEditor.SpeedButton1Click(Sender: TObject);
+var F : TfmCliForGrid;
+begin
+  F := TfmCliForGrid.Create(Self);
+  try
+    F.IB_Query1.Locate('codigo', IB_Query1.FieldByName('clifor').AsInteger, []);
+    F.ShowModal;
+  finally
+    F.Free;
+  end;
+end;
+
+procedure TfmContasPagarEditor.SpeedButton2Click(Sender: TObject);
+var F : TfmPlanoConGrid;
+begin
+  F := TfmPlanoConGrid.Create(Self);
+  try
+    F.IB_Query1.Locate('codigo', IB_Query1.FieldByName('PLANO_CONTA').AsInteger, []);
+    F.ShowModal;
+  finally
+    F.Free;
+  end;
+end;
+
 end.
+
+
