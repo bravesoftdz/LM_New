@@ -38,10 +38,5 @@ begin
   TStyleManager.TrySetStyle('Amethyst Kamri');
   Application.CreateForm(TDMDados, DMDados);
   Application.CreateForm(TfmPrincipal, fmPrincipal);
-  Application.CreateForm(TfmContasPagarEditor, fmContasPagarEditor);
-  Application.CreateForm(TfmContasPagarGrid, fmContasPagarGrid);
-  Application.CreateForm(TfmContasReceberEditor, fmContasReceberEditor);
-  Application.CreateForm(TfmContasReceberGrid, fmContasReceberGrid);
-  Application.CreateForm(TfmConfiguracoes, fmConfiguracoes);
   Application.Run;
 end.

@@ -57,7 +57,9 @@ begin
 end;
 
 function TDMDados.GetConfigPath: string;
-begin result:= TAppFunctions.GetFilePath + 'config.ini'; end;
+begin
+  Result := TAppFunctions.GetFilePath + 'config.ini';
+end;
 
 procedure TDMDados.GravaIni(aTexto: string);
 begin
