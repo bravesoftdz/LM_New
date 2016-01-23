@@ -22,12 +22,8 @@ object fmConfiguracoes: TfmConfiguracoes
     ActivePage = TabSheet1
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 344
     object TabSheet1: TTabSheet
       Caption = 'Gerais'
-      ExplicitLeft = 8
-      ExplicitTop = 28
-      ExplicitHeight = 316
       object IB_Empresa_Padrao: TIB_Edit
         Left = 107
         Top = 16

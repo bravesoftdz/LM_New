@@ -42,5 +42,6 @@ begin
   Application.CreateForm(TfmContasPagarGrid, fmContasPagarGrid);
   Application.CreateForm(TfmContasReceberEditor, fmContasReceberEditor);
   Application.CreateForm(TfmContasReceberGrid, fmContasReceberGrid);
+  Application.CreateForm(TfmConfiguracoes, fmConfiguracoes);
   Application.Run;
 end.

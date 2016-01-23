@@ -42,6 +42,7 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Panel3: TPanel;
+    LblRazao: TLabel;
     procedure btnCadastrosClick(Sender: TObject);
     procedure BtnOperacionalClick(Sender: TObject);
     procedure BtnFinanceiroClick(Sender: TObject);
@@ -89,7 +90,7 @@ begin
   Try
     F.ShowModal;
   Finally
-    F.Free;
+    F.Close;
   End;
 
 end;
@@ -167,6 +168,22 @@ begin
     Label1.Caption := 'Usuário: ' +Q1.FieldByName('usuario').AsString +
                    '   Data Login: ' + DateToStr(Date) +' - ' + TimeToStr(Time)+
                       '   Versão 1.00 2016.' ;
+    Q1.Close;
+    Q1.SQL.Text := 'select c.razao ' +
+                   ' , c.cnpj ' +
+                   ' , c.telefone ' +
+                   ' , c.celular ' +
+                   ' , c.email ' +
+                   ' , c.endereco ' +
+                   ' , c.estado ' +
+                   ' , c.cidade ' +
+                   ' , cd.cidade ' +
+               ' from clifor c ' +
+               ' left join cidades cd on cd.codigo = c.cidade ' +
+               ' where c.codigo = ' + IntToStr(fmConfiguracoes.EMPRESA_PADRAO);
+    Q1.Open();
+    LblRazao.Caption := Q1.FieldByName('razao').AsString;
+
     Q1.Free;
   End;
 end;

@@ -9392,7 +9392,6 @@ object fmPrincipal: TfmPrincipal
     Height = 167
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 350
     object Label1: TLabel
       Left = 5
       Top = 149
@@ -9420,6 +9419,19 @@ object fmPrincipal: TfmPrincipal
       Height = 165
       Align = alRight
       TabOrder = 0
+      object LblRazao: TLabel
+        Left = 24
+        Top = 16
+        Width = 80
+        Height = 24
+        Caption = 'LblRazao'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
     end
   end
   object PopupCadastro: TPopupMenu

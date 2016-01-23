@@ -29,6 +29,7 @@ type
     { Private declarations }
   public
     { Public declarations }
+    EMPRESA_PADRAO : Integer;
   end;
 
 var
@@ -45,6 +46,7 @@ begin
   IB_Query1.Edit;
 
   Clientes.Open();
+  EMPRESA_PADRAO := IB_Query1.FieldByName('EMPRESA_PADRAO').AsInteger;
 end;
 
 procedure TfmConfiguracoes.SpeedButton1Click(Sender: TObject);
