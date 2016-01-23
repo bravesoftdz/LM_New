@@ -22,5 +22,9 @@ inherited fmFuncionariosGrid: TfmFuncionariosGrid
       '      ,c.cidade as cidade'
       'from usuarios u'
       'left join cidades c on c.codigo = u.cidade')
+    DeleteSQL.Strings = (
+      'DELETE FROM USUARIOS U'
+      'WHERE'
+      '   CODIGO = :OLD_CODIGO')
   end
 end

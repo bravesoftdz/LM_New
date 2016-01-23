@@ -8,5 +8,11 @@ inherited fmMarcasGrid: TfmMarcasGrid
       'MARCA=Marca')
     SQL.Strings = (
       'select * from marcas')
+    DeleteSQL.Strings = (
+      'DELETE FROM MARCAS MARCAS'
+      'WHERE'
+      '   CODIGO = :OLD_CODIGO')
+    EditSQL.Strings = (
+      '')
   end
 end

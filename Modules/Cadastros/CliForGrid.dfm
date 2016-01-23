@@ -52,6 +52,6 @@ inherited fmCliForGrid: TfmCliForGrid
     DeleteSQL.Strings = (
       'DELETE FROM CLIFOR CLIFOR'
       'WHERE'
-      'CLIFOR.RDB$DB_KEY = :DB_KEY')
+      'CLIFOR.CODIGO = :CODIGO')
   end
 end

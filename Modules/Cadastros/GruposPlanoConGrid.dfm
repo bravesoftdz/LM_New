@@ -9,5 +9,10 @@ inherited fmGrupoPlanoConGrid: TfmGrupoPlanoConGrid
     SQL.Strings = (
       'select * from grupos'
       '')
+    DeleteSQL.Strings = (
+      'DELETE FROM GRUPOS GRUPOS'
+      'WHERE'
+      '   CODIGO = :OLD_CODIGO')
+    Top = 168
   end
 end

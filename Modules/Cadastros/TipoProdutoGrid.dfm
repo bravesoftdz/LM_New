@@ -8,5 +8,27 @@ inherited fmTipoProdutoGrid: TfmTipoProdutoGrid
       'TIPO_PRODUTO=Tipo Produto')
     SQL.Strings = (
       'select * from tipo_produto')
+    DeleteSQL.Strings = (
+      'DELETE FROM TIPO_PRODUTO TIPO_PRODUTO'
+      'WHERE'
+      '   CODIGO = :OLD_CODIGO')
+    EditSQL.Strings = (
+      'UPDATE TIPO_PRODUTO TIPO_PRODUTO SET'
+      '   TIPO_PRODUTO.CODIGO = :CODIGO, /*PK*/'
+      '   TIPO_PRODUTO.TIPO_PRODUTO = :TIPO_PRODUTO,'
+      '   TIPO_PRODUTO.USUARIO = :USUARIO'
+      'WHERE'
+      '   CODIGO = :OLD_CODIGO')
+    InsertSQL.Strings = (
+      'INSERT INTO TIPO_PRODUTO('
+      '   CODIGO, /*PK*/'
+      '   TIPO_PRODUTO,'
+      '   USUARIO)'
+      'VALUES ('
+      '   :CODIGO,'
+      '   :TIPO_PRODUTO,'
+      '   :USUARIO)')
+    KeyLinks.Strings = (
+      'TIPO_PRODUTO.CODIGO')
   end
 end

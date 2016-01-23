@@ -23,5 +23,9 @@ inherited fmProdutosGrid: TfmProdutosGrid
       'from produtos p'
       'left join marcas m on m.codigo = p.marca'
       'left join tipo_produto tp on tp.codigo = p.tipo')
+    DeleteSQL.Strings = (
+      'DELETE FROM PRODUTOS P'
+      'WHERE'
+      '   CODIGO = :OLD_CODIGO')
   end
 end
