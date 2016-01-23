@@ -9402,8 +9402,8 @@ object fmPrincipal: TfmPrincipal
     object Label2: TLabel
       Left = 16
       Top = 6
-      Width = 398
-      Height = 89
+      Width = 350
+      Height = 91
       Caption = 'LM System'
       Font.Charset = ANSI_CHARSET
       Font.Color = clSilver
@@ -9499,6 +9499,7 @@ object fmPrincipal: TfmPrincipal
     end
     object Requisies1: TMenuItem
       Caption = 'Requisi'#231#245'es'
+      OnClick = Requisies1Click
     end
     object Cadastrodeprodutos1: TMenuItem
       Caption = 'Cadastro de produtos'

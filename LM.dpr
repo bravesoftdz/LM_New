@@ -28,7 +28,9 @@ uses
   PlanoContaGrid in 'Modules\Cadastros\PlanoContaGrid.pas',
   PlanoContaEditor in 'Modules\Cadastros\PlanoContaEditor.pas' {$R *.res},
   Functions in 'Functions\Functions.pas',
-  Configuracoes in 'Configuracoes.pas' {fmConfiguracoes};
+  Configuracoes in 'Configuracoes.pas' {fmConfiguracoes},
+  RequisicaoGrid in 'Modules\Estoque\RequisicaoGrid.pas',
+  RequisicaoEditor in 'Modules\Estoque\RequisicaoEditor.pas';
 
 {$R *.res}
 
