@@ -39,9 +39,10 @@ type
     OpenDialog1: TOpenDialog;
     pg1: TGauge;
     btnRemover: TSpeedButton;
+    edtUsuario: TEdit;
+    edtSenha: TEdit;
     procedure btnEnviarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure ListAnexosKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure btnRemoverClick(Sender: TObject);
@@ -100,7 +101,7 @@ begin
     end;
     pg1.AddProgress(1);
     IdMessage1.From.Address := 'email@email.com';
-    IdMessage1.Subject := edtAssunto;
+    IdMessage1.Subject := edtAssunto.Text;
     IdMessage1.ContentType := 'text/html';
     IdMessage1.Body.Add('<html><body>');
     IdMessage1.Body.Add('<p><hr></p><br>' + mmoMsg.Text);
@@ -141,13 +142,13 @@ procedure Tfmemail.FormCreate(Sender: TObject);
 begin
   with IdSMTP1 do
   begin
-    AuthType := atLogin;
+    AuthType := satDefault;
     Host := '';
-    IOHandler := SSLSocket;
     Password := EdtSenha.Text;
     Port := 465; Username :=
     EdtUsuario.Text;
-  end; SSLSocket.SSLOptions.Method := sslvSSLv2; SSLSocket.SSLOptions.Mode := sslmClient;
+  end;
+  //SSLSocket.SSLOptions.Method := sslvSSLv2; SSLSocket.SSLOptions.Mode := sslmClient;
 
 end;
 

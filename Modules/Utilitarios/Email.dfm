@@ -185,6 +185,23 @@ object fmemail: Tfmemail
       Height = 24
       Progress = 0
     end
+    object edtUsuario: TEdit
+      Left = 4
+      Top = 272
+      Width = 121
+      Height = 21
+      TabOrder = 0
+      Text = 'edtUsuario'
+    end
+    object edtSenha: TEdit
+      Left = 24
+      Top = 240
+      Width = 121
+      Height = 21
+      PasswordChar = '*'
+      TabOrder = 1
+      Text = 'edtSenha'
+    end
   end
   object IdSMTP1: TIdSMTP
     OnDisconnected = IdSMTP1Disconnected
