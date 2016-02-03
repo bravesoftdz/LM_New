@@ -60,6 +60,7 @@ type
     procedure Pedidos1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure Requisies1Click(Sender: TObject);
   private
     { Private declarations }
 
@@ -76,7 +77,7 @@ implementation
 
 uses CliforGrid, FuncionariosGrid, EmpresasGrid, PlanoContaGrid, ContasPagarGrid,
      ProdutosGrid, EstoqueGrid, TipoEntradaEstoqueGrid, ContasReceberGrid, ReservaGrid,
-     Login, Dados, Functions, Configuracoes;
+     Login, Dados, Functions, Configuracoes, RequisicaoGrid;
 
 procedure TfmPrincipal.btnCadastrosClick(Sender: TObject);
 begin
@@ -211,6 +212,11 @@ end;
 procedure TfmPrincipal.Planodecontas1Click(Sender: TObject);
 begin
   CriaForm(TfmPlanoConGrid);
+end;
+
+procedure TfmPrincipal.Requisies1Click(Sender: TObject);
+begin
+  CriaForm(TfmRequisicaoGrid);
 end;
 
 end.

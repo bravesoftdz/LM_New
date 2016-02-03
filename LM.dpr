@@ -30,6 +30,8 @@ uses
   Functions in 'Functions\Functions.pas',
   Configuracoes in 'Configuracoes.pas' {fmConfiguracoes},
   Email in 'Modules\Utilitarios\Email.pas' {fmemail};
+  RequisicaoGrid in 'Modules\Estoque\RequisicaoGrid.pas',
+  RequisicaoEditor in 'Modules\Estoque\RequisicaoEditor.pas';
 
 {$R *.res}
 

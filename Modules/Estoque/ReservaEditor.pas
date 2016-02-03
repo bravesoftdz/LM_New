@@ -28,6 +28,7 @@ type
     SourceProdutos: TIB_DataSource;
     SpeedButton1: TSpeedButton;
     SpeedButton2: TSpeedButton;
+    IB_Date2: TIB_Date;
     procedure FormCreate(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);

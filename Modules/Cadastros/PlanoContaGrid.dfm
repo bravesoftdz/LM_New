@@ -18,5 +18,9 @@ inherited fmPlanoConGrid: TfmPlanoConGrid
       '     , g.descricao as grupo'
       'from planoconta p'
       'left join grupos g on g.codigo = p.grupo')
+    DeleteSQL.Strings = (
+      'DELETE FROM PLANOCONTA P'
+      'WHERE'
+      '   CODIGO = :OLD_CODIGO')
   end
 end

@@ -9,5 +9,11 @@ inherited fmTipoEstradaEstoqueGrid: TfmTipoEstradaEstoqueGrid
       'CODIGO=C'#243'digo')
     SQL.Strings = (
       'select * from tipo_movimentacao_estoque')
+    DeleteSQL.Strings = (
+      'DELETE FROM TIPO_MOVIMENTACAO_ESTOQUE TIPO_MOVIMENTACAO_ESTOQUE'
+      'WHERE'
+      '   CODIGO = :OLD_CODIGO')
+    EditSQL.Strings = (
+      '')
   end
 end
