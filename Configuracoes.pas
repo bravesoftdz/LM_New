@@ -22,6 +22,7 @@ type
     SpeedButton2: TSpeedButton;
     Clientes: TIB_Query;
     SourceClientes: TIB_DataSource;
+    Edit1: TEdit;
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -45,17 +46,18 @@ uses Functions;
 procedure TfmConfiguracoes.FormCreate(Sender: TObject);
 begin
   LoadConfig;
+  Clientes.Open;
 end;
 
 procedure TfmConfiguracoes.GravaConfig;
 begin
-//TConfig.SetConfig('permite_alterar', 'contas', Edit.text);
+  TConfig.SetConfig('permite_alterar', 'contas', Edit1.Text);
 
 end;
 
 procedure TfmConfiguracoes.LoadConfig;
 begin
-//TConfig.GetConfig()
+  TConfig.GetConfig('permite_alterar', 'contas') ;
 end;
 
 procedure TfmConfiguracoes.SpeedButton1Click(Sender: TObject);

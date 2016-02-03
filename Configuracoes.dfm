@@ -78,6 +78,13 @@ object fmConfiguracoes: TfmConfiguracoes
       OnClick = SpeedButton2Click
     end
   end
+  object Edit1: TEdit
+    Left = 168
+    Top = 160
+    Width = 121
+    Height = 21
+    TabOrder = 2
+  end
   object IB_Query1: TIB_Query
     IB_Connection = DMDados.Conexao
     IB_Transaction = IB_Transaction1
