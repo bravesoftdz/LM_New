@@ -181,7 +181,7 @@ begin
                    ' , cd.cidade ' +
                ' from clifor c ' +
                ' left join cidades cd on cd.codigo = c.cidade ' +
-               ' where c.codigo = ' + TConfig.GetConfig('permite_alterar', 'contas'); //+ IntToStr(fmConfiguracoes.EMPRESA_PADRAO);
+               ' where c.codigo = 0'; //+ IntToStr(fmConfiguracoes.EMPRESA_PADRAO);
     Q1.Open();
     LblRazao.Caption := Q1.FieldByName('razao').AsString;
 

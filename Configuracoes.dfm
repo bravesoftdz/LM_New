@@ -1,7 +1,7 @@
 object fmConfiguracoes: TfmConfiguracoes
   Left = 0
   Top = 0
-  Caption = 'Configuracoes do Sistema'
+  Caption = 'a'
   ClientHeight = 420
   ClientWidth = 643
   Color = clBtnFace

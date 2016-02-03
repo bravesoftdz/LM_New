@@ -22,16 +22,16 @@ uses
   ContasPagarGrid in 'Modules\Financeiro\ContasPagarGrid.pas' {fmContasPagarGrid},
   ContasReceberEditor in 'Modules\Financeiro\ContasReceberEditor.pas' {fmContasReceberEditor},
   ContasReceberGrid in 'Modules\Financeiro\ContasReceberGrid.pas' {fmContasReceberGrid},
-  FuncionariosGrid in 'Modules\Cadastros\FuncionariosGrid.pas' {$R *.res},
-  FuncionariosEditor in 'Modules\Cadastros\FuncionariosEditor.pas' {$R *.res},
-  EmpresasGrid in 'Modules\Cadastros\EmpresasGrid.pas' {$R *.res},
-  PlanoContaGrid in 'Modules\Cadastros\PlanoContaGrid.pas',
-  PlanoContaEditor in 'Modules\Cadastros\PlanoContaEditor.pas' {$R *.res},
+  FuncionariosGrid in 'Modules\Cadastros\FuncionariosGrid.pas',
+  FuncionariosEditor in 'Modules\Cadastros\FuncionariosEditor.pas',
+  EmpresasGrid in 'Modules\Cadastros\EmpresasGrid.pas',
+  PlanoContaEditor in 'Modules\Cadastros\PlanoContaEditor.pas',
   Functions in 'Functions\Functions.pas',
   Configuracoes in 'Configuracoes.pas' {fmConfiguracoes},
-  Email in 'Modules\Utilitarios\Email.pas' {fmemail};
-  RequisicaoGrid in 'Modules\Estoque\RequisicaoGrid.pas',
-  RequisicaoEditor in 'Modules\Estoque\RequisicaoEditor.pas';
+  Email in 'Modules\Utilitarios\Email.pas' {fmemail},
+  RequisicaoGrid in 'Modules\Estoque\RequisicaoGrid.pas' {fmRequisicaoGrid},
+  RequisicaoEditor in 'Modules\Estoque\RequisicaoEditor.pas',
+  PlanoContaGrid in 'Modules\Cadastros\PlanoContaGrid.pas' {fmPlanoConGrid};
 
 {$R *.res}
 
@@ -42,5 +42,7 @@ begin
   Application.CreateForm(TDMDados, DMDados);
   Application.CreateForm(TfmPrincipal, fmPrincipal);
   Application.CreateForm(Tfmemail, fmemail);
+  Application.CreateForm(TfmRequisicaoGrid, fmRequisicaoGrid);
+  Application.CreateForm(TfmPlanoConGrid, fmPlanoConGrid);
   Application.Run;
 end.

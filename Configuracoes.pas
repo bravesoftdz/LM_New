@@ -46,7 +46,6 @@ uses Functions;
 procedure TfmConfiguracoes.FormCreate(Sender: TObject);
 begin
   LoadConfig;
-  Clientes.Open;
 end;
 
 procedure TfmConfiguracoes.GravaConfig;
@@ -57,7 +56,7 @@ end;
 
 procedure TfmConfiguracoes.LoadConfig;
 begin
-  TConfig.GetConfig('permite_alterar', 'contas') ;
+  Edit1.Text := String(TConfig.GetConfig('permite_alterar', 'contas'));
 end;
 
 procedure TfmConfiguracoes.SpeedButton1Click(Sender: TObject);
