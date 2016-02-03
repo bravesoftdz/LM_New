@@ -43,6 +43,9 @@ type
     Label2: TLabel;
     Panel3: TPanel;
     LblRazao: TLabel;
+    LblEmpresa: TLabel;
+    LblEmpresa1: TLabel;
+    LblEmpresa2: TLabel;
     procedure btnCadastrosClick(Sender: TObject);
     procedure BtnOperacionalClick(Sender: TObject);
     procedure BtnFinanceiroClick(Sender: TObject);
@@ -176,15 +179,17 @@ begin
                    ' , c.celular ' +
                    ' , c.email ' +
                    ' , c.endereco ' +
-                   ' , c.estado ' +
+                   ' , cd.estado ' +
                    ' , c.cidade ' +
-                   ' , cd.cidade ' +
+                   ' , cd.cidade as nome_cidade ' +
                ' from clifor c ' +
                ' left join cidades cd on cd.codigo = c.cidade ' +
                ' where c.codigo = 0'; //+ IntToStr(fmConfiguracoes.EMPRESA_PADRAO);
     Q1.Open();
     LblRazao.Caption := Q1.FieldByName('razao').AsString;
-
+    LblEmpresa.Caption := Q1.FieldByName('cnpj').AsString + ', ' + Q1.FieldByName('Telefone').AsString;
+    LblEmpresa1.Caption := Q1.FieldByName('nome_cidade').AsString + ' - ' + Q1.FieldByName('estado').AsString;
+    LblEmpresa2.Caption := Q1.FieldByName('email').AsString;
     Q1.Free;
   End;
 end;

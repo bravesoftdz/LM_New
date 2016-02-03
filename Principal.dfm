@@ -9432,6 +9432,45 @@ object fmPrincipal: TfmPrincipal
         Font.Style = []
         ParentFont = False
       end
+      object LblEmpresa: TLabel
+        Left = 24
+        Top = 46
+        Width = 81
+        Height = 19
+        Caption = 'LblEmpresa'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object LblEmpresa1: TLabel
+        Left = 24
+        Top = 71
+        Width = 90
+        Height = 19
+        Caption = 'LblEmpresa1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object LblEmpresa2: TLabel
+        Left = 24
+        Top = 96
+        Width = 90
+        Height = 19
+        Caption = 'LblEmpresa2'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
     end
   end
   object PopupCadastro: TPopupMenu
