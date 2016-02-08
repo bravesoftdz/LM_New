@@ -7,56 +7,7 @@ inherited fmEntradaEstoque: TfmEntradaEstoque
   ExplicitHeight = 254
   PixelsPerInch = 96
   TextHeight = 13
-  object IB_Edit1: TIB_Edit [0]
-    Left = 72
-    Top = 60
-    Width = 113
-    Height = 21
-    AutoLabel.Caption = 'C'#243'digo'
-    AutoLabel.Kind = albLeft
-    DataField = 'CODIGO'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 1
-  end
-  object IB_Edit7: TIB_Edit [1]
-    Left = 72
-    Top = 87
-    Width = 73
-    Height = 21
-    AutoLabel.Kind = albLeft
-    AutoLabel.Suffix = ':'
-    DataField = 'CLIENTE_FORNECEDOR'
-    DataSource = IB_DataSource1
-    ParentBackground = False
-    TabOrder = 4
-  end
-  object IB_LookupCombo3: TIB_LookupCombo [2]
-    Left = 151
-    Top = 87
-    Width = 450
-    Height = 21
-    DataSource = srcClifor
-    ParentBackground = False
-    TabOrder = 5
-    DisplayField = 'RAZAO'
-    IndicateTitles = True
-    ShowButton = True
-  end
-  object IB_Edit8: TIB_Edit [3]
-    Left = 72
-    Top = 114
-    Width = 73
-    Height = 21
-    AutoLabel.Kind = albLeft
-    AutoLabel.Suffix = ':'
-    DataField = 'TIPO_MOVIMENTO'
-    DataSource = IB_DataSource1
-    Visible = False
-    ParentBackground = False
-    TabOrder = 6
-  end
-  object IB_DateTimePicker1: TIB_DateTimePicker [4]
+  object IB_DateTimePicker1: TIB_DateTimePicker [0]
     Left = 224
     Top = 60
     Width = 169
@@ -70,7 +21,7 @@ inherited fmEntradaEstoque: TfmEntradaEstoque
     DataSource = IB_DataSource1
     ParentBackground = False
   end
-  object GroupBox2: TGroupBox [5]
+  object GroupBox2: TGroupBox [1]
     Left = 8
     Top = 141
     Width = 593
@@ -138,20 +89,7 @@ inherited fmEntradaEstoque: TfmEntradaEstoque
       TabOrder = 2
     end
   end
-  object IB_LookupCombo4: TIB_LookupCombo [6]
-    Left = 151
-    Top = 114
-    Width = 450
-    Height = 21
-    DataSource = SourceTipoMovimento
-    Visible = False
-    ParentBackground = False
-    TabOrder = 7
-    DisplayField = 'NOME'
-    IndicateTitles = True
-    ShowButton = True
-  end
-  object IB_Date1: TIB_Date [7]
+  object IB_Date1: TIB_Date [2]
     Left = 480
     Top = 60
     Width = 121
@@ -165,6 +103,68 @@ inherited fmEntradaEstoque: TfmEntradaEstoque
     IncCellHeight = 1
     IncCellWidth = 2
     DrawYearArrow = False
+  end
+  object IB_LookupCombo4: TIB_LookupCombo [3]
+    Left = 151
+    Top = 114
+    Width = 450
+    Height = 21
+    DataSource = SourceTipoMovimento
+    Visible = False
+    ParentBackground = False
+    TabOrder = 7
+    DisplayField = 'NOME'
+    IndicateTitles = True
+    ShowButton = True
+  end
+  object IB_Edit8: TIB_Edit [4]
+    Left = 72
+    Top = 114
+    Width = 73
+    Height = 21
+    AutoLabel.Kind = albLeft
+    AutoLabel.Suffix = ':'
+    DataField = 'TIPO_MOVIMENTO'
+    DataSource = IB_DataSource1
+    Visible = False
+    ParentBackground = False
+    TabOrder = 6
+  end
+  object IB_LookupCombo3: TIB_LookupCombo [5]
+    Left = 151
+    Top = 87
+    Width = 450
+    Height = 21
+    DataSource = srcClifor
+    ParentBackground = False
+    TabOrder = 5
+    DisplayField = 'RAZAO'
+    IndicateTitles = True
+    ShowButton = True
+  end
+  object IB_Edit7: TIB_Edit [6]
+    Left = 72
+    Top = 87
+    Width = 73
+    Height = 21
+    AutoLabel.Kind = albLeft
+    AutoLabel.Suffix = ':'
+    DataField = 'CLIENTE_FORNECEDOR'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 4
+  end
+  object IB_Edit1: TIB_Edit [7]
+    Left = 72
+    Top = 60
+    Width = 113
+    Height = 21
+    AutoLabel.Caption = 'C'#243'digo'
+    AutoLabel.Kind = albLeft
+    DataField = 'CODIGO'
+    DataSource = IB_DataSource1
+    ParentBackground = False
+    TabOrder = 1
   end
   inherited pnlControles: TPanel
     Width = 613
@@ -186,7 +186,8 @@ inherited fmEntradaEstoque: TfmEntradaEstoque
       'DATA_VALIDADE=Data Validade'
       'CLIENTE_FORNECEDOR=Cli./Forn.')
     SQL.Strings = (
-      'select * from movimentacao_estoque')
+      'select * from movimentacao_estoque'
+      'where codigo=:codigo')
     DeleteSQL.Strings = (
       'DELETE FROM MOVIMENTACAO_ESTOQUE MOVIMENTACAO_ESTOQUE'
       'WHERE'
