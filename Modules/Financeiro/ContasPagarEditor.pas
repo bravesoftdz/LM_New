@@ -86,11 +86,7 @@ end;
 
 procedure TfmContasPagarEditor.IB_Query1BeforePost(IB_Dataset: TIB_Dataset);
 begin
-  if FTipoConta = tpPagar then
-    IB_Query1.FieldByName('tipo').AsInteger := 1
-  else
-    IB_Query1.FieldByName('tipo').AsInteger := 2;
-
+  IB_Query1.FieldByName('tipo').AsInteger := 1;
   inherited;
 end;
 

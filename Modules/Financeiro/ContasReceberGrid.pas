@@ -10,8 +10,12 @@ uses
 type
   TfmContasReceberGrid = class(TfmFormGrid)
     BtnQuitar: TSpeedButton;
+    BtnEstornar: TSpeedButton;
     procedure FormCreate(Sender: TObject);
     procedure BtnQuitarClick(Sender: TObject);
+    procedure BtnEstornarClick(Sender: TObject);
+    procedure IB_Grid1GetCellProps(Sender: TObject; ACol, ARow: Integer;
+      AState: TGridDrawState; var AColor: TColor; AFont: TFont);
   private
     { Private declarations }
   public
@@ -26,6 +30,20 @@ implementation
 uses ContasReceberEditor, QuitacaoConta;
 
 {$R *.dfm}
+
+procedure TfmContasReceberGrid.BtnEstornarClick(Sender: TObject);
+var Q : Tib_Query;
+begin
+  if ((IB_Query1.FieldByName('codigo').AsString <> '') and (IB_Query1.FieldByName('data_pagrec').AsString <> '')) then begin
+    Q := TIB_Query.Create(Self);
+    Q.SQL.Text := 'execute procedure estorna_conta(' + IB_Query1.FieldByName('codigo').AsString + ')';
+    Q.ExecSQL;
+    Q.Free;
+    IB_Query1.Refresh;
+    ShowMessage('Conta estornada com sucesso!');
+  end else
+    ShowMessage('A conta não está quitada!');
+end;
 
 procedure TfmContasReceberGrid.BtnQuitarClick(Sender: TObject);
 var F : TQuitacao;
@@ -48,6 +66,30 @@ procedure TfmContasReceberGrid.FormCreate(Sender: TObject);
 begin
   FormEditor := TfmContasReceberEditor;
   inherited;
+end;
+
+procedure TfmContasReceberGrid.IB_Grid1GetCellProps(Sender: TObject; ACol,
+  ARow: Integer; AState: TGridDrawState; var AColor: TColor; AFont: TFont);
+begin
+  try
+    with IB_DataSource1.DataSet do
+    begin
+      BufferRowNum := IB_Grid1.DataRow[ARow];
+      if BufferRowNum > 0 then
+      begin
+        If (BufferFieldByName('data_vencimento').AsDate > Date) and (BufferFieldByName('data_pagrec').AsString = '') then    //não quitada e não vencida
+          AFont.Color := $0056A554;
+
+        If (BufferFieldByName('data_vencimento').AsDate <= Date) and (BufferFieldByName('data_pagrec').AsString = '') then  //não quitada e vencida
+          AFont.Color := $00133AD9;
+
+        If BufferFieldByName('data_pagrec').AsString <> ''  then  //vencendo hoje e quitada
+          AFont.Color := $00B75F3E;
+      end;
+    end;
+  except
+  Exit;
+  end;
 end;
 
 end.

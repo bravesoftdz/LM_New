@@ -14,6 +14,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure btnSaidaClick(Sender: TObject);
     procedure btnEntradaClick(Sender: TObject);
+    procedure IB_Grid1GetCellProps(Sender: TObject; ACol, ARow: Integer;
+      AState: TGridDrawState; var AColor: TColor; AFont: TFont);
   private
     { Private declarations }
   public
@@ -60,6 +62,30 @@ procedure TfmEstoqueGrid.FormCreate(Sender: TObject);
 begin
   FormEditor := TfmEntradaEstoque;
   inherited;
+end;
+
+procedure TfmEstoqueGrid.IB_Grid1GetCellProps(Sender: TObject; ACol,
+  ARow: Integer; AState: TGridDrawState; var AColor: TColor; AFont: TFont);
+begin
+  try
+    with IB_DataSource1.DataSet do
+    begin
+      BufferRowNum := IB_Grid1.DataRow[ARow];
+      if BufferRowNum > 0 then
+      begin
+        If BufferFieldByName('tipo_movimento').AsString = 'Saída' then    //não quitada e não vencida
+          AFont.Color := $00133AD9;
+
+        If BufferFieldByName('tipo_movimento').AsString = 'Entrada' then  //não quitada e vencida
+          AFont.Color := $0056A554;
+
+        If BufferFieldByName('tipo_movimento').AsString = 'Locação' then  //vencendo hoje e quitada
+          AFont.Color := $00B75F3E;
+      end;
+    end;
+  except
+  Exit;
+  end;
 end;
 
 end.
