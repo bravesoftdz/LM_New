@@ -1,7 +1,7 @@
 object fmemail: Tfmemail
   Left = 0
   Top = 0
-  Caption = 'fmemail'
+  Caption = 'Email'
   ClientHeight = 493
   ClientWidth = 730
   Color = clBtnFace
@@ -11,6 +11,7 @@ object fmemail: Tfmemail
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poDesktopCenter
   OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
@@ -49,7 +50,6 @@ object fmemail: Tfmemail
       Width = 505
       Height = 21
       TabOrder = 0
-      Text = 'edtPara'
     end
     object edtCC: TEdit
       Left = 16
@@ -57,7 +57,6 @@ object fmemail: Tfmemail
       Width = 505
       Height = 21
       TabOrder = 1
-      Text = 'edtCC'
     end
     object edtCCO: TEdit
       Left = 16
@@ -65,7 +64,6 @@ object fmemail: Tfmemail
       Width = 505
       Height = 21
       TabOrder = 2
-      Text = 'edtCCO'
     end
   end
   object GroupBox1: TGroupBox
@@ -121,7 +119,7 @@ object fmemail: Tfmemail
       Width = 456
       Height = 21
       TabOrder = 0
-      Text = 'edtAssunto'
+      Text = 'Assunto'
     end
     object mmoMsg: TMemo
       Left = 16
@@ -187,11 +185,10 @@ object fmemail: Tfmemail
     end
     object edtUsuario: TEdit
       Left = 20
-      Top = 280
+      Top = 293
       Width = 121
       Height = 21
       TabOrder = 0
-      Text = 'edtUsuario'
     end
     object edtSenha: TEdit
       Left = 20
@@ -201,6 +198,29 @@ object fmemail: Tfmemail
       PasswordChar = '*'
       TabOrder = 1
       Text = 'edtSenha'
+    end
+    object edtHost: TEdit
+      Left = 24
+      Top = 361
+      Width = 121
+      Height = 21
+      TabOrder = 2
+      Text = 'smtp.gmail.com'
+    end
+    object edtPort: TEdit
+      Left = 24
+      Top = 388
+      Width = 121
+      Height = 21
+      TabOrder = 3
+      Text = '465'
+    end
+    object edtNome: TEdit
+      Left = 20
+      Top = 266
+      Width = 121
+      Height = 21
+      TabOrder = 4
     end
   end
   object IdSMTP1: TIdSMTP

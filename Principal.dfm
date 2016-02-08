@@ -9567,4 +9567,9 @@ object fmPrincipal: TfmPrincipal
     Left = 664
     Top = 224
   end
+  object IdSMTP1: TIdSMTP
+    SASLMechanisms = <>
+    Left = 616
+    Top = 168
+  end
 end

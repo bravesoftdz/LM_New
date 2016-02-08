@@ -8,7 +8,7 @@ uses
   IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack, IdSSL, IdSSLOpenSSL,
   IdAntiFreezeBase, Vcl.IdAntiFreeze, IdMessage, IdBaseComponent, IdComponent,
   IdTCPConnection, IdTCPClient, IdExplicitTLSClientServerBase, IdMessageClient,
-  IdSMTPBase, IdSMTP, Vcl.Samples.Gauges, IdAttachmentFile;
+  IdSMTPBase, IdSMTP, Vcl.Samples.Gauges, IdAttachmentFile, IdText;
 
 type
   Tfmemail = class(TForm)
@@ -40,6 +40,9 @@ type
     btnRemover: TSpeedButton;
     edtUsuario: TEdit;
     edtSenha: TEdit;
+    edtHost: TEdit;
+    edtPort: TEdit;
+    edtNome: TEdit;
     procedure btnEnviarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure ListAnexosKeyDown(Sender: TObject; var Key: Word;
@@ -76,48 +79,117 @@ begin
 end;
 
 procedure Tfmemail.btnEnviarClick(Sender: TObject);
-var RequerAutenticacao : Boolean;
+var
+  IdSSLIOHandlerSocket: TIdSSLIOHandlerSocketOpenSSL;
+  IdSMTP: TIdSMTP;
+  IdMessage: TIdMessage;
+  IdText: TIdText;
+  sAnexo: string;
+  ListDestinatarios : TStringList;
   I : Integer;
 begin
-  try
-    pg1.MaxValue := 6;
-		pg1.Progress := 0;
-    Screen.Cursor := crHourGlass;
-    pg1.AddProgress(1);
-    btnEnviar.Enabled := False;
-    IdSMTP1.Host := 'smtp.gmail.com';
-    IdSMTP1.Username := edtUsuario.Text;
-    IdSMTP1.Password := edtSenha.Text;
-    IdSMTP1.Port :=  465;
+  btnEnviar.Enabled:= False;
+  pg1.MaxValue := 7;
+  pg1.Progress := 0;
 
-    if RequerAutenticacao then
-      IdSMTP1.AuthType := satDefault
-    else IdSMTP1.AuthType := satNone;
+  // instanciação dos objetos
+  IdSSLIOHandlerSocket := TIdSSLIOHandlerSocketOpenSSL.Create(Self);
+  IdSMTP := TIdSMTP.Create(Self);
+  IdMessage := TIdMessage.Create(Self);
+
+  try
+    // Configuração do protocolo SSL (TIdSSLIOHandlerSocketOpenSSL)
+    IdSSLIOHandlerSocket.SSLOptions.Method := sslvSSLv23;
+    IdSSLIOHandlerSocket.SSLOptions.Mode := sslmClient;
     pg1.AddProgress(1);
-    IdMessage1.MessageParts.Clear;
+    // Configuração do servidor SMTP (TIdSMTP)
+    IdSMTP.IOHandler := IdSSLIOHandlerSocket;
+    IdSMTP.UseTLS := utUseImplicitTLS;
+    IdSMTP.AuthType := satDefault;
+    IdSMTP.Port := Variant(edtPort.Text);
+    IdSMTP.Host := edtHost.Text;
+    IdSMTP.Username := edtUsuario.Text;
+    IdSMTP.Password := edtSenha.Text;
+    pg1.AddProgress(1);
+    // Configuração da mensagem (TIdMessage)
+    IdMessage.From.Address := edtUsuario.Text;
+    IdMessage.From.Name := edtNome.Text;
+    IdMessage.ReplyTo.EMailAddresses := IdMessage.From.Address;
+    ListDestinatarios := TStringList.Create;
+    try
+      ListDestinatarios.Text := StringReplace(edtPara.Text, ';', #13, [rfReplaceAll]);
+      for I := 0 to ListDestinatarios.Count -1 do
+        IdMessage.Recipients.Add.Text := ListDestinatarios.Strings[I];
+    finally
+      ListDestinatarios.Free;
+    end;
+    pg1.AddProgress(1);
+    ListDestinatarios := TStringList.Create;
+    try
+      ListDestinatarios.Text := StringReplace(edtCC.Text, ';', #13, [rfReplaceAll]);
+      for I := 0 to ListDestinatarios.Count -1 do
+        IdMessage.BccList.Add.Text := ListDestinatarios.Strings[I];
+    finally
+      ListDestinatarios.Free;
+    end;
+    pg1.AddProgress(1);
+    ListDestinatarios := TStringList.Create;
+    try
+      ListDestinatarios.Text := StringReplace(edtPara.Text, ';', #13, [rfReplaceAll]);
+      for I := 0 to ListDestinatarios.Count -1 do
+        IdMessage.CCList.Add.Text := ListDestinatarios.Strings[I];
+    finally
+      ListDestinatarios.Free;
+    end;
+    pg1.AddProgress(1);
+    IdMessage.Subject := edtAssunto.Text;
+    IdMessage.Encoding := meMIME;
+
+    // Configuração do corpo do email (TIdText)
+    IdText := TIdText.Create(IdMessage.MessageParts);
+    IdText.Body.Add(mmoMsg.Text);
+    IdText.ContentType := 'text/plain; charset=iso-8859-1';
+    pg1.AddProgress(1);
+    // Opcional - Anexo da mensagem (TIdAttachmentFile)
     if ListAnexos.Items.Count > 0 then
     begin
       for I := 0 to ListAnexos.Items.Count do
         TIdAttachmentFile.Create(IdMessage1.MessageParts, ListAnexos.Items[I]);
     end;
     pg1.AddProgress(1);
-    IdMessage1.From.Address := edtUsuario.Text;
-    IdMessage1.Subject := edtAssunto.Text;
-    IdMessage1.ContentType := 'text/html';
-    IdMessage1.Body.Add('<html><body>');
-    IdMessage1.Body.Add('<p><hr></p><br>' + mmoMsg.Text);
-    IdMessage1.Body.Add('</body></html>');
+    // Conexão e autenticação
+    try
+      IdSMTP.Connect;
+      IdSMTP.Authenticate;
+    except
+      on E:Exception do
+      begin
+        MessageDlg('Erro na conexão ou autenticação: ' +
+          E.Message, mtWarning, [mbOK], 0);
+        Exit;
+      end;
+    end;
     pg1.AddProgress(1);
-    IdMessage1.Recipients.EMailAddresses := EdtPara.Text;
-    IdMessage1.BccList.EMailAddresses := edtCC.Text;
-    IdMessage1.CCList.EMailAddresses := edtCCO.Text;
-    if not IdSMTP1.Connected then
-      IdSMTP1.Connect();
-    IdSMTP1.SendMsg(IdMessage1);
-    pg1.AddProgress(1);
+    // Envio da mensagem
+    try
+      IdSMTP.Send(IdMessage);
+      MessageDlg('Mensagem enviada com sucesso!', mtInformation, [mbOK], 0);
+    except
+      On E:Exception do
+      begin
+        MessageDlg('Erro ao enviar a mensagem: ' +
+          E.Message, mtWarning, [mbOK], 0);
+      end;
+    end;
   finally
-    IdSMTP1.Disconnect;
-    Screen.Cursor := crDefault;
+    // desconecta do servidor
+    IdSMTP.Disconnect;
+    // liberação da DLL
+    UnLoadOpenSSLLibrary;
+    // liberação dos objetos da memória
+    FreeAndNil(IdMessage);
+    FreeAndNil(IdSSLIOHandlerSocket);
+    FreeAndNil(IdSMTP);
     btnEnviar.Enabled:= true;
 		pg1.Progress := 0;
   end;

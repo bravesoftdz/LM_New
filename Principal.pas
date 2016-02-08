@@ -5,7 +5,9 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.Buttons, Vcl.ExtCtrls,
-  Vcl.Imaging.pngimage, IB_Components, IB_Access, Vcl.StdCtrls;
+  Vcl.Imaging.pngimage, IB_Components, IB_Access, Vcl.StdCtrls, IdBaseComponent,
+  IdComponent, IdTCPConnection, IdTCPClient, IdExplicitTLSClientServerBase,
+  IdMessageClient, IdSMTPBase, IdSMTP;
 
 type
   TfmPrincipal = class(TForm)
@@ -46,6 +48,7 @@ type
     LblEmpresa1: TLabel;
     LblEmpresa2: TLabel;
     Email1: TMenuItem;
+    IdSMTP1: TIdSMTP;
     procedure btnCadastrosClick(Sender: TObject);
     procedure BtnOperacionalClick(Sender: TObject);
     procedure BtnFinanceiroClick(Sender: TObject);
