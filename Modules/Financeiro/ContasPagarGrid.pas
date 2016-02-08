@@ -30,11 +30,17 @@ uses ContasPagarEditor, QuitacaoConta;
 procedure TfmContasPagarGrid.BtnQuitarClick(Sender: TObject);
 var F : TQuitacao;
 begin
+  if IB_Query1.FieldByName('data_pagrec').AsDate > 0 then
+    raise Exception.Create('Essa conta ja está quitada!');
+
   F := TQuitacao.Create(Self);
   Try
+    F.CodConta := IB_Query1.FieldByName('codigo').AsInteger;
+    F.xValor := IB_Query1.FieldByName('valor').AsFloat;
     F.ShowModal;
   Finally
     F.Free;
+    IB_Query1.Refresh;
   End;
 end;
 

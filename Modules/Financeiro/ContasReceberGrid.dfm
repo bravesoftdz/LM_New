@@ -32,7 +32,7 @@ inherited fmContasReceberGrid: TfmContasReceberGrid
       'Select c.codigo'
       '     , c.data_emissao'
       '     , c.data_vencimento'
-      '     , c.data_pagamento'
+      '     , c.data_pagrec'
       '     , cli.razao as cliente'
       '     , p.descricao as plano_de_conta'
       '     , c.valor'

@@ -2,8 +2,8 @@ object Quitacao: TQuitacao
   Left = 541
   Top = 281
   Caption = 'Quita'#231#227'o'
-  ClientHeight = 148
-  ClientWidth = 357
+  ClientHeight = 191
+  ClientWidth = 325
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,7 +12,7 @@ object Quitacao: TQuitacao
   Font.Style = []
   OldCreateOrder = False
   Position = poDesigned
-  OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -30,7 +30,7 @@ object Quitacao: TQuitacao
     Caption = 'Juros:'
   end
   object Label3: TLabel
-    Left = 222
+    Left = 206
     Top = 46
     Width = 30
     Height = 13
@@ -44,25 +44,33 @@ object Quitacao: TQuitacao
     Caption = 'Desconto:'
   end
   object Label5: TLabel
-    Left = 181
-    Top = 73
-    Width = 71
+    Left = 20
+    Top = 116
+    Width = 83
     Height = 13
     Caption = 'Valor Pag/Rec:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object SpeedButton1: TSpeedButton
-    Left = 90
-    Top = 104
+    Left = 74
+    Top = 150
     Width = 81
     Height = 33
     Caption = 'Ok'
+    OnClick = SpeedButton1Click
   end
   object SpeedButton2: TSpeedButton
-    Left = 186
-    Top = 104
+    Left = 170
+    Top = 150
     Width = 81
     Height = 33
     Caption = 'Cancelar'
+    OnClick = SpeedButton2Click
   end
   object DateTimePicker1: TDateTimePicker
     Left = 85
@@ -73,32 +81,49 @@ object Quitacao: TQuitacao
     Time = 42408.577967500000000000
     TabOrder = 0
   end
-  object Edit1: TEdit
+  object edtJuros: TEdit
     Left = 85
     Top = 43
     Width = 81
     Height = 21
     TabOrder = 1
+    Text = '0'
+    OnChange = edtJurosChange
   end
-  object Edit2: TEdit
-    Left = 258
+  object edtMulta: TEdit
+    Left = 236
     Top = 43
     Width = 81
     Height = 21
     TabOrder = 2
+    Text = '0'
+    OnChange = edtMultaChange
   end
-  object Edit3: TEdit
+  object edtDesconto: TEdit
     Left = 85
     Top = 70
     Width = 81
     Height = 21
     TabOrder = 3
+    Text = '0'
+    OnChange = edtDescontoChange
   end
-  object Edit4: TEdit
-    Left = 258
-    Top = 70
-    Width = 81
+  object edtTotal: TEdit
+    Left = 109
+    Top = 113
+    Width = 142
     Height = 21
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    ReadOnly = True
     TabOrder = 4
+  end
+  object Qry: TIB_Query
+    Left = 280
+    Top = 128
   end
 end

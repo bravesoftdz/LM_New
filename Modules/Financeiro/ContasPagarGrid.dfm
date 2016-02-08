@@ -8,6 +8,7 @@ inherited fmContasPagarGrid: TfmContasPagarGrid
   TextHeight = 13
   inherited pnlControles: TPanel
     Width = 754
+    ExplicitWidth = 754
     inherited pnlBotao: TPanel
       Left = 72
       Top = 5
@@ -28,6 +29,8 @@ inherited fmContasPagarGrid: TfmContasPagarGrid
   inherited IB_Grid1: TIB_Grid
     Width = 754
     Height = 284
+    ExplicitWidth = 754
+    ExplicitHeight = 284
   end
   inherited IB_Query1: TIB_Query
     FieldsDisplayLabel.Strings = (
@@ -45,7 +48,7 @@ inherited fmContasPagarGrid: TfmContasPagarGrid
       'Select c.codigo'
       '     , c.data_emissao'
       '     , c.data_vencimento'
-      '     , c.data_pagamento'
+      '     , c.data_pagrec'
       '     , cli.razao as cliente'
       '     , p.descricao as plano_de_conta'
       '     , c.valor'
