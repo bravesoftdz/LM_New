@@ -9435,7 +9435,7 @@ object fmPrincipal: TfmPrincipal
       object LblEmpresa: TLabel
         Left = 24
         Top = 46
-        Width = 82
+        Width = 81
         Height = 19
         Caption = 'LblEmpresa'
         Font.Charset = DEFAULT_CHARSET
@@ -9448,7 +9448,7 @@ object fmPrincipal: TfmPrincipal
       object LblEmpresa1: TLabel
         Left = 24
         Top = 71
-        Width = 91
+        Width = 90
         Height = 19
         Caption = 'LblEmpresa1'
         Font.Charset = DEFAULT_CHARSET
@@ -9461,7 +9461,7 @@ object fmPrincipal: TfmPrincipal
       object LblEmpresa2: TLabel
         Left = 24
         Top = 96
-        Width = 91
+        Width = 90
         Height = 19
         Caption = 'LblEmpresa2'
         Font.Charset = DEFAULT_CHARSET
@@ -9495,6 +9495,7 @@ object fmPrincipal: TfmPrincipal
     end
     object Empresas1: TMenuItem
       Caption = 'Empresas'
+      Visible = False
       OnClick = Empresas1Click
     end
   end
@@ -9511,9 +9512,11 @@ object fmPrincipal: TfmPrincipal
     end
     object Caixa1: TMenuItem
       Caption = 'Caixa/Banco'
+      Visible = False
     end
     object Metas1: TMenuItem
       Caption = 'Metas'
+      Visible = False
     end
   end
   object PopupOperacional: TPopupMenu
@@ -9525,9 +9528,11 @@ object fmPrincipal: TfmPrincipal
     end
     object Vendas1: TMenuItem
       Caption = 'Vendas'
+      Visible = False
     end
     object Locaes1: TMenuItem
       Caption = 'Loca'#231#245'es'
+      Visible = False
     end
     object Estoque1: TMenuItem
       Caption = 'Produtos/Estoque'

@@ -48,17 +48,18 @@ end;
 
 procedure TfmConfiguracoes.GravaConfig;
 begin
-  TConfig.SetConfig('permite_alterar', 'contas', Edit1.Text);
+  TConfig.SetConfig('seta_clifor', 'clifor', Edit1.Text);
 end;
 
 procedure TfmConfiguracoes.LoadConfig;
 begin
-  Edit1.Text := String(TConfig.GetConfig('permite_alterar', 'contas'));
+  Edit1.Text := String(TConfig.GetConfig('seta_clifor', 'clifor'));
 end;
 
 procedure TfmConfiguracoes.SpeedButton1Click(Sender: TObject);
 begin
   GravaConfig;
+  Close;
 end;
 
 procedure TfmConfiguracoes.SpeedButton2Click(Sender: TObject);

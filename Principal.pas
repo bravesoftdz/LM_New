@@ -195,7 +195,7 @@ begin
                    ' , cd.cidade as nome_cidade ' +
                ' from clifor c ' +
                ' left join cidades cd on cd.codigo = c.cidade ' +
-               ' where c.codigo = 0'; //+ IntToStr(fmConfiguracoes.EMPRESA_PADRAO);
+               ' where c.codigo = ' + TConfig.GetConfig('seta_clifor', 'clifor');
     Q1.Open();
     LblRazao.Caption := Q1.FieldByName('razao').AsString;
     LblEmpresa.Caption := Q1.FieldByName('cnpj').AsString + ', ' + Q1.FieldByName('Telefone').AsString;
