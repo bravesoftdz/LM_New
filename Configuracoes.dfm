@@ -1,7 +1,7 @@
 object fmConfiguracoes: TfmConfiguracoes
   Left = 0
   Top = 0
-  Caption = 'a'
+  Caption = 'Configura'#231#245'es'
   ClientHeight = 420
   ClientWidth = 643
   Color = clBtnFace
@@ -14,6 +14,13 @@ object fmConfiguracoes: TfmConfiguracoes
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
+  object Label1: TLabel
+    Left = 312
+    Top = 224
+    Width = 31
+    Height = 13
+    Caption = 'Label1'
+  end
   object PageControl1: TPageControl
     Left = 0
     Top = 0
@@ -24,33 +31,12 @@ object fmConfiguracoes: TfmConfiguracoes
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Gerais'
-      object IB_Empresa_Padrao: TIB_Edit
-        Left = 107
-        Top = 16
-        Width = 65
-        Height = 21
-        Hint = 
-          'Define qual empresa cadastrada nos clientes fornecedores que ger' +
-          #234'ncia o sistema!'
-        AutoLabel.Caption = 'Empresa Padr'#227'o:'
-        AutoLabel.Kind = albLeft
-        DataField = 'EMPRESA_PADRAO'
-        DataSource = IB_DataSource1
-        ParentShowHint = False
-        ShowHint = True
-        ParentBackground = False
-        TabOrder = 0
-      end
-      object IB_LookupCombo1: TIB_LookupCombo
-        Left = 178
-        Top = 16
-        Width = 346
-        Height = 21
-        DataSource = SourceClientes
-        ParentBackground = False
-        TabOrder = 1
-        DisplayField = 'RAZAO'
-        ShowButton = True
+      object Label2: TLabel
+        Left = 39
+        Top = 27
+        Width = 191
+        Height = 13
+        Caption = 'C'#243'digo Cliente/Fornecedor da empresa:'
       end
     end
   end
@@ -79,9 +65,9 @@ object fmConfiguracoes: TfmConfiguracoes
     end
   end
   object Edit1: TEdit
-    Left = 168
-    Top = 160
-    Width = 121
+    Left = 240
+    Top = 48
+    Width = 103
     Height = 21
     TabOrder = 2
   end
@@ -127,20 +113,5 @@ object fmConfiguracoes: TfmConfiguracoes
     Isolation = tiCommitted
     Left = 576
     Top = 56
-  end
-  object Clientes: TIB_Query
-    IB_Connection = DMDados.Conexao
-    SQL.Strings = (
-      'select codigo, razao from clifor')
-    KeyLinks.Strings = (
-      'codigo=empresa_padrao')
-    KeySource = IB_DataSource1
-    Left = 516
-    Top = 240
-  end
-  object SourceClientes: TIB_DataSource
-    Dataset = Clientes
-    Left = 516
-    Top = 288
   end
 end

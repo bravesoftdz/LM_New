@@ -12,17 +12,15 @@ type
   TfmConfiguracoes = class(TForm)
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;
-    IB_Empresa_Padrao: TIB_Edit;
-    IB_LookupCombo1: TIB_LookupCombo;
     IB_Query1: TIB_Query;
     IB_DataSource1: TIB_DataSource;
     IB_Transaction1: TIB_Transaction;
     Panel1: TPanel;
     SpeedButton1: TSpeedButton;
     SpeedButton2: TSpeedButton;
-    Clientes: TIB_Query;
-    SourceClientes: TIB_DataSource;
     Edit1: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -51,7 +49,6 @@ end;
 procedure TfmConfiguracoes.GravaConfig;
 begin
   TConfig.SetConfig('permite_alterar', 'contas', Edit1.Text);
-
 end;
 
 procedure TfmConfiguracoes.LoadConfig;

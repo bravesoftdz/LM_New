@@ -10,7 +10,7 @@
     Top = 54
     Width = 638
     Height = 303
-    ActivePage = TabSheet1
+    ActivePage = Usuário
     Align = alClient
     Style = tsFlatButtons
     TabOrder = 1
@@ -253,7 +253,7 @@
       object IB_CheckBox1: TIB_CheckBox
         Left = 232
         Top = 11
-        Width = 97
+        Width = 66
         Height = 17
         DataField = 'ATIVO'
         DataSource = IB_DataSource1
@@ -262,11 +262,24 @@
         TabOrder = 2
         Caption = 'Ativo'
       end
+      object IB_CheckBox2: TIB_CheckBox
+        Left = 304
+        Top = 11
+        Width = 119
+        Height = 17
+        DataField = 'USUARIO'
+        DataSource = IB_DataSource1
+        BorderStyle = bsNone
+        ParentBackground = False
+        TabOrder = 3
+        Caption = 'Usu'#225'rio Administrador'
+      end
     end
   end
   inherited IB_Query1: TIB_Query
     ColumnAttributes.Strings = (
-      'ATIVO=BOOLEAN='#39'1,0'#39)
+      'ATIVO=BOOLEAN='#39'1,0'#39
+      'USUARIO_ADM=BOOLEAN='#39'1,0'#39)
     FieldsCharCase.Strings = (
       'USUARIO=UPPER')
     FieldsEditMask.Strings = (
@@ -275,7 +288,8 @@
     SQL.Strings = (
       'select * from usuarios where codigo = :codigo')
     DefaultValues.Strings = (
-      'ATIVO=0')
+      'ATIVO=0'
+      'USUARIO_ADM=0')
     DeleteSQL.Strings = (
       'DELETE FROM USUARIOS USUARIOS'
       'WHERE'
@@ -283,7 +297,7 @@
     EditSQL.Strings = (
       'UPDATE USUARIOS USUARIOS SET'
       '   USUARIOS.CODIGO = :CODIGO, /*PK*/'
-      '   USUARIOS.USUARIO = :USUARIO,'
+      '   USUARIOS."USER" = :"USER",'
       '   USUARIOS.SENHA = :SENHA,'
       '   USUARIOS.NOME = :NOME,'
       '   USUARIOS.CPF = :CPF,'
@@ -299,13 +313,15 @@
       '   USUARIOS.ESTADO = :ESTADO,'
       '   USUARIOS.DATA_NASCIMENTO = :DATA_NASCIMENTO,'
       '   USUARIOS.DATA_ADMISSAO = :DATA_ADMISSAO,'
-      '   USUARIOS.ATIVO = :ATIVO'
+      '   USUARIOS.ATIVO = :ATIVO,'
+      '   USUARIOS.USUARIO = :USUARIO,'
+      '   USUARIOS.USUARIO_ADM = :USUARIO_ADM'
       'WHERE'
       '   CODIGO = :OLD_CODIGO')
     InsertSQL.Strings = (
       'INSERT INTO USUARIOS('
       '   CODIGO, /*PK*/'
-      '   USUARIO,'
+      '   "USER",'
       '   SENHA,'
       '   NOME,'
       '   CPF,'
@@ -321,10 +337,12 @@
       '   ESTADO,'
       '   DATA_NASCIMENTO,'
       '   DATA_ADMISSAO,'
-      '   ATIVO)'
+      '   ATIVO,'
+      '   USUARIO,'
+      '   USUARIO_ADM)'
       'VALUES ('
       '   :CODIGO,'
-      '   :USUARIO,'
+      '   :"USER",'
       '   :SENHA,'
       '   :NOME,'
       '   :CPF,'
@@ -340,7 +358,9 @@
       '   :ESTADO,'
       '   :DATA_NASCIMENTO,'
       '   :DATA_ADMISSAO,'
-      '   :ATIVO)')
+      '   :ATIVO,'
+      '   :USUARIO,'
+      '   :USUARIO_ADM)')
     KeyLinks.Strings = (
       'USUARIOS.CODIGO')
     Left = 480

@@ -36,6 +36,7 @@ type
     SpeedButton1: TSpeedButton;
     Cidades: TIB_Query;
     SourceCidades: TIB_DataSource;
+    IB_CheckBox2: TIB_CheckBox;
     procedure SpeedButton1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
