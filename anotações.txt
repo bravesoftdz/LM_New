@@ -1,0 +1,16 @@
+Contrato
+data da prova
+data retirada
+data devolução
+
+
+
+Listar aniversariantes da semana
+cadastro do cliente - credito
+valor de locação e venda
+não deixar locar vestido que já está locado com margem de 5 dias antes e 3 dias depois
+
+
+relatorio de produtos
+relatorio de contratos
+relatorio de estoque
