@@ -30,10 +30,14 @@ type
     IB_Date1: TIB_Date;
     IB_DateTimePicker1: TIB_DateTimePicker;
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure IB_DataSource1DataChange(Sender: TIB_StatementLink;
+      Statement: TIB_Statement; Field: TIB_Column);
   private
     { Private declarations }
   public
     { Public declarations }
+    xTipoMovimento : TMovEstoque;
   end;
 
 var
@@ -49,6 +53,31 @@ begin
   Clifor.Open();
   TipoMovimentos.Open();
   Produtos.Open();
+end;
+
+procedure TfmEntradaEstoque.FormShow(Sender: TObject);
+begin
+  inherited;
+  if xTipoMovimento = meEntrada then
+    Caption := 'Cadastro de Entrada de estoque'
+  else
+  if xTipoMovimento = meSaida then
+    Caption := 'Cadastro de Saída de estoque'
+  else
+  if xTipoMovimento = meLocacao then
+    Caption := 'Cadastro de Locação';
+
+  IB_Query1.FieldByName('tipo_movimento').AsInteger := Integer(xTipoMovimento);
+end;
+
+procedure TfmEntradaEstoque.IB_DataSource1DataChange(Sender: TIB_StatementLink;
+  Statement: TIB_Statement; Field: TIB_Column);
+begin
+  inherited;
+  if (Field = IB_Query1.FieldByName('quantidade'))
+    or (Field = IB_Query1.FieldByName('valor_unitario'))
+  then
+    IB_Query1.FieldByName('valor_total').AsFloat := IB_Query1.FieldByName('quantidade').AsFloat * IB_Query1.FieldByName('valor_unitario').AsFloat;
 end;
 
 end.

@@ -37,7 +37,6 @@ type
     Empresas1: TMenuItem;
     Cadastrodeprodutos1: TMenuItem;
     Movimentaodeestoque1: TMenuItem;
-    ipodemovimentao1: TMenuItem;
     IB_Query1: TIB_Query;
     Label1: TLabel;
     Label2: TLabel;
@@ -64,6 +63,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Requisies1Click(Sender: TObject);
+    procedure Estoque1Click(Sender: TObject);
   private
     { Private declarations }
 
@@ -147,6 +147,17 @@ end;
 procedure TfmPrincipal.Empresas1Click(Sender: TObject);
 begin
   CriaForm(TfmEmpresasGrid);
+end;
+
+procedure TfmPrincipal.Estoque1Click(Sender: TObject);
+var F : TfmEstoqueGrid;
+begin
+  F := TfmEstoqueGrid.Create(Self);
+  try
+    F.ShowModal;
+  finally
+    F.Free;
+  end;
 end;
 
 procedure TfmPrincipal.FormCreate(Sender: TObject);
