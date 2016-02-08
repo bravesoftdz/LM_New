@@ -9,7 +9,9 @@ uses
 
 type
   TfmContasReceberGrid = class(TfmFormGrid)
+    BtnQuitar: TSpeedButton;
     procedure FormCreate(Sender: TObject);
+    procedure BtnQuitarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -21,9 +23,20 @@ var
 
 implementation
 
-uses ContasReceberEditor;
+uses ContasReceberEditor, QuitacaoConta;
 
 {$R *.dfm}
+
+procedure TfmContasReceberGrid.BtnQuitarClick(Sender: TObject);
+var F : TQuitacao;
+begin
+  F := TQuitacao.Create(Self);
+  Try
+    F.ShowModal;
+  Finally
+    F.Free;
+  End;
+end;
 
 procedure TfmContasReceberGrid.FormCreate(Sender: TObject);
 begin
