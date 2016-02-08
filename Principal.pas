@@ -45,6 +45,7 @@ type
     LblEmpresa: TLabel;
     LblEmpresa1: TLabel;
     LblEmpresa2: TLabel;
+    Email1: TMenuItem;
     procedure btnCadastrosClick(Sender: TObject);
     procedure BtnOperacionalClick(Sender: TObject);
     procedure BtnFinanceiroClick(Sender: TObject);
@@ -64,6 +65,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure Requisies1Click(Sender: TObject);
     procedure Estoque1Click(Sender: TObject);
+    procedure Email1Click(Sender: TObject);
   private
     { Private declarations }
 
@@ -80,7 +82,7 @@ implementation
 
 uses CliforGrid, FuncionariosGrid, EmpresasGrid, PlanoContaGrid, ContasPagarGrid,
      ProdutosGrid, EstoqueGrid, TipoEntradaEstoqueGrid, ContasReceberGrid, ReservaGrid,
-     Login, Dados, Functions, Configuracoes, RequisicaoGrid;
+     Login, Dados, Functions, Configuracoes, RequisicaoGrid, Email;
 
 procedure TfmPrincipal.btnCadastrosClick(Sender: TObject);
 begin
@@ -141,6 +143,17 @@ begin
     ShowModal;
   finally
     Free;
+  end;
+end;
+
+procedure TfmPrincipal.Email1Click(Sender: TObject);
+var F : Tfmemail;
+begin
+  F := Tfmemail.Create(Self);
+  try
+    F.ShowModal;
+  finally
+    F.Free;
   end;
 end;
 

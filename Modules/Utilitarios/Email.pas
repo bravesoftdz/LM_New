@@ -34,7 +34,6 @@ type
     btnContatos: TSpeedButton;
     IdSMTP1: TIdSMTP;
     IdMessage1: TIdMessage;
-    IdAntiFreeze1: TIdAntiFreeze;
     IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL;
     OpenDialog1: TOpenDialog;
     pg1: TGauge;
@@ -87,8 +86,10 @@ begin
     pg1.AddProgress(1);
     btnEnviar.Enabled := False;
     IdSMTP1.Host := 'smtp.gmail.com';
-    IdSMTP1.Username := 'email@email.com';
-    IdSMTP1.Password := 'senha';
+    IdSMTP1.Username := edtUsuario.Text;
+    IdSMTP1.Password := edtSenha.Text;
+    IdSMTP1.Port :=  465;
+
     if RequerAutenticacao then
       IdSMTP1.AuthType := satDefault
     else IdSMTP1.AuthType := satNone;
@@ -100,7 +101,7 @@ begin
         TIdAttachmentFile.Create(IdMessage1.MessageParts, ListAnexos.Items[I]);
     end;
     pg1.AddProgress(1);
-    IdMessage1.From.Address := 'email@email.com';
+    IdMessage1.From.Address := edtUsuario.Text;
     IdMessage1.Subject := edtAssunto.Text;
     IdMessage1.ContentType := 'text/html';
     IdMessage1.Body.Add('<html><body>');

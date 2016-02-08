@@ -186,16 +186,16 @@ object fmemail: Tfmemail
       Progress = 0
     end
     object edtUsuario: TEdit
-      Left = 4
-      Top = 272
+      Left = 20
+      Top = 280
       Width = 121
       Height = 21
       TabOrder = 0
       Text = 'edtUsuario'
     end
     object edtSenha: TEdit
-      Left = 24
-      Top = 240
+      Left = 20
+      Top = 320
       Width = 121
       Height = 21
       PasswordChar = '*'
@@ -222,10 +222,6 @@ object fmemail: Tfmemail
     ReplyTo = <>
     ConvertPreamble = True
     Left = 120
-    Top = 400
-  end
-  object IdAntiFreeze1: TIdAntiFreeze
-    Left = 184
     Top = 400
   end
   object IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL
